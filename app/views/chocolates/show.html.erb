@@ -1,0 +1,50 @@
+<%= stylesheet_link_tag "colorbox.css" %>
+<%= javascript_include_tag "jquery.min.js" %>
+<%= javascript_include_tag "jquery.colorbox.js" %>
+
+<p id="notice"><%= notice %></p>
+
+<p id="name" style="color: #000000">
+  <b>Name:</b>
+  <%= @chocolate.name %>
+</p>
+<div id="total" style="height: 40;width: 80; border: solid 1px black;text-align:center; padding: 20px; font-size: 25"> <%= number_with_precision @chocolate.ratings.average(:rate), :precision => 2 %></div>
+ <h3> Look: <%= number_with_precision @chocolate.ratings.average(:look), :precision => 2 %> /5, Smell: <%= number_with_precision @chocolate.ratings.average(:smell), :precision => 2 %> /5,
+   Snap:<%= number_with_precision @chocolate.ratings.average(:snap), :precision => 2 %> /5,
+  Mouthfeel: <%= number_with_precision @chocolate.ratings.average(:mouthfeel), :precision => 2 %> /25,
+  Taste: <%= number_with_precision @chocolate.ratings.average(:taste), :precision => 2 %> /50,
+  Aftertaste: <%= number_with_precision @chocolate.ratings.average(:aftertaste), :precision => 2 %> /10.  </h3>
+<p style="text-align:justify;color: #000000">
+  <b>Description:</b>
+  <%= @chocolate.description %>
+</p>
+<P>
+<b>Type:</b>
+<%= @chocolate.type_of_chocolate %>
+</P>
+
+<div id="pic" style="min-height:250px;height:auto;">
+<% for photo in @chocolate.photos %>
+    <div class="photos" style="float: left;width: 200px;height: 200px; border: solid 1px black; margin: 10px;">
+      <%= link_to image_tag(photo.image.url(:thumb),:size =>'200x200') ,photo.image.url, :class => "group1" %>
+    </div>
+    <% end %>
+</div>
+
+<p><%= link_to 'Rate Chocolate',  rate_chocolate_chocolates_path(:chocolate_id => @chocolate.id) %></p>
+ <P>
+   <%= link_to 'Edit', edit_chocolate_path(@chocolate) %> |
+   <%= link_to 'Back', chocolates_path %>
+ </P>
+
+<div style="height: 20px;"></div>
+
+<script>
+    $(document).ready(function(){
+        //Examples of how to assign the Colorbox event to elements
+        $("a.group1").colorbox({rel:'group1'});
+    });
+
+
+
+</script>

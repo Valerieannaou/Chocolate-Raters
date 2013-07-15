@@ -1,0 +1,51 @@
+<%= javascript_include_tag 'jquery', 'nested_form' %>
+<%= nested_form_for @chocolate, :html => { :multipart => true } do |f| %>
+    <% if @chocolate.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@chocolate.errors.count, "error") %> prohibited this chocolate from being saved:</h2>
+
+          <ul>
+            <% @chocolate.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <%=  f.select :chocolatier_id, options_for_select(@chocolatiers.collect{|c| [c.name, c.id]}) %>
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :type_of_chocolate %><br />
+      <%= f.text_field :type_of_chocolate %>
+    </div>
+    <div class="field">
+      <%= f.label :cocao %><br />
+      <%= f.text_field :cocao %>  %
+    </div>
+    <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_area :description ,:size => "100x10" %>
+    </div>
+    <div class="field">
+      <%= f.fields_for :photos do |builder| %>
+          <%#= image_tag builder.image if builder.image.present? %>
+          <% if builder.object.new_record? %>
+          Photo: <%= builder.file_field :image ,:class => 'file_field' %>
+              <%= builder.link_to_remove "Remove"  %>
+           <% else %>
+              <div id="mphoto">
+              <div id="photo" style="width: 200px; height: 200px; border: solid 1px black; margin: 10px;">
+            <%=  image_tag builder.object.image.url, :size =>'200x200' %>
+              </div>
+          <%= builder.link_to_remove "Remove"  %>
+              </div>
+          <% end %>
+      <% end %>
+    </div>
+    <%= f.link_to_add "Add a photo", :photos %>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

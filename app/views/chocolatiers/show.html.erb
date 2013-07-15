@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @chocolatier.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @chocolatier.address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @chocolatier.city %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @chocolatier.country %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @chocolatier.state %>
+</p>
+
+<p>
+  <b>Zip code:</b>
+  <%= @chocolatier.zip_code %>
+</p>
+
+<p>
+  <b>Chocolatier type:</b>
+  <%= @chocolatier.chocolatier_type %>
+</p>
+
+<p>
+  <b>Chocolatier url:</b>
+  <%= @chocolatier.chocolatier_url %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @chocolatier.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @chocolatier.phone %>
+</p>
+
+
+<%= link_to 'Edit', edit_chocolatier_path(@chocolatier) %> |
+<%= link_to 'Back', chocolatiers_path %>

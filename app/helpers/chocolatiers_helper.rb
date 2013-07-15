@@ -1,0 +1,2 @@
+module ChocolatiersHelper
+end

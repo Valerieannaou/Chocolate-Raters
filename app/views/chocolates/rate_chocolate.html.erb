@@ -1,0 +1,125 @@
+
+<h2>Add Rating to</h2>
+<p id="notice"><%= notice %></p>
+ <%= %>
+<div id="total" style="height: 40;width: 80; border: solid 1px black;text-align:center; padding: 20px; font-size: 25"></div>
+<div id="rateing" style="margin-left:20px;margin-top:20px  ">
+  <form action="<%= add_rating_ratings_path %>" >
+    <div clase="clear" >
+      <%= label_tag "Look" %>
+     <%= select_tag "look", options_for_select((1..5).step(1)) ,:prompt => " " ,:style => "width:50px"  %>
+
+
+    <p>
+    </div>
+    <div clase="clear" >
+      <%= label_tag "Smell" %>
+      <%= select_tag "smell", options_for_select((1..5).step(1)) ,:prompt => " " ,:style => "width:50px" %>
+
+      </div>
+    <div clase="clear" >
+      <%= label_tag "Snap" %>
+      <%= select_tag "snap", options_for_select((1..5).step(1)) ,:prompt => " " ,:style => "width:50px" %>
+
+    </div>
+    <div clase="clear" >
+      <%= label_tag "Mouthfeel" %>
+      <%= select_tag "mouthfeel", options_for_select((1..25).step(1)) ,:prompt => " " ,:style => "width:50px" %>
+
+    </div>
+    <div clase="clear" >
+      <%= label_tag "Taste" %>
+      <%= select_tag "taste", options_for_select((2..50).step(2)) ,:prompt => " " ,:style => "width:50px" %>
+
+    </div>
+    <div clase="clear" >
+      <%= label_tag "Aftertaste" %>
+      <%= select_tag "aftertaste", options_for_select((1..10).step(1)) ,:prompt => " " ,:style => "width:50px" %>
+
+
+    </div>
+    <%= text_area_tag "comment" %>
+     </br>
+      <input type="hidden" name="chocolate_id" value="<%= @chocolate_id %>" >
+      <input type="hidden" name="user_id" value= "<%= current_user.id %>" >
+     <input type="hidden" name="rate" id="rate" >
+
+      <input type="submit" value="submit" style="background-color: #fffabf; margin: 5px;" />
+    </p>
+  </form>
+</div>
+<script>
+    $(document).ready(function(){
+        var total_rate= 0;
+        var look_rate=0;
+        var smell_rate=0;
+        var snap_rate=0;
+        var mouthfeel_rate=0;
+        var taste_rate=0;
+        var aftertaste_rate=0;
+        document.getElementById('total').innerHTML=total_rate;
+        $("#look").click(function(){
+            if (document.getElementById('look').value ){
+            total_rate= total_rate-look_rate
+            look_rate =parseFloat( document.getElementById('look').value)
+            total_rate= total_rate + look_rate
+        document.getElementById('total').innerHTML=total_rate;
+                $("#rate").val(total_rate);
+            }
+
+        });
+        $("#smell").click(function(){
+            if (document.getElementById('smell').value ){
+            total_rate= total_rate-smell_rate
+            smell_rate = parseFloat( document.getElementById('smell').value)
+            total_rate= total_rate + smell_rate
+            document.getElementById('total').innerHTML=total_rate;
+                $("#rate").val(total_rate);
+            }
+        });
+        $("#snap").click(function(){
+            if (document.getElementById('snap').value ){
+            total_rate= total_rate-snap_rate
+            snap_rate = parseFloat( document.getElementById('snap').value)
+            total_rate= total_rate + snap_rate
+            document.getElementById('total').innerHTML=total_rate;
+                $("#rate").val(total_rate);
+            }
+
+        });
+        $("#mouthfeel").click(function(){
+            if (document.getElementById('mouthfeel').value ){
+                total_rate= total_rate-mouthfeel_rate
+                mouthfeel_rate = parseFloat( document.getElementById('mouthfeel').value)
+                total_rate= total_rate + mouthfeel_rate
+                document.getElementById('total').innerHTML=total_rate;
+                $("#rate").val(total_rate);
+            }
+
+        });
+        $("#taste").click(function(){
+            if (document.getElementById('taste').value ){
+                total_rate= total_rate-taste_rate
+                taste_rate = parseFloat( document.getElementById('taste').value)
+                total_rate= total_rate + taste_rate
+                document.getElementById('total').innerHTML=total_rate;
+                $("#rate").val(total_rate);
+            }
+
+        });
+        $("#aftertaste").click(function(){
+            if (document.getElementById('aftertaste').value ){
+                total_rate= total_rate-aftertaste_rate
+                aftertaste_rate = parseFloat( document.getElementById('aftertaste').value)
+                total_rate= total_rate + aftertaste_rate
+                document.getElementById('total').innerHTML=total_rate;
+                $("#rate").val(total_rate);
+            }
+
+        });
+
+
+
+
+    });
+</script>

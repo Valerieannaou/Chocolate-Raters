@@ -1,0 +1,311 @@
+body {
+	background: url(pattern_40.gif) top left repeat;
+	margin: 0;
+	padding: 0;
+	font: 12px normal Verdana, Arial, Helvetica, sans-serif;
+	height: 100%;
+	color: rgba(6, 6, 6, 0.98);
+}
+
+* {margin: 0; padding: 0; outline: none;}
+
+img {border: none;}
+
+a { 
+	text-decoration:none; 
+	color:#00c6ff;
+}
+
+h1 {
+	font: 4em normal Arial, Helvetica, sans-serif;
+	padding: 20px;	margin: 0;
+	text-align:center;
+	color: #060606;
+}
+
+h1 small{
+	font: 0.2em normal  Arial, Helvetica, sans-serif;
+	text-transform:uppercase; letter-spacing: 0.2em; line-height: 5em;
+	display: block;
+}
+
+h2 {
+	font: 2em normal Arial, Helvetica, sans-serif;
+	padding-bottom:30px;
+	color: #060606;
+	display:block;
+}
+
+h3 {
+	font: 1em Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	color:#86B404;
+	display:block;
+	padding:10px;
+}
+
+.container {
+	width: 960px;
+	margin: 0 auto; 
+	overflow: hidden;
+	position:relative;
+	padding-bottom:50px;
+}
+
+
+/* SECOND EXAMPLE */
+
+#paneltwo { 
+	width:300px;
+	list-style:none; 
+	position:relative;
+	display:inline;
+}
+
+#paneltwo li {  
+	border-radius:3px 3px 3px 3px; 
+	margin-top:5px;
+	width:150px;
+	float:left;
+	overflow:hidden;
+	position:relative;
+	background: #000000;
+	background: -moz-linear-gradient(top, #161616 0%, #86B404 100%);
+	background: -webkit-linear-gradient(top, #161616 0%,#000000 100%);
+	background: -o-linear-gradient(top, #161616 0%,#000000 100%);
+	border-left:1px solid #111; border-top:1px solid #111; border-right:1px solid #333; border-bottom:1px solid #333;
+}
+
+#paneltwo li.mask { /* It allows us to hide the link behind it */
+	z-index:10; 
+	overflow:hidden;
+}
+
+#paneltwo li.linkOne, #paneltwo li.linkTwo, #paneltwo li.linkThree, #paneltwo li.linkFour, #paneltwo li.linkFive 
+{   -moz-transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+}
+
+#paneltwo:hover li.linkOne, #paneltwo:hover li.linkTwo, #paneltwo:hover li.linkThree, #paneltwo:hover li.linkFour, #paneltwo:hover li.linkFive 
+{ 	-moz-transform:translateX(0px);
+	-moz-transition: all 1s ease-in-out; 
+	-webkit-transform:translateX(0px);
+	-webkit-transition: all 1s ease-in-out; 
+	-o-transform:translateX(0px);
+	-o-transition: all 1s ease-in-out; 
+}
+
+#paneltwo li.linkOne {
+	-moz-transform:translateX(-90%); 
+	-moz-transition-delay:0.6s; 
+	
+	-webkit-transform:translateX(-90%); 
+	-webkit-transition-delay:0.6s; 
+	
+	-o-transform:translateX(-90%); 
+	-o-transition-delay:0.6s; 
+	
+	z-index:5; 
+}
+#paneltwo li.linkTwo { 
+	-moz-transform:translateX(-180%); 
+	-moz-transition-delay:0.5s; 
+	
+	-webkit-transform:translateX(-180%); 
+	-webkit-transition-delay:0.5s; 
+	
+	-o-transform:translateX(-180%); 
+	-o-transition-delay:0.5s; 
+	
+	z-index:4;
+}
+#paneltwo li.linkThree { 
+	-moz-transform:translateX(-270%); 
+	-moz-transition-delay:0.4s; 
+	
+	-webkit-transform:translateX(-270%); 
+	-webkit-transition-delay:0.4s; 
+	
+	-o-transform:translateX(-270%); 
+	-o-transition-delay:0.4s;
+	
+	z-index:3;
+}
+#paneltwo li.linkFour { 
+	-moz-transform:translateX(-360%); 
+	-moz-transition-delay:0.3s;
+	
+	-webkit-transform:translateX(-360%); 
+	-webkit-transition-delay:0.3s;
+	
+	-o-transform:translateX(-360%); 
+	-o-transition-delay:0.3s; 
+	z-index:2;
+}
+
+#paneltwo li.linkFive { 
+	-moz-transform:translateX(-450%); 
+	-moz-transition-delay:0.2s;
+	
+	-webkit-transform:translateX(-450%); 
+	-webkit-transition-delay:0.2s;
+	
+	-o-transform:translateX(-450%); 
+	-o-transition-delay:0.2s;
+	 
+	z-index:1;
+}
+
+#paneltwo:hover li.linkOne { 
+	-moz-transition-delay:0s; 
+	-webkit-transition-delay:0s; 
+	-o-transition-delay:0s; 
+	z-index:5;
+}
+#paneltwo:hover li.linkTwo { 
+	-moz-transition-delay:0.2s;
+	-webkit-transition-delay:0.2s;
+	-o-transition-delay:0.2s; 
+	z-index:4;
+}
+#paneltwo:hover li.linkThree { 
+	-moz-transition-delay:0.4s;
+	-webkit-transition-delay:0.4s;
+	-o-transition-delay:0.4s; 
+	z-index:3;
+}
+#paneltwo:hover li.linkFour { 
+	-moz-transition-delay:0.6s;
+	-webkit-transition-delay:0.6s;
+	-o-transition-delay:0.6s; 
+	z-index:2;
+}
+#paneltwo:hover li.linkFive { 
+	-moz-transition-delay:0.8s;
+	-webkit-transition-delay:0.8s;
+	-o-transition-delay:0.8s; 
+	z-index:1;
+}
+
+#paneltwo li a { 
+	color:#fff;
+	display:block; 
+	padding:10px;
+}
+
+#paneltwo li a:hover { 
+	color:#00c6ff;
+}
+#panel { 
+	width:300px;
+	list-style:none; 
+	padding-top:30px;
+	display:inline-block;
+}
+
+#panel li {  
+	border-radius:3px 3px 3px 3px; 
+	margin-top:5px;
+	width:150px;
+	background: #000000;
+	background: -moz-linear-gradient(top, #161616 0%, #86B404 100%);
+	background: -webkit-linear-gradient(top, #161616 0%,#000000 100%);
+	background: -o-linear-gradient(top, #161616 0%,#000000 100%);
+	border-left:1px solid #111; border-top:1px solid #111; border-right:1px solid #333; border-bottom:1px solid #333;
+}
+
+#panel li.animation { 
+	-moz-transition: all 0.4s ease-in-out; 
+	-moz-transform:translateX(0px); 
+	-o-transition: all 0.4s ease-in-out; 
+	-o-transform:translateX(0px); 
+	-webkit-transition: all 0.4s ease-in-out; 
+	-webkit-transform:translateX(0px); 
+}
+
+#panel li.animation:hover { 
+	-moz-transform:translateX(25px);
+	-o-transform:translateX(25px);
+	-webkit-transform:translateX(25px);
+}
+
+#panel li a { 
+	color:#fff; 
+	display:block; 
+	padding:10px;
+}
+
+#panel li a:hover { 
+	color:#00c6ff;
+}
+
+/*
+    Colorbox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto; -webkit-overflow-scrolling: touch;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+.cboxPhoto{float:left; margin:auto; border:0; display:block; max-width:none; -ms-interpolation-mode:bicubic;}
+.cboxIframe{width:100%; height:100%; display:block; border:0;}
+#colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;}
+
+/* 
+    User Style:
+    Change the following styles to modify the appearance of Colorbox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#cboxOverlay{background:url(images/overlay.png) repeat 0 0;}
+#colorbox{outline:0;}
+    #cboxTopLeft{width:21px; height:21px; background:url(images/controls.png) no-repeat -101px 0;}
+    #cboxTopRight{width:21px; height:21px; background:url(images/controls.png) no-repeat -130px 0;}
+    #cboxBottomLeft{width:21px; height:21px; background:url(images/controls.png) no-repeat -101px -29px;}
+    #cboxBottomRight{width:21px; height:21px; background:url(images/controls.png) no-repeat -130px -29px;}
+    #cboxMiddleLeft{width:21px; background:url(images/controls.png) left top repeat-y;}
+    #cboxMiddleRight{width:21px; background:url(images/controls.png) right top repeat-y;}
+    #cboxTopCenter{height:21px; background:url(images/border.png) 0 0 repeat-x;}
+    #cboxBottomCenter{height:21px; background:url(images/border.png) 0 -29px repeat-x;}
+    #cboxContent{background:#fff; overflow:hidden;}
+        .cboxIframe{background:#fff;}
+        #cboxError{padding:50px; border:1px solid #ccc;}
+        #cboxLoadedContent{margin-bottom:28px;}
+        #cboxTitle{position:absolute; bottom:4px; left:0; text-align:center; width:100%; color:#949494;}
+        #cboxCurrent{position:absolute; bottom:4px; left:58px; color:#949494;}
+        #cboxLoadingOverlay{background:url(images/loading_background.png) no-repeat center center;}
+        #cboxLoadingGraphic{background:url(images/loading.gif) no-repeat center center;}
+
+        /* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
+        #cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {border:0; padding:0; margin:0; overflow:visible; width:auto; background:none; }
+        
+        /* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
+        #cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {outline:0;}
+
+        #cboxSlideshow{position:absolute; bottom:4px; right:30px; color:#0092ef;}
+        #cboxPrevious{position:absolute; bottom:0; left:0; background:url(images/controls.png) no-repeat -75px 0; width:25px; height:25px; text-indent:-9999px;}
+        #cboxPrevious:hover{background-position:-75px -25px;}
+        #cboxNext{position:absolute; bottom:0; left:27px; background:url(images/controls.png) no-repeat -50px 0; width:25px; height:25px; text-indent:-9999px;}
+        #cboxNext:hover{background-position:-50px -25px;}
+        #cboxClose{position:absolute; bottom:0; right:0; background:url(images/controls.png) no-repeat -25px 0; width:25px; height:25px; text-indent:-9999px;}
+        #cboxClose:hover{background-position:-25px -25px;}
+
+/*
+  The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
+  when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to or needed in IE9.
+  See: http://jacklmoore.com/notes/ie-transparency-problems/
+*/
+.cboxIE #cboxTopLeft,
+.cboxIE #cboxTopCenter,
+.cboxIE #cboxTopRight,
+.cboxIE #cboxBottomLeft,
+.cboxIE #cboxBottomCenter,
+.cboxIE #cboxBottomRight,
+.cboxIE #cboxMiddleLeft,
+.cboxIE #cboxMiddleRight {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
+}

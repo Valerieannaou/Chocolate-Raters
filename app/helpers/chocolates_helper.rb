@@ -1,0 +1,3 @@
+module ChocolatesHelper
+
+end

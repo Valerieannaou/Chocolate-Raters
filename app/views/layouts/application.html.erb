@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>Chocolate</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+
+
+
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+<div id="container">
+  <div id="header" style="height: 100px; border-bottom: solid 1px black">
+  <div id="user_nav" style="float: right">
+
+    <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.email %></strong>.
+        <%= link_to 'Edit profile', edit_user_registration_path %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <% else %>
+        <%= link_to "Sign up", new_user_registration_path %> |
+        <%= link_to "Login", new_user_session_path %> |
+    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+
+    <% end %>
+    <div id="search" style="margin: 10px">
+    <%= form_tag show_search_chocolates_path, :method => 'get' do %>
+        <p>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search", :name => nil %>
+        </p>
+      <% end %>
+          </div>
+  </div>
+   <%= image_tag 'logo.jpg',:size=> '96x200',:title => 'show_group'  %>
+    <%= link_to 'Home', root_path %> | <%= link_to 'Chocolatiers', chocolatiers_path %> | <%= link_to 'Chocolates', chocolates_path %> | <%= link_to 'Add chocolatier', new_chocolatier_path %> |<%= link_to 'Add chocolate', new_chocolate_path %>
+  </div>
+ <%= yield %>
+</div>
+</body>
+</html>
