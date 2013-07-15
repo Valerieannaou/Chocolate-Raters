@@ -22,6 +22,11 @@ group :assets do
   gem 'twitter-bootstrap-rails'
 end
 
+group :development do
+  gem "capistrano", "~> 2.15.5"
+  gem "rvm-capistrano", "~> 1.3.4"
+end
+
 gem 'jquery-rails'
 gem 'rmagick'
 gem 'mini_magick'
@@ -35,6 +40,7 @@ gem 'omniauth-facebook'
 gem 'carmen-rails'
 gem 'countries'
 gem 'country_select'
+gem 'cancan'
 
 
 

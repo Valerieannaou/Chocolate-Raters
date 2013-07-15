@@ -1,6 +1,8 @@
 class ChocolatesController < ApplicationController
   # GET /chocolates
   # GET /chocolates.json
+  load_and_authorize_resource
+
   def index
     @chocolates = Chocolate.all
 
