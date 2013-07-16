@@ -1,7 +1,7 @@
 /*
  * Metadata - jQuery plugin for parsing metadata from elements
  *
- * Copyright (c) 2006 John Resig, Yehuda Katz, Jörn Zaefferer, Paul McLanahan
+ * Copyright (c) 2006 John Resig, Yehuda Katz, Jï¿½rn Zaefferer, Paul McLanahan
  *
 	* Licensed under http://en.wikipedia.org/wiki/MIT_License
  *
@@ -38,7 +38,8 @@
  * @after $("#one").metadata().item_id == 1; $("#one").metadata().item_label == "Label"
  * @desc Reads metadata from a "data" attribute
  * 
- * @example <p id="one" class="some_class"><script>{item_id: 1, item_label: 'Label'}</script>This is a p</p>
+ * @example <p id="one" class="some_class"><script>{item_id: 1, item_label: 'Label'}</script>
+ * This is a p</p>
  * @before $.metadata.setType("elem", "script")
  * @after $("#one").metadata().item_id == 1; $("#one").metadata().item_label == "Label"
  * @desc Reads metadata from a nested script element
