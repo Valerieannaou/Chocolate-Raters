@@ -5,11 +5,11 @@ require 'bundler/capistrano'
 set :application, 'chocolate_raters'
 set :repository,  'git@github.com:Valerieannaou/Chocolate-Raters.git'
 set :scm, :git
-#set :deploy_via, :remote_cache
+set :deploy_via, :remote_cache
 #set :copy_strategy, :export
 set :keep_releases, 10
-set :rvm_ruby_string, '1.9.3-p448'
-set :rvm_type, :system
+set :rvm_ruby_string, '1.9.3-p429'
+#set :rvm_type, :system
 set :rake, 'bundle exec rake'
 set :user, 'deployer'
 set :password, 'n@sceni@404'
@@ -38,7 +38,7 @@ end
 
 #===============begin: configuration for staging server===============
 set :branch, 'master'
-set :deploy_to, '/home/deployer/chocolate-staging'
+set :deploy_to, '/home/deployer/chocolate_staging'
 set :rails_env, 'staging'
 web_server = '74.207.241.126'
 set :application, web_server
