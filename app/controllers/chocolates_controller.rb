@@ -26,6 +26,9 @@ class ChocolatesController < ApplicationController
   # GET /chocolates/new
   # GET /chocolates/new.json
   def new
+    if current_user.blank?
+      redirect_to new_user_session_path
+    end
     @chocolate = Chocolate.new
     @chocolatiers = Chocolatier.find_all_by_user_id(current_user.id)
     #@chocolate.photos.build #if @chocolate.photos.empty?

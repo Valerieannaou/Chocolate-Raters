@@ -34,9 +34,12 @@
           </div>
   </div>
    <%= image_tag 'logo.jpg',:size=> '96x200',:title => 'show_group'  %>
-    <%= link_to 'Home', root_path %> | <%= link_to 'Chocolatiers', chocolatiers_path %> | <%= link_to 'Chocolates', chocolates_path %> | <%= link_to 'Add chocolatier', new_chocolatier_path %> |<%= link_to 'Add chocolate', new_chocolate_path %>
+
   </div>
- <%= yield %>
+  <div id="menu" style="margin-top: 8px; margin-left: 100px">
+  <%= link_to 'Home', root_path %> | <%= link_to 'Chocolatiers', chocolatiers_path %> | <%= link_to 'Chocolates', chocolates_path %> | <%= link_to 'Add chocolatier', new_chocolatier_path %> |<%= link_to 'Add chocolate', new_chocolate_path %>
+  </div>
+    <%= yield %>
 </div>
 </body>
 </html>

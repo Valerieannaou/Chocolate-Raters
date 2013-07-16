@@ -17,6 +17,7 @@ ChocolateRatingSystem::Application.routes.draw do
   resources :ratings  do
     collection do
       get 'add_rating'
+      get 'edit_rating'
     end
     end
 
