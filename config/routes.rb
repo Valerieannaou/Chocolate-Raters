@@ -1,5 +1,12 @@
 ChocolateRatingSystem::Application.routes.draw do
-  resources :chocolatiers
+  resources :chocolatiers do
+    collection do
+      get 'requests'
+    end
+    member do
+      get 'approve'
+    end
+  end
 
 
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},

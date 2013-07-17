@@ -14,17 +14,26 @@ class Ability
       can :manage , Chocolatier do |chocolatier|
         chocolatier.user_id == user.id
       end
+     cannot :requests, Chocolatier
       can :new , Chocolatier
       can :new , Chocolate
-      can :create , Chocolate
-      can :manage , Chocolate
+      can :create ,Chocolatier
+      can :crate , Chocolate
+      can :manage , Chocolate do |chocolate|
+        chocolate.user_id == user.id
+      end
       can :rate_chocolate , Chocolate
+
       can :add_rating ,Rating
+
       can :edit_rating , Rating do |rating|
         rating.user_id == user.id
       end
     else
       can :read ,:all
+      can :new , Chocolatier
+      can :new , Chocolate
+
 
       end
 

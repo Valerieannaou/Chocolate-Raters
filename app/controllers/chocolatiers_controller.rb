@@ -2,8 +2,17 @@ class ChocolatiersController < ApplicationController
   # GET /chocolatiers
   # GET /chocolatiers.json
   load_and_authorize_resource
+  def requests
+    @chocolatiers = Chocolatier.find_all_by_status(0)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @chocolatiers }
+    end
+
+  end
   def index
-    @chocolatiers = Chocolatier.all
+    @chocolatiers = Chocolatier.find_all_by_status(1)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,12 +34,18 @@ class ChocolatiersController < ApplicationController
   # GET /chocolatiers/new
   # GET /chocolatiers/new.json
   def new
+    if current_user.blank?
+      flash[:notice] = "Login to add new Chocolatier"
+      redirect_to new_user_session_path
+
+     else
     @chocolatier = Chocolatier.new
 
 
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @chocolatier }
+    end
     end
   end
 
@@ -43,6 +58,8 @@ class ChocolatiersController < ApplicationController
   # POST /chocolatiers.json
   def create
     @chocolatier = Chocolatier.new(params[:chocolatier])
+    @chocolatier.status = 0
+    @chocolatier.user_id= current_user.id
 
     respond_to do |format|
       if @chocolatier.save
@@ -69,6 +86,14 @@ class ChocolatiersController < ApplicationController
         format.json { render json: @chocolatier.errors, status: :unprocessable_entity }
       end
     end
+  end
+  def approve
+    @chocolatier = Chocolatier.find(params[:id])
+    @chocolatier.status = 1
+    if @chocolatier.save
+    redirect_to requests_chocolatiers_path
+      end
+
   end
 
   # DELETE /chocolatiers/1

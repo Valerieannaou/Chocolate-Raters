@@ -21,7 +21,7 @@
     <% else %>
         <%= link_to "Sign up", new_user_registration_path %> |
         <%= link_to "Login", new_user_session_path %> |
-    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), :class => "popup", :"data-width" => 600, :"data-height" => 400 %>
 
     <% end %>
     <div id="search" style="margin: 10px">
@@ -37,8 +37,10 @@
 
   </div>
   <div id="menu" style="margin-top: 8px; margin-left: 100px">
-  <%= link_to 'Home', root_path %> | <%= link_to 'Chocolatiers', chocolatiers_path %> | <%= link_to 'Chocolates', chocolates_path %> | <%= link_to 'Add chocolatier', new_chocolatier_path %> |<%= link_to 'Add chocolate', new_chocolate_path %>
+  <%= link_to 'Home', root_path %> | <%= link_to 'Chocolatiers', chocolatiers_path %> | <%= link_to 'Chocolates', chocolates_path %> | <%= link_to 'Add chocolatier', new_chocolatier_path %> |<%= link_to 'Add chocolate', new_chocolate_path %><% if admin? %>|
+    <%= link_to 'Requests', requests_chocolatiers_path %> <% end %>
   </div>
+  <p id="notice" style="margin-top: 5px"><%= notice %></p>
     <%= yield %>
 </div>
 </body>

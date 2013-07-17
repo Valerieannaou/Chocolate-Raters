@@ -28,15 +28,21 @@ class ChocolatesController < ApplicationController
   def new
     if current_user.blank?
       redirect_to new_user_session_path
-    end
+      flash[:notice] = "Login to add new Chocolate"
+     else
     @chocolate = Chocolate.new
     @chocolatiers = Chocolatier.find_all_by_user_id(current_user.id)
-    #@chocolate.photos.build #if @chocolate.photos.empty?
+    if @chocolatiers.blank?
+       redirect_to new_chocolatier_path
+      flash[:notice] = "Add a chocolatier to add chocolate"
 
+      else
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @chocolate }
     end
+    end
+     end
   end
 
   # GET /chocolates/1/edit
@@ -49,6 +55,7 @@ class ChocolatesController < ApplicationController
   # POST /chocolates.json
   def create
     @chocolate = Chocolate.new(params[:chocolate])
+    @chocolate.user_id = current_user.id
 
     respond_to do |format|
       if @chocolate.save
@@ -91,7 +98,7 @@ class ChocolatesController < ApplicationController
     end
   end
   def rate_chocolate
-    @chocolate_id = params[:chocolate_id]
+    @chocolate = Chocolate.find(params[:chocolate_id])
 
   end
 

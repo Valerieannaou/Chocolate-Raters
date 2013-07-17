@@ -69,7 +69,8 @@ Devise.setup do |config|
   # Does not affect registerable.
   # config.paranoid = true
   require "omniauth-facebook"
-  config.omniauth :facebook, "438108232953466", "58e48194e44ffcb1fe496a26e786cbd7"
+  config.omniauth :facebook, "438108232953466", "58e48194e44ffcb1fe496a26e786cbd7", :authorize_params => { :display => 'popup' }
+
 
   # By default Devise will store the user in session. You can skip storage for
   # :http_auth and :token_auth by adding those symbols to the array below.

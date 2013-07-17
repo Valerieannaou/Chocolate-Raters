@@ -1,5 +1,5 @@
 class Chocolate < ActiveRecord::Base
-  attr_accessible :description, :name, :photos_attributes , :image ,:type_of_chocolate, :cocao, :chocolatier_id , :user_id
+  attr_accessible :description, :name, :photos_attributes , :image ,:type_of_chocolate, :cocao, :chocolatier_id
   belongs_to :chocolatier
   has_many :photos, :dependent => :destroy
   has_many :ratings, :dependent => :destroy

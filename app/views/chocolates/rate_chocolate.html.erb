@@ -1,10 +1,10 @@
 
-<h2>Add Rating to</h2>
-<p id="notice"><%= notice %></p>
- <%= %>
+<h2>Rate: <%= @chocolate.name  %></h2>
+
+
 <div id="total" style="height: 40;width: 80; border: solid 1px black;text-align:center; padding: 20px; font-size: 25"></div>
 <div id="rateing" style="margin-left:20px;margin-top:20px  ">
-  <% if @rating = Rating.find_by_chocolate_id_and_user_id(@chocolate_id,current_user.id) %>
+  <% if @rating = Rating.find_by_chocolate_id_and_user_id(@chocolate.id,current_user.id) %>
     <form action="<%= edit_rating_ratings_path  %>" >
       <% else %>
   <form action="<%= add_rating_ratings_path  %>" >
@@ -49,7 +49,7 @@
       <% end %>
 
      </br>
-      <input type="hidden" name="chocolate_id" value="<%= @chocolate_id %>" >
+      <input type="hidden" name="chocolate_id" value="<%= @chocolate.id %>" >
       <input type="hidden" name="user_id" value= "<%= current_user.id %>" >
      <input type="hidden" name="rate" id="rate" >
 

@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
   <b>Name:</b>
@@ -50,6 +50,14 @@
   <%= @chocolatier.phone %>
 </p>
 
-
+<% if can? :edit , @chocolatier %>
 <%= link_to 'Edit', edit_chocolatier_path(@chocolatier) %> |
-<%= link_to 'Back', chocolatiers_path %>
+    <% end %>
+<%= link_to 'Back', chocolatiers_path %><% if can? :delete , @chocolatier %>|
+<%= link_to 'Destroy', @chocolatier, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+<% if admin? %>
+    <% if @chocolatier.status != 1 %>
+    |<%= link_to 'Approve', approve_chocolatier_path(@chocolatier.id) %>
+        <% end %>
+<% end %>
