@@ -1,0 +1,38 @@
+<h1>Listing Requests</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>Country</th>
+    <th>State</th>
+    <th>Zip code</th>
+    <th>Chocolatier type</th>
+    <th>Chocolatier url</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @chocolatiers.each do |chocolatier| %>
+      <tr>
+        <td><%= chocolatier.name %></td>
+        <td><%= chocolatier.address %></td>
+        <td><%= chocolatier.city %></td>
+        <td><%= chocolatier.country %></td>
+        <td><%= chocolatier.state %></td>
+        <td><%= chocolatier.zip_code %></td>
+        <td><%= chocolatier.chocolatier_type %></td>
+        <td><%= chocolatier.chocolatier_url %></td>
+        <td><%= chocolatier.email %></td>
+        <td><%= chocolatier.phone %></td>
+        <td><%= link_to 'Show', chocolatier %></td>
+
+      </tr>
+  <% end %>
+</table>
+
+<br />
