@@ -30,8 +30,11 @@
     </div>
     <% end %>
 </div>
-
+<% if current_user %>
+ <% if @chocolate.user_id != current_user.id %>
 <p><%= link_to 'Rate Chocolate',  rate_chocolate_chocolates_path(:chocolate_id => @chocolate.id) %></p>
+<% end %>
+    <% end %>
  <P>
    <% if can? :edit , @chocolate %>
    <%= link_to 'Edit', edit_chocolate_path(@chocolate) %> |
@@ -41,6 +44,18 @@
    <% end %>
 
  </P>
+<div id="reviews" style="height: 400px;width: 600px; background-color: #fffcd0 ; overflow: auto">
+  <% @reviews= Rating.find_all_by_chocolate_id(@chocolate.id) %>
+  <% @reviews.each do |review| %>
+     <% reviewer = User.find(review.user_id).user_name %>
+      <h3><%= reviewer %></h3>
+      </br>
+      <P style="margin-left: 20px"><span style="font-size: 20px"><%= review.rate %> </span> <%= review.comment %></P>
+    <% end %>
+
+
+
+</div>
 
 <div style="height: 20px;"></div>
 
