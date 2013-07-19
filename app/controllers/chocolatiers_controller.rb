@@ -13,6 +13,8 @@ class ChocolatiersController < ApplicationController
   end
   def index
     @chocolatiers = Chocolatier.find_all_by_status(1)
+    #@chocolatiers = Chocolatier.order("id").page(params[:page]).per_page(5)
+
 
     respond_to do |format|
       format.html # index.html.erb
