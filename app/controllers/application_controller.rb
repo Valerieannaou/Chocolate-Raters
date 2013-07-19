@@ -13,4 +13,11 @@ class ApplicationController < ActionController::Base
       return false
     end
   end
+  def authorize
+    if !(current_user)
+    redirect_to root_path
+    elsif !(current_user.admin == 1)
+      redirect_to root_path
+    end
+  end
 end
