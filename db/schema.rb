@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130717061738) do
+ActiveRecord::Schema.define(:version => 20130719092341) do
 
   create_table "chocolates", :force => true do |t|
     t.string   "name"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20130717061738) do
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.string   "type_of_chocolate"
-    t.float    "cocao"
+    t.float    "cocoa"
     t.integer  "chocolatier_id"
     t.integer  "user_id"
   end
@@ -79,6 +79,9 @@ ActiveRecord::Schema.define(:version => 20130717061738) do
     t.string   "provider"
     t.string   "uid"
     t.integer  "admin"
+    t.string   "photo"
+    t.string   "user_name"
+    t.string   "fb_photo"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
