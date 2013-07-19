@@ -18,7 +18,7 @@ class Ability
       can :new , Chocolatier
       can :new , Chocolate
       can :create ,Chocolatier
-      can :crate , Chocolate
+      can :create , Chocolate
       can :manage , Chocolate do |chocolate|
         chocolate.user_id == user.id
       end
@@ -33,9 +33,7 @@ class Ability
       can :read ,:all
       can :new , Chocolatier
       can :new , Chocolate
-
-
-      end
+  end
 
 
 
