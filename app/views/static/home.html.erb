@@ -1,0 +1,28 @@
+<h2>Recent Reviews:</h2>
+<% if !(@reviews.blank?)  %>
+<% @reviews.each do |review| %>
+    <div id= "review_chocolate_pic" style="float: left">
+      <% user = User.find(review.user_id) %>
+
+      <% if  !(user.photo.blank?) %>
+          <%  pic = user.photo %>
+
+        <%= image_tag pic ,:size => '150x150'%>
+          <% elsif !(user.fb_photo.blank?) %>
+          <%  pic = (user.fb_photo) %>
+          <%= image_tag pic ,:size => '150x150'%>
+
+          <% else %>
+          <%= image_tag 'default_pro.jpg',:size=> '150x150',:title => 'default image'  %>
+
+          <% end %>
+      </br>
+      <%= user.user_name %>
+    </div>
+    <div id="detail" style="height: 150px;width: 600px">
+    <h3><%= (Chocolate.find(review.chocolate_id)).name %></h3>
+    <p><span style="font-size: 20px"><%= review.rate %> </span> <%= review.comment %></p>
+    </div>
+    </br>
+<% end %>
+<% end %>
