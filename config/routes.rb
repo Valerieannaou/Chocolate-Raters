@@ -1,10 +1,17 @@
 ChocolateRatingSystem::Application.routes.draw do
+  get "user/index"
+
   resources :chocolatiers do
     collection do
       get 'requests'
     end
     member do
       get 'approve'
+    end
+  end
+  resources :user do
+    collection do
+      get 'destroy'
     end
   end
 
