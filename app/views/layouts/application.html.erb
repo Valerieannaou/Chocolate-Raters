@@ -38,7 +38,7 @@
   </div>
   <div id="menu" style="margin-top: 8px; margin-left: 100px">
   <%= link_to 'Home', root_path %> | <%= link_to 'Chocolatiers', chocolatiers_path %> | <%= link_to 'Chocolates', chocolates_path %> | <%= link_to 'Add chocolatier', new_chocolatier_path %> |<%= link_to 'Add chocolate', new_chocolate_path %><% if admin? %>|
-    <%= link_to 'Requests', requests_chocolatiers_path %> <% end %>
+    <%= link_to 'Requests', requests_chocolatiers_path %> |<%= link_to 'Users', user_index_path %><% end %>
   </div>
   <p id="notice" style="margin-top: 5px"><%= notice %></p>
     <%= yield %>
