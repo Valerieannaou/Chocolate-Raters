@@ -1,6 +1,6 @@
 class RatingsController < ApplicationController
   def add_rating
-
+      if params[:user_id] != current_user.id
       @ratings=Rating.new
       @ratings.chocolate_id = params[:chocolate_id]
       @ratings.rate = params[:rate]
@@ -21,6 +21,10 @@ class RatingsController < ApplicationController
         format.html {redirect_to chocolate_path(:id => @ratings.chocolate_id) }
       end
       end
+      else
+        redirect_to root
+      end
+
   end
   def edit_rating
     @ratings = Rating.find_by_chocolate_id_and_user_id(params[:chocolate_id],params[:user_id])
