@@ -4,7 +4,7 @@ class ChocolatesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @chocolates = Chocolate.all
+    @chocolates = Chocolate.order("id").page(params[:page]).per_page(5)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -31,7 +31,7 @@ class ChocolatesController < ApplicationController
       flash[:notice] = "Login to add new Chocolate"
      else
     @chocolate = Chocolate.new
-    @chocolatiers = Chocolatier.find_all_by_user_id(current_user.id)
+    @chocolatiers = Chocolatier.find_all_by_user_id_and_status(current_user.id,1)
     if @chocolatiers.blank?
        redirect_to new_chocolatier_path
       flash[:notice] = "Add a chocolatier to add chocolate"
