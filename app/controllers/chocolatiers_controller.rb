@@ -3,7 +3,7 @@ class ChocolatiersController < ApplicationController
   # GET /chocolatiers.json
   load_and_authorize_resource
   def requests
-    @chocolatiers = Chocolatier.find_all_by_status(0)
+    @chocolatiers = Chocolatier.by_pending_status.order("id").page(params[:page]).per_page(10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -12,7 +12,8 @@ class ChocolatiersController < ApplicationController
 
   end
   def index
-    @chocolatiers = Chocolatier.find_all_by_status(1)
+    @chocolatiers = Chocolatier.by_active_status.order("id").page(params[:page]).per_page(10)
+    #@chocolatiers = Chocolatier.find_all_by_status(1)
     #@chocolatiers = Chocolatier.order("id").page(params[:page]).per_page(5)
 
 
