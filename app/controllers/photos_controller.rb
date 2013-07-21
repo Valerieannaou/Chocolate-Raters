@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+  authorize_resource
   def new
 
       @photo = Photo.new(:chocolate_id => params[:chocolate_id])
