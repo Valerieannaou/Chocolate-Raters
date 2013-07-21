@@ -5,10 +5,7 @@ class Chocolate < ActiveRecord::Base
   has_many :ratings, :dependent => :destroy
   accepts_nested_attributes_for :photos, :allow_destroy => true ,:reject_if => :all_blank#, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
   #mount_uploader :image , ImageUploader
-  def self.search(search)
-    if search
-      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-    end
-  end
+  scope :by_chocolate_name , lambda{ |name| where('name LIKE ?', "%#{name}%" ) unless name.nil? }
+
 
 end
