@@ -29,10 +29,15 @@ class Ability
       can :edit_rating , Rating do |rating|
         rating.user_id == user.id
       end
+      cannot :index , Rating
+      cannot :index , :user
     else
       can :read ,:all
       can :new , Chocolatier
       can :new , Chocolate
+      can :user_review , Chocolate
+      cannot :index , Rating
+      cannot :index , :user
   end
 
 
