@@ -42,6 +42,7 @@ gem 'countries'
 gem 'country_select'
 gem 'cancan'
 gem 'will_paginate', '~> 3.0'
+gem 'thinking-sphinx'
 
 
 
