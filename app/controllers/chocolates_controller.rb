@@ -86,10 +86,11 @@ class ChocolatesController < ApplicationController
     end
   end
   def show_search
-    @chocolates = Chocolate.search(params[:search])
-    if @chocolates.blank?
+    @chocolates = Chocolate.by_chocolate_name(params[:search])
+    @chocolatiers =  Chocolatier.by_chocolatier_name(params[:search])
+    if @chocolates.blank? && @chocolatiers.blank?
       flash[:notice]="Search do not match"
-      redirect_to chocolates_path
+      redirect_to root
     else
     respond_to do |format|
       format.html # index.html.erb
@@ -100,6 +101,12 @@ class ChocolatesController < ApplicationController
   def rate_chocolate
     @chocolate = Chocolate.find(params[:chocolate_id])
 
+  end
+  def user_review
+  user = params[:user_id]
+  chocolate = params[:chocolate_id]
+    @review = Rating.find_by_user_id_and_chocolate_id(user,chocolate)
+    @user = User.find(user)
   end
 
   # DELETE /chocolates/1
