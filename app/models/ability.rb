@@ -38,6 +38,7 @@ class Ability
       can :user_review , Chocolate
       cannot :index , Rating
       cannot :index , :user
+      can :show_search , :all
   end
 
 
