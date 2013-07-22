@@ -1,0 +1,29 @@
+<P>Look: <%= @review.look %></P>
+<P>Smell: <%= @review.smell %></P>
+<P>Snap: <%= @review.snap %></P>
+<P>Mouthfeel: <%= @review.mouthfeel %></P>
+<P>Taste: <%= @review.taste %></P>
+<P>Aftertaste: <%= @review.aftertaste %></P>
+
+<div id= "user_pic" style="float: left">
+
+
+  <% if  !(@user.photo.blank?) %>
+      <%  pic = @user.photo %>
+
+      <%= image_tag pic ,:size => '80x80'%>
+  <% elsif !(@user.fb_photo.blank?) %>
+      <%  pic = (@user.fb_photo) %>
+      <%= image_tag pic ,:size => '80x80'%>
+
+  <% else %>
+      <%= image_tag 'default_pro.jpg',:size=> '80x150',:title => 'default image'  %>
+
+  <% end %>
+  </br>
+
+</div>
+<div>
+  <h3> <%= @user.user_name %></h3>
+  <p> <%= @review.comment %></p>
+</div>
