@@ -1,5 +1,6 @@
 ChocolateRatingSystem::Application.routes.draw do
   get "user/index"
+  get "ratings/index"
 
   resources :chocolatiers do
     collection do
@@ -25,6 +26,7 @@ ChocolateRatingSystem::Application.routes.draw do
     collection do
       get 'show_search'
       get 'rate_chocolate'
+      get 'user_review'
     end
   end
   resources :photos
