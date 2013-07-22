@@ -9,11 +9,12 @@
   <%= @chocolate.name %>
 </p>
 <div id="total" style="height: 40;width: 80; border: solid 1px black;text-align:center; padding: 20px; font-size: 25"> <%= number_with_precision @chocolate.ratings.average(:rate), :precision => 2 %></div>
- <h3> Look: <%= number_with_precision @chocolate.ratings.average(:look), :precision => 2 %> /5, Smell: <%= number_with_precision @chocolate.ratings.average(:smell), :precision => 2 %> /5,
-   Snap:<%= number_with_precision @chocolate.ratings.average(:snap), :precision => 2 %> /5,
-  Mouthfeel: <%= number_with_precision @chocolate.ratings.average(:mouthfeel), :precision => 2 %> /25,
-  Taste: <%= number_with_precision @chocolate.ratings.average(:taste), :precision => 2 %> /50,
-  Aftertaste: <%= number_with_precision @chocolate.ratings.average(:aftertaste), :precision => 2 %> /10.  </h3>
+ <h3> Look: <%= number_with_precision @chocolate.ratings.average(:look), :precision => 2 %> /5 </h3>
+<h3>  Smell: <%= number_with_precision @chocolate.ratings.average(:smell), :precision => 2 %> /5 </h3>
+<h3> Snap:<%= number_with_precision @chocolate.ratings.average(:snap), :precision => 2 %> /5  </h3>
+<h3> Mouthfeel: <%= number_with_precision @chocolate.ratings.average(:mouthfeel), :precision => 2 %> /25</h3>
+<h3> Taste: <%= number_with_precision @chocolate.ratings.average(:taste), :precision => 2 %> /50 </h3>
+<h3> Aftertaste: <%= number_with_precision @chocolate.ratings.average(:aftertaste), :precision => 2 %> /10.  </h3>
 <p style="text-align:justify;color: #000000">
   <b>Description:</b>
   <%= @chocolate.description %>
@@ -47,8 +48,26 @@
 <div id="reviews" style="height: 400px;width: 600px; background-color: #fffcd0 ; overflow: auto">
   <% @reviews= Rating.find_all_by_chocolate_id(@chocolate.id) %>
   <% @reviews.each do |review| %>
-     <% reviewer = User.find(review.user_id).user_name %>
-      <h3><%= reviewer %></h3>
+     <% user = User.find(review.user_id) %>
+      <div id= "user_pic" style="float: left">
+
+
+        <% if  !(user.photo.blank?) %>
+            <%  pic = user.photo %>
+
+            <%= image_tag pic ,:size => '80x80'%>
+        <% elsif !(user.fb_photo.blank?) %>
+            <%  pic = (user.fb_photo) %>
+            <%= image_tag pic ,:size => '80x80'%>
+
+        <% else %>
+            <%= image_tag 'default_pro.jpg',:size=> '80x150',:title => 'default image'  %>
+
+        <% end %>
+
+
+      </div>
+      <h3><%= link_to user.user_name, user_review_chocolates_path(:user_id => user.id, :chocolate_id => @chocolate.id) %></h3>
       </br>
       <P style="margin-left: 20px"><span style="font-size: 20px"><%= review.rate %> </span> <%= review.comment %></P>
     <% end %>
