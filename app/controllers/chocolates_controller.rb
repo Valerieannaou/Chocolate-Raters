@@ -86,11 +86,12 @@ class ChocolatesController < ApplicationController
     end
   end
   def show_search
-    @chocolates = Chocolate.by_chocolate_name(params[:search])
+    @chocolates = Chocolate.search "*#{params[:search].downcase}*"
+
     @chocolatiers =  Chocolatier.by_chocolatier_name(params[:search])
     if @chocolates.blank? && @chocolatiers.blank?
       flash[:notice]="Search do not match"
-      redirect_to root
+      redirect_to root_path
     else
     respond_to do |format|
       format.html # index.html.erb
