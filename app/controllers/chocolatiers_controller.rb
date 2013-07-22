@@ -27,6 +27,7 @@ class ChocolatiersController < ApplicationController
   # GET /chocolatiers/1.json
   def show
     @chocolatier = Chocolatier.find(params[:id])
+    @chocolates = Chocolate.find_all_by_chocolatier_id(@chocolatier.id)
 
     respond_to do |format|
       format.html # show.html.erb
