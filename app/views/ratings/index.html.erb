@@ -1,0 +1,35 @@
+<h2>Reviews: </h2>
+<table>
+  <tr>
+    <th>Chocolate Name</th>
+    <th>User name</th>
+    <th>Total rate</th>
+    <th>Look</th>
+    <th>Smell</th>
+    <th>Snap</th>
+    <th>Mouthfeel</th>
+    <th>Taste</th>
+    <th>Aftertaste</th>
+    <th>comment</th>
+
+  </tr>
+
+  <% @ratings.each do |rating| %>
+      <tr>
+        <td><%= Chocolate.find(rating.chocolate_id).name %></td>
+        <td><%= User.find(rating.user_id).user_name %></td>
+        <td><%= rating.rate %></td>
+        <td><%= rating.look %></td>
+        <td><%= rating.smell %></td>
+        <td><%= rating.snap %></td>
+        <td><%= rating.mouthfeel %></td>
+        <td><%= rating.taste %></td>
+        <td><%= rating.aftertaste %></td>
+        <td><%= rating.comment %></td>
+        <td><%= link_to 'Destroy', rating, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+      </tr>
+  <% end %>
+</table>
+<%= will_paginate @ratings %>
+<br />
