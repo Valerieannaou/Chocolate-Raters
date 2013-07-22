@@ -1,28 +1,37 @@
 <h2>Recent Reviews:</h2>
 <% if !(@reviews.blank?)  %>
 <% @reviews.each do |review| %>
-    <div id= "review_chocolate_pic" style="float: left">
+    <div id= "user_pic" style="float: left">
       <% user = User.find(review.user_id) %>
 
       <% if  !(user.photo.blank?) %>
           <%  pic = user.photo %>
 
-        <%= image_tag pic ,:size => '150x150'%>
+        <%= link_to (image_tag pic ,:size => '150x150'), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id) %>
           <% elsif !(user.fb_photo.blank?) %>
           <%  pic = (user.fb_photo) %>
-          <%= image_tag pic ,:size => '150x150'%>
+          <%= link_to (image_tag pic ,:size => '150x150'), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id) %>
 
           <% else %>
-          <%= image_tag 'default_pro.jpg',:size=> '150x150',:title => 'default image'  %>
+          <%= link_to (image_tag 'default_pro.jpg',:size=> '150x150',:title => 'default image'), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id)  %>
 
           <% end %>
       </br>
       <%= user.user_name %>
     </div>
     <div id="detail" style="height: 150px;width: 600px">
-    <h3><%= (Chocolate.find(review.chocolate_id)).name %></h3>
+      <% chocolate = Chocolate.find(review.chocolate_id) %>
+    <h3><%= link_to chocolate.name, chocolate_path(chocolate.id) %></h3>
     <p><span style="font-size: 20px"><%= review.rate %> </span> <%= review.comment %></p>
     </div>
     </br>
 <% end %>
+<% end %>
+<h2>Trending Chocolates: </h2>
+<% @chocolates.each do |chocolate| %>
+
+    <% chocolate_pic= Photo.find_by_chocolate_id(chocolate.id).image %>
+    <div><%= link_to (image_tag chocolate_pic ,:size => '150x150'), chocolate_path(chocolate) %></br></div>
+    <div><h3><%= chocolate.name %>  <span style="color: orangered">  <%= chocolate.ratings.average(:rate) %> /100</span></h3> </div>
+    </br>
 <% end %>
