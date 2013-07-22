@@ -1,0 +1,37 @@
+<h1>Listing users</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Photo</th>
+    <th>User Name</th>
+    <th>Email</th>
+    <th>Provider</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+      <tr>
+        <td id= "pic" style="height: 50px; width: 50px; border: solid 1px black;">
+          <% if !(user.photo.blank?) %>
+          <%= image_tag user.photo ,:size => '50x80'%>
+              <% elsif !(user.fb_photo.blank?) %>
+          <%= image_tag user.fb_photo ,:size => '50x80'%>
+              <% else %>
+          <% end %>
+        </td>
+        <td><%= user.user_name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.provider %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>
