@@ -19,7 +19,7 @@
 
 <% @chocolatiers.each do |chocolatier| %>
   <tr>
-    <td><%= chocolatier.name %></td>
+    <td><%= link_to chocolatier.name , chocolatier %></td>
     <td><%= chocolatier.address %></td>
     <td><%= chocolatier.city %></td>
     <td><%= chocolatier.country %></td>
@@ -29,12 +29,11 @@
     <td><%= chocolatier.chocolatier_url %></td>
     <td><%= chocolatier.email %></td>
     <td><%= chocolatier.phone %></td>
-    <td><%= link_to 'Show', chocolatier %></td>
 
   </tr>
 <% end %>
 </table>
-<%#= will_paginate @chocolatiers %>
+<%= will_paginate @chocolatiers %>
 <br />
 
 <%= link_to 'New Chocolatier', new_chocolatier_path %>
