@@ -14,10 +14,8 @@
 
 <% @chocolates.each do |chocolate| %>
   <tr>
-    <td><%= chocolate.name %></td>
+    <td><%= link_to chocolate.name, chocolate %></td>
     <td style="text-align:justify;"><%= chocolate.description %></td>
-
-    <td><%= link_to 'Show', chocolate %></td>
 
   </tr>
 <% end %>
