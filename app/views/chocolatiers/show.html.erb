@@ -59,3 +59,15 @@
     |<%= link_to 'Approve', approve_chocolatier_path(@chocolatier.id) %>
         <% end %>
 <% end %>
+
+<h3>chocolates</h3>
+<% @chocolates.each do |chocolate| %>
+    <% pic = Photo.find_by_chocolate_id(chocolate.id).image %>
+    <%= image_tag pic  ,:size => '80x80' %>
+    </br>
+    <%= link_to chocolate.name , chocolate %>
+    <%= chocolate.ratings.average(:rate)  %>
+    </br>
+
+
+<% end %>
