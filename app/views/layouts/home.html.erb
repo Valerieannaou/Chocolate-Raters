@@ -1,0 +1,156 @@
+<html>
+<head>
+  <title>Chocolate</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+  <%= stylesheet_link_tag    "application", "bootstrap.min","style","bootstrap-responsive.min", media: "all" %>
+
+
+  <%= javascript_include_tag "application" %>
+
+
+
+  <%= csrf_meta_tag %>
+</head>
+<body>
+<div class="navbar-wrapper">
+  <div class="navbar">
+    <div class="content-wrapper">
+      <div class="container">
+        <div id="header-links">
+          <%= image_tag 'header-links.png' %>
+        </div>
+        <div id="header-logo">
+          <%= image_tag 'logo.png' %>
+        </div>
+
+        <div id="login-signup">
+          <% if user_signed_in? %>
+              Logged in as <strong><%= current_user.email %></strong>.
+              <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <% else %>
+              <%= link_to "Sign up", new_user_registration_path %> |
+              <%= link_to "Login", new_user_session_path %> |
+              <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), :class => "popup", :"data-width" => 600, :"data-height" => 400 %>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-inner content-wrapper" id="main-menu">
+      <div class="container" id="main-menu-container">
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'Chocolates', chocolates_path %></li>
+            <li><%= link_to 'Add chocolate', new_chocolate_path %></li>
+            <li><%= link_to 'Chocolatiers', chocolatiers_path %> </li>
+            <li><%= link_to 'Add chocolatier', new_chocolatier_path %></li>
+          </ul>
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Carousel
+    ================================================== -->
+<div id="myCarousel" class="carousel slide">
+  <div id="over-slideshow"></div>
+
+  <div class="carousel-inner">
+    <div class="item active">
+      <%= image_tag 'slide-01.jpg'%>
+
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Top Rated Dark Chocolate</h1>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag 'slide-02.jpg'%>
+
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Another example headline.</h1>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag 'slide-03.jpg'%>
+
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>One more for good measure.</h1>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag 'slide-04.jpg'%>
+
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>One more for good measure.</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+    <div id="search-box-on-slider">
+      <form action="<%= show_search_chocolates_path %>" method="get">
+        <input type="text" name="search" placeholder="Enter chocolate/ chocolatier/ place to either rate or find">
+        <button id="search-box-button"><%= image_tag 'search-button.png'%></button>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="content-wrapper">
+    <ol class="carousel-indicators carousel-indicator-button">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+  </div>
+
+</div>
+
+<div class="content-wrapper">
+  <%= yield %>
+</div>
+ <%= render partial: 'shared/footer' %>
+
+<!--<script src="jquery/jquery-1.10.2.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>-->
+<!--<cript src="bootstrap/js/bootstrap-carousel.js"></script>
+<script src="bootstrap/js/bootstrap-transition.js"></script>
+<script src="bootstrap/js/bootstrap-dropdown.js"></script> -->
+
+<script>
+    !function ($) {
+        $(function () {
+            // carousel demo
+            $('#myCarousel').carousel();
+            $('#miniCarousel').carousel({interval: false});
+        })
+    }(window.jQuery)
+</script>
+
+</body>
+</html>
