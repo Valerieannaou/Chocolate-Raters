@@ -1,0 +1,411 @@
+body {
+    background: #E9E9E9;
+}
+
+.content-wrapper {
+    max-width: 960px;
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.navbar-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    /*margin-top: 20px;*/
+    /*margin-bottom: -90px;*/
+}
+
+#header-links {
+    margin-top: 11px;
+}
+#header-links img{
+    height: 33px;
+}
+
+#header-logo {
+    margin-top: 11px;
+    float: left;
+}
+#header-logo img {
+    height: 33px;
+}
+
+#login-signup {
+    width: 265px;
+    background: #EB0089;
+    padding: 0 8px;
+    border-radius: 2px;
+    float: right;
+    margin-top: 11px;
+}
+#login-signup a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+#main-menu {
+    background: none;
+    border: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    margin-top: 11px;
+}
+
+#main-menu .nav {
+    background: url("menu-bg.png");
+    width: 100%;
+    border-radius: 3px;
+}
+
+.navbar .nav > li {
+    padding: 15px 0;
+    font-weight: bold;
+}
+
+.navbar .nav > li > a {
+    color: #D4DF21;
+    border-left: 2px solid #AE7645;
+    text-shadow: none;
+    padding: 0 31px;
+    font-size: 17px;
+}
+.navbar .nav > li > a:hover {
+    color: #EEE;
+}
+
+.navbar .nav > li:first-child > a {
+    border-left: none;
+}
+
+#over-slideshow {
+    z-index: 10;
+    /*background: url("images/over-slideshow.png") repeat;*/
+    background: rgba(200,200,200, .1); /*TODO:  */
+    position: absolute;
+    top: 0;
+    height: 200px;
+    width: 100%;
+}
+
+#myCarousel {
+    z-index: 9;
+    margin-bottom: 80px;
+}
+
+#search-box-on-slider {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
+    width: 700px;
+    margin: auto;
+    text-align: center;
+    border: 6px solid rgba( 50, 50, 50, .7);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, .7);
+}
+
+#search-box-on-slider form {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+}
+
+#search-box-on-slider input {
+    margin: 0;
+    border: 0;
+    background: none;
+    height: 40px;
+    float: left;
+    padding: 0 10px;
+    border-radius: 1px;
+    width: 570px;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#search-box-on-slider input:focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+#search-box-on-slider button {
+    padding: 0;
+    border: 0;
+    float: right;
+    margin: 3px;
+    background: none;
+}
+
+#search-box-on-slider button img {
+    height: 35px;
+}
+
+
+.carousel-caption {
+    background: none;
+    position: absolute;
+    top: 70%;
+}
+.carousel-caption h1 {
+    color: #FFF;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: impact;
+    text-shadow: 3px 1px 2px #000;
+}
+
+
+ol.carousel-indicator-button {
+    position: absolute;
+    margin-top: -80px;
+    z-index: 10;
+    right: auto;
+    top: auto;
+}
+
+ol.carousel-indicator-button li {
+    height: 17px;
+    width: 15px;
+    list-style-image: url("slider-indicator.jpg");
+    float: left;
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.carousel-indicator-button li.active {
+    list-style-image: url("slider-indicator-active.jpg");
+}
+
+
+#recent-rating, #trading-chocolate {
+    width: 49%;
+    float: left;
+    background: #EEE;
+}
+
+#recent-rating {
+
+}
+#trading-chocolate {
+    margin-left: 2%;
+}
+
+#recent-rating div.title, #trading-chocolate div.title {
+    background: #EB0089;
+    display: inline-block;
+    font-weight: bold;
+    color: #FFF;
+    font-size: 22px;
+    border-radius: 10px;
+    font-family: verdana;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 65px;
+}
+
+#miniCarousel {
+    margin: 0 25px;
+    /*position: relative;*/
+}
+
+#miniCarousel .carousel-control {
+    height: 20px;
+    width: 20px;
+    border: none;
+}
+
+#miniCarousel .left-control {
+    position: absolute;
+    left: -25px;
+    right: auto;
+    top: 78px;
+    background: url("mini-slider-prev.png");
+    background-size: 20px 20px;
+    opacity: 1;
+}
+
+#miniCarousel .right-control {
+    position: absolute;
+    left: auto;
+    right: -25px;
+    top: 78px;
+    background: url("mini-slider-next.png");
+    background-size: 20px 20px;
+    opacity: 1;
+}
+
+#miniCarousel img {
+    height: 140px;
+    width: 135px;
+    z-index: 15;
+    position: relative;
+}
+
+#miniCarousel p.name {
+    font-family: Verdana;
+    width: 135px;
+    background: #D5DE22;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: #FFF;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 8px;
+    margin-top: -6px;
+    z-index: 16;
+    position: relative;
+}
+
+#miniCarousel .carousel-caption {
+    width: 276px;
+    margin-left: 130px;
+    margin-top: -130px;
+    padding-right: 0;
+}
+
+#miniCarousel .carousel-caption p.title {
+    color: #AE7646;
+    font-weight: bold;
+    font-family: "Myriad Pro";
+    font-size: 18px;
+}
+
+#miniCarousel .carousel-caption p.description {
+    color: #222;
+    font-family: "Myriad Pro";
+    font-size: 17px;
+    /*text-shadow: 1px 1px 1px #999;*/
+    text-align: justify;
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+
+#miniCarousel .carousel-caption p.read-more {
+    color: #B27F53;
+    font-family: "Myriad Pro";
+    font-size: 16px;
+    font-weight: bold;
+    /*text-shadow: 1px 1px 1px #B27F53;*/
+}
+
+
+.trading-chocolate {
+    float: left;
+    position: relative;
+}
+
+.trading-chocolate img.chocolate{
+    height: 190px;
+    width: 206px;
+    /*width: 208px;*/
+    border: 3px solid #EB008A;
+    border-radius: 10px;
+    z-index: 12;
+}
+
+.trading-chocolate:hover img.chocolate {
+    border-color: #C6A487;
+}
+
+.trading-chocolate:hover .trading-chocolate-rating {
+    background: url("trending-chocolate-text-bg-1.png") no-repeat;
+    background-size: 180px 80px;
+}
+
+.trading-chocolate-rating {
+    height: 80px;
+    width: 180px;
+    position: absolute;
+    background: url("trending-chocolate-text-bg-2.png") no-repeat;
+    background-size: 180px 80px;
+    /*background-size: ;*/
+    bottom: -18px;
+    right: -5px;
+    top: auto;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.trading-chocolate-rating p {
+    font-family: verdana;
+    font-size: 23px;
+    font-weight: bold;
+    color: #FFF;
+}
+
+.rating-starts {
+    margin-top: -5px;
+}
+
+.trading-chocolate-overlay {
+    height: 190px;
+    width: 206px;
+    background: #C6A487;
+    border-radius: 7px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    opacity: 0;
+    z-index: 11;
+}
+
+.trading-chocolate-overlay:hover {
+    opacity: 0.2;
+    z-index: 13;
+}
+
+#trading-chocolate-1 {
+
+}
+
+#trading-chocolate-2 {
+    margin-left: 40px;
+}
+
+/*border: 2px solid #C6A487;*/
+
+
+
+
+
+#footer-area-full-width {
+    margin-top: 100px;
+    width: 100%;
+    background: url("footer-bg.png") repeat-x;
+}
+
+
+#footer-area {
+    border-top: 2px solid #555;
+    padding-top: 15px;
+    color: #555;
+}
+
+#footer-area-1, #footer-area-2, #footer-area-3, #footer-area-4 {
+    /*background: #777;*/
+    float: left;
+    width: 189px;
+    border-left: 1px solid #555;
+    padding-left: 50px;
+}
+
+#footer-area-1 {
+    border-left: 0;
+}
+
+#copy-right {
+    margin: 17px 0px 35px 50px;
+}
