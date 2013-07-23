@@ -1,5 +1,6 @@
 require 'rvm/capistrano'
 require 'bundler/capistrano'
+require 'thinking_sphinx/capistrano'
 #require 'whenever/capistrano'
 
 set :application, 'chocolate_raters'
