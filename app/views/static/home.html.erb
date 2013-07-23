@@ -1,37 +1,88 @@
-<h2>Recent Reviews:</h2>
-<% if !(@reviews.blank?)  %>
-<% @reviews.each do |review| %>
-    <div id= "user_pic" style="float: left">
-      <% user = User.find(review.user_id) %>
+<div id="recent-rating">
+  <div class="title">Recent Ratings</div>
+  <br>
+  <!--<img src="images/female-face.jpg" style="width: 200px">-->
 
-      <% if  !(user.photo.blank?) %>
-          <%  pic = user.photo %>
 
-        <%= link_to (image_tag pic ,:size => '150x150'), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id) %>
-          <% elsif !(user.fb_photo.blank?) %>
-          <%  pic = (user.fb_photo) %>
-          <%= link_to (image_tag pic ,:size => '150x150'), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id) %>
+  <div id="miniCarousel" class="carousel slide">
+    <div class="carousel-inner">
+      <% active = 'active' %>
+      <% @reviews.each do |review| %>
+         <% user = User.find(review.user_id) %>
+      <div class="item <%= active %>">
+        <% active = '' %>
+        <% if  !(user.photo.blank?) %>
+            <%  pic = user.photo %>
 
-          <% else %>
-          <%= link_to (image_tag 'default_pro.jpg',:size=> '150x150',:title => 'default image'), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id)  %>
+            <%= link_to (image_tag pic), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id) %>
+        <% elsif !(user.fb_photo.blank?) %>
+            <%  pic = (user.fb_photo) %>
+            <%= link_to (image_tag pic), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id) %>
 
-          <% end %>
-      </br>
-      <%= user.user_name %>
+        <% else %>
+            <%= link_to (image_tag 'default_pro.jpg',:title => 'default image'), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id)  %>
+
+        <% end %>
+
+        <p class="name"><%= user.user_name %></p>
+        <% chocolate = Chocolate.find(review.chocolate_id) %>
+        <div class="container">
+          <div class="carousel-caption">
+            <p class="title"><%= link_to chocolate.name, chocolate_path(chocolate.id) %></p>
+
+            <p class="description"><span style="font-size: 20px"><%= review.rate %> </span> <%= truncate review.comment, length: 110 %></p>
+
+            <p class="read-more"><%= link_to 'Read more...',user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id) %></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
     </div>
-    <div id="detail" style="height: 150px;width: 600px">
-      <% chocolate = Chocolate.find(review.chocolate_id) %>
-    <h3><%= link_to chocolate.name, chocolate_path(chocolate.id) %></h3>
-    <p><span style="font-size: 20px"><%= review.rate %> </span> <%= review.comment %></p>
-    </div>
-    </br>
-<% end %>
-<% end %>
-<h2>Trending Chocolates: </h2>
-<% @chocolates.each do |chocolate| %>
 
-    <% chocolate_pic= Photo.find_by_chocolate_id(chocolate.id).image %>
-    <div><%= link_to (image_tag chocolate_pic ,:size => '150x150'), chocolate_path(chocolate) %></br></div>
-    <div><h3><%= chocolate.name %>  <span style="color: orangered">  <%= chocolate.ratings.average(:rate) %> /100</span></h3> </div>
-    </br>
-<% end %>
+    <a class="left-control carousel-control" href="#miniCarousel" data-slide="prev"></a>
+    <a class="right-control carousel-control" href="#miniCarousel" data-slide="next"></a>
+  </div>
+  <!-- /#miniCarousel -->
+
+
+</div>
+
+
+<div id="trading-chocolate">
+  <div class="title">Trending Chocolate</div>
+  <br>
+
+
+
+  <div class="trading-chocolate" id="trading-chocolate-1">
+    <img class="chocolate" src="<%= Photo.find_by_chocolate_id(@chocolates[0].id).image %>">
+
+    <div class="trading-chocolate-rating">
+      <p><%= @chocolates[0].name %></p>
+      <div class="rating-starts"><%= @chocolates[0].ratings.average(:rate) %></div>
+    </div>
+    <div class="trading-chocolate-overlay"></div>
+  </div>
+
+
+
+  <div class="trading-chocolate" id="trading-chocolate-2">
+    <img class="chocolate" src="<%= Photo.find_by_chocolate_id(@chocolates[1].id).image %>">
+
+    <div class="trading-chocolate-rating">
+      <p><%= @chocolates[1].name %></p>
+      <div class="rating-starts"><%= @chocolates[1].ratings.average(:rate) %></div>
+    </div>
+    <div class="trading-chocolate-overlay"></div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
