@@ -63,7 +63,7 @@
 <h3>chocolates</h3>
 <% @chocolates.each do |chocolate| %>
     <% pic = Photo.find_by_chocolate_id(chocolate.id).image %>
-    <%= image_tag pic  ,:size => '80x80' %>
+    <%= link_to image_tag(pic  ,:size => '80x80'), chocolate %>
     </br>
     <%= link_to chocolate.name , chocolate %>
     <%= chocolate.ratings.average(:rate)  %>
