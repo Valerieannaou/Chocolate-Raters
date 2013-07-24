@@ -27,8 +27,9 @@
     <th></th>
   </tr>
 
-  <% @chocolatiers.each do |chocolatier| %>
+  <% @chocolates_by_unique_chocolatier.each do |chocolate| %>
       <tr>
+        <% chocolatier = Chocolatier.find(chocolate.chocolatier_id) %>
         <td><%= link_to chocolatier.name, chocolatier %></td>
         <td ><%= chocolatier.email %></td>
         <td ><%= chocolatier.country %></td>
