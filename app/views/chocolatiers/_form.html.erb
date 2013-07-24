@@ -28,7 +28,7 @@
       </div>
       <div class="field">
         <%= f.label :country %><br />
-        <%= f.country_select :country  %>
+        <%= f.country_select :country,["United States"] %>
       </div>
       <div class="field">
         <%= f.label :state %><br />
@@ -52,7 +52,7 @@
       </div>
       <div class="field">
         <%= f.label :phone %><br />
-        <%= f.text_field :phone %>
+        <%= f.phone_field :phone %>
       </div>
       <%#= hidden_field_tag "user_id", current_user.id  %>
       <%#= f.hidden_field :user_id, :value => current_user.id %>
