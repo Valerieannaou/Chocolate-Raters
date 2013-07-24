@@ -87,9 +87,10 @@ class ChocolatesController < ApplicationController
   end
   def show_search
     @chocolates = Chocolate.search "*#{params[:search].downcase}*"
+    #@chocolatiers =  Chocolatier.by_chocolatier_name(params[:search])
+    @chocolates_by_unique_chocolatier = @chocolates.uniq{|x| x.chocolatier_id}
 
-    @chocolatiers =  Chocolatier.by_chocolatier_name(params[:search])
-    if @chocolates.blank? && @chocolatiers.blank?
+    if @chocolates.blank?
       flash[:notice]="Search do not match"
       redirect_to root_path
     else
