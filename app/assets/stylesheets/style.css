@@ -190,7 +190,7 @@ ol.carousel-indicator-button li {
 #recent-rating, #trading-chocolate {
     width: 49%;
     float: left;
-    background: #EEE;
+   /* background: #EEE;     */
 }
 
 #recent-rating {
