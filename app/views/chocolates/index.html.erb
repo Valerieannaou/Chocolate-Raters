@@ -1,12 +1,11 @@
-
-<%= javascript_include_tag "application" %>
-
+<div id="chocolates" >
 <h1>Listing chocolates</h1>
 
 <table>
   <tr>
+    <th>Photo</th>
     <th>Name</th>
-    <th>Description</th>
+    <th>Rating</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,8 +13,12 @@
 
 <% @chocolates.each do |chocolate| %>
   <tr>
+    <% pic = Photo.find_by_chocolate_id(chocolate.id).image %>
+    <td><%= link_to image_tag(pic  ,:size => '180x180'), chocolate %></td>
     <td><%= link_to chocolate.name, chocolate %></td>
-    <td style="text-align:justify;"><%= chocolate.description %></td>
+    <td><%= chocolate.ratings.average(:rate) %></td>
+
+
 
   </tr>
 <% end %>
@@ -25,3 +28,4 @@
 
 <%= link_to 'New Chocolate', new_chocolate_path %>
 <%= will_paginate @chocolates %>
+ </div>
