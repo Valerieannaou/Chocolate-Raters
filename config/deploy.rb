@@ -57,6 +57,13 @@ namespace :deploy do
 
   task :stop do ; end
 
+
+  desc 'rebuild sphinx'
+  task :rebuild_sphinx, :role => :app do
+    run "cd #{current_path}; rake ts:rebuild RAILS_ENV=staging"
+  end
+
+
   desc 'Restart the application'
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
@@ -79,5 +86,6 @@ end
 
 before 'deploy:assets:precompile', 'deploy:copy_in_database_yml'
 after 'deploy:update_code', 'deploy:migrate'
+after 'deploy:migrate', 'deploy:rebuild_sphinx'
 after 'deploy:setup', 'deploy:create_shared_files_and_directories'
 after 'deploy:create_symlink', :link_shared_files
