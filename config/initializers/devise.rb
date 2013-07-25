@@ -68,14 +68,16 @@ Devise.setup do |config|
   # to behave the same regardless if the e-mail provided was right or wrong.
   # Does not affect registerable.
   # config.paranoid = true
-  if Rails.env == "development"
   require "omniauth-facebook"
+  if Rails.env == "development"
   config.omniauth :facebook, "438108232953466", "58e48194e44ffcb1fe496a26e786cbd7", :authorize_params => { :display => 'popup' }
-   end
-  if Rails.env == "production"
-    require "omniauth-facebook"
+
+  elsif Rails.env == "staging"
+    config.omniauth :facebook, "472910752794349", "1cee2b94eee9f00271d895aecf6ddfe9", :authorize_params => { :display => 'popup' }
+  else
     config.omniauth :facebook, "472910752794349", "1cee2b94eee9f00271d895aecf6ddfe9", :authorize_params => { :display => 'popup' }
   end
+
 
   # By default Devise will store the user in session. You can skip storage for
   # :http_auth and :token_auth by adding those symbols to the array below.
