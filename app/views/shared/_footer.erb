@@ -22,11 +22,18 @@
       New Chocolate<br>
     </div>
     <div id="footer-area-4">
+      <% if !(admin?)  %>
       <b>the best</b><br>
       About RateChocolate<br>
       FAQ<br>
       Contact<br>
       New Chocolate<br>
+      <% end %>
+      <% if admin? %>
+          <b>Link for admin access</b><br>
+          <%= link_to 'Requests', requests_chocolatiers_path %></br>
+          <%= link_to 'Users', user_index_path %></br>
+      <% end %>
     </div>
     <div style="clear: both"></div>
 
