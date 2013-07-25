@@ -101,6 +101,10 @@ class ChocolatesController < ApplicationController
     end
   end
   def rate_chocolate
+    if current_user.blank?
+      redirect_to new_user_session_path
+      flash[:notice] = "Login to rate Chocolate"
+      end
     @chocolate = Chocolate.find(params[:chocolate_id])
 
   end
