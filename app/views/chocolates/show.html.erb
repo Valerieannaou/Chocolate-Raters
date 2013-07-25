@@ -33,6 +33,9 @@
  <% if @chocolate.user_id != current_user.id %>
 <p><%= link_to 'Rate Chocolate',  rate_chocolate_chocolates_path(:chocolate_id => @chocolate.id) %></p>
 <% end %>
+
+    <% else %>
+    <p><%= link_to 'Rate Chocolate', rate_chocolate_chocolates_path(:chocolate_id => @chocolate.id) %></p>
     <% end %>
  <P>
    <% if can? :edit , @chocolate %>
