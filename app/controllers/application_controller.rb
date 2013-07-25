@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :admin?
   def admin?
     if current_user
-    if current_user.admin== 1
+    if current_user.email == "j-moore@ou.edu" ||  current_user.email == "chocolateraters@gmail.com" ||current_user.email == "jmoore2002@gmail.com"  ||current_user.email == "fuad@nascenia.com"  || current_user.email == "sifat@nascenia.com"
       return true
 
     else
