@@ -3,10 +3,10 @@
   <br>
   <!--<img src="images/female-face.jpg" style="width: 200px">-->
 
-  <% if !(@reviews.blank?) %>
+
   <div id="miniCarousel" class="carousel slide">
     <div class="carousel-inner">
-
+      <% if !(@reviews.blank?) %>
       <% active = 'active' %>
       <% @reviews.each do |review| %>
          <% user = User.find(review.user_id) %>
@@ -38,8 +38,9 @@
         </div>
       </div>
       <% end %>
+      <% end %>
     </div>
-     <% end %>
+
     <a class="left-control carousel-control" href="#miniCarousel" data-slide="prev"></a>
     <a class="right-control carousel-control" href="#miniCarousel" data-slide="next"></a>
   </div>
