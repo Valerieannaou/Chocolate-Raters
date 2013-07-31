@@ -13,8 +13,12 @@
 
 <% @chocolates.each do |chocolate| %>
   <tr>
-    <% pic = Photo.find_by_chocolate_id(chocolate.id).image %>
-    <td><%= link_to image_tag(pic  ,:size => '180x180'), chocolate %></td>
+    <% pic = Photo.find_by_chocolate_id(chocolate.id) %>
+    <td>
+      <% if !(pic.blank?)  %>
+           <%= link_to image_tag( pic.image  ,:size => '180x180')%>
+       <% end %>
+    </td>
     <td><%= link_to chocolate.name, chocolate %></td>
     <td><%= chocolate.ratings.average(:rate) %></td>
 
