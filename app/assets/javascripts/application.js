@@ -12,7 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
+//= require jquery-1.10.2.min
+//= require bootstrap.min
+//= require bootstrap-carousel
+//= require bootstrap-transition
+//= require bootstrap-dropdown
+//= require script-carousel-ie
 //= require_tree .
 //require 'carrierwave/processing/rmagick'
 // require cocoon
