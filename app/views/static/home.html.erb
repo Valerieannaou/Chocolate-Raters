@@ -38,7 +38,7 @@
 
                     <% end %>
 
-                    <p class="name"><%= (user.user_name).match(" ").pre_match %></p>
+                    <p class="name"><%= user.user_name %></p>
                     <% chocolate = Chocolate.find(review.chocolate_id) %>
                     <div class="container">
                       <div class="carousel-caption">
