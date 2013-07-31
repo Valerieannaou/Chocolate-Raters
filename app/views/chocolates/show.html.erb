@@ -25,7 +25,7 @@
 <div id="pic" style="min-height:250px;height:auto;">
 <% for photo in @chocolate.photos %>
     <div class="photos" style="float: left;width: 200px;height: 200px; border: solid 1px black; margin: 10px;">
-      <%= link_to image_tag(photo.image.url(:thumb),:size =>'200x200') ,photo.image.url, :class => "group1" %>
+      <%= link_to image_tag(photo.image.url(:thumb)) ,photo.image.url, :class => "group1" %>
     </div>
     <% end %>
 </div>
