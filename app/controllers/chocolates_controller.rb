@@ -48,13 +48,14 @@ class ChocolatesController < ApplicationController
   # GET /chocolates/1/edit
   def edit
     @chocolate = Chocolate.find(params[:id])
-    @chocolatiers = Chocolatier.find_all_by_user_id(current_user.id)
+    @chocolatiers = Chocolatier.find_all_by_user_id_and_status(current_user.id,1)
   end
 
   # POST /chocolates
   # POST /chocolates.json
   def create
     @chocolate = Chocolate.new(params[:chocolate])
+    @chocolatiers = Chocolatier.find_all_by_user_id_and_status(current_user.id,1)
     @chocolate.user_id = current_user.id
 
     respond_to do |format|
@@ -86,8 +87,8 @@ class ChocolatesController < ApplicationController
     end
   end
   def show_search
+    #@chocolates = Chocolate.search(params[:search])
     @chocolates = Chocolate.search "*#{params[:search].downcase}*"
-    #@chocolatiers =  Chocolatier.by_chocolatier_name(params[:search])
     @chocolates_by_unique_chocolatier = @chocolates.uniq{|x| x.chocolatier_id}
 
     if @chocolates.blank?
@@ -107,6 +108,9 @@ class ChocolatesController < ApplicationController
       end
     @chocolate = Chocolate.find(params[:chocolate_id])
 
+  end
+  def recent_ratings
+    @reviews = Rating.all(:order => 'created_at desc', :limit => 50)
   end
   def user_review
   user = params[:user_id]
