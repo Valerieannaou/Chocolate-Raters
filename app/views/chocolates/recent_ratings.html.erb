@@ -1,0 +1,29 @@
+<h2>Recent Reviews:</h2>
+<% if !(@reviews.blank?)  %>
+    <% @reviews.each do |review| %>
+        <div id= "user_pic" style="float: left">
+          <% user = User.find(review.user_id) %>
+
+          <% if  !(user.photo.blank?) %>
+              <%  pic = user.photo %>
+
+              <%= link_to (image_tag pic ,:size => '100x100'), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id) %>
+          <% elsif !(user.fb_photo.blank?) %>
+              <%  pic = (user.fb_photo) %>
+              <%= link_to (image_tag pic,:size => '100x100'), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id) %>
+
+          <% else %>
+              <%= link_to (image_tag 'default_pro.jpg',:title => 'default image',:size => '100x100'), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id)  %>
+
+          <% end %>
+          </br>
+          <%= user.user_name %>
+        </div>
+        <div id="detail" style="height: 150px;width: 600px">
+          <% chocolate = Chocolate.find(review.chocolate_id) %>
+          <h3><%= link_to chocolate.name, chocolate_path(chocolate.id) %></h3>
+          <p><span style="font-size: 20px"><%= review.rate %> </span> <%= review.comment %></p>
+        </div>
+        </br>
+    <% end %>
+<% end %>
