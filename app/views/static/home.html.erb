@@ -1,89 +1,115 @@
-<div id="recent-rating">
-  <div class="title">Recent Ratings</div>
-  <br>
-  <!--<img src="images/female-face.jpg" style="width: 200px">-->
+<div class="content-wrapper">
+  <div class="row-fluid">
+    <div class="span12" id="mini-search-box">
+      <form action="<%= show_search_chocolates_path %>" method="get">
+        <input type="text" name="search" placeholder="Enter chocolate/ chocolatier/ place to either rate or find">
+        <button id="mini-search-box-button"><%= image_tag 'search-button-mini.png'%></button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row-fluid">
+    <div class="span6" id="recent-rating">
+      <div class="title"><%= link_to "Recent Ratings", chocolates_recent_ratings_path%></div>
+      <!--<br>-->
+      <!--<img src="images/female-face.jpg" style="width: 200px">-->
+
+      <div id="miniCarousel" class="carousel slide">
+        <div class="carousel-inner">
 
 
-  <div id="miniCarousel" class="carousel slide">
-    <div class="carousel-inner">
-      <% if !(@reviews.blank?) %>
-      <% active = 'active' %>
-      <% @reviews.each do |review| %>
-         <% user = User.find(review.user_id) %>
-      <div class="item <%= active %>">
-        <% active = '' %>
-        <% if  !(user.photo.blank?) %>
-            <%  pic = user.photo %>
 
-            <%= link_to (image_tag pic), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id) %>
-        <% elsif !(user.fb_photo.blank?) %>
-            <%  pic = (user.fb_photo) %>
-            <%= link_to (image_tag pic), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id) %>
+          <% if !(@reviews.blank?) %>
+              <% active = 'active' %>
+              <% @reviews.each do |review| %>
+                  <% user = User.find(review.user_id) %>
+                  <div class="item <%= active %>">
+                    <% active = '' %>
+                    <% if  !(user.photo.blank?) %>
+                        <%  pic = user.photo %>
 
-        <% else %>
-            <%= link_to (image_tag 'default_pro.jpg',:title => 'default image'), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id)  %>
+                        <%= link_to (image_tag pic), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id) %>
+                    <% elsif !(user.fb_photo.blank?) %>
+                        <%  pic = (user.fb_photo) %>
+                        <%= link_to (image_tag pic), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id) %>
 
-        <% end %>
+                    <% else %>
+                        <%= link_to (image_tag 'default_pro.jpg',:title => 'default image'), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id)  %>
 
-        <p class="name"><%= user.user_name %></p>
-        <% chocolate = Chocolate.find(review.chocolate_id) %>
-        <div class="container">
-          <div class="carousel-caption">
-            <p class="title"><%= link_to chocolate.name, chocolate_path(chocolate.id) %></p>
+                    <% end %>
 
-            <p class="description"><span style="font-size: 20px"><%= review.rate %> </span> <%= truncate review.comment, length: 110 %></p>
+                    <p class="name"><%= (user.user_name).match(" ").pre_match %></p>
+                    <% chocolate = Chocolate.find(review.chocolate_id) %>
+                    <div class="container">
+                      <div class="carousel-caption">
+                        <div class="name">
+                          <a href="<%= chocolate_path(chocolate.id) %>"><%= chocolate.name %></a>
+                        </div>
 
-            <p class="read-more"><%= link_to 'Read more...',user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id) %></p>
-          </div>
+                        <p class="description"><span style="font-size: 20px"><%= review.rate %> </span> <%= truncate review.comment, length: 110 %></p>
+
+
+                        <div class="read-more"><a href="<%= user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id) %>">Read more...</a></div>
+
+                      </div>
+                    </div>
+                  </div>
+              <% end %>
+          <% end %>
+
+
         </div>
+
+        <a class="left-control carousel-control" href="#miniCarousel" data-slide="prev"></a>
+        <a class="right-control carousel-control" href="#miniCarousel" data-slide="next"></a>
       </div>
-      <% end %>
-      <% end %>
+      <!-- /#miniCarousel -->
     </div>
 
-    <a class="left-control carousel-control" href="#miniCarousel" data-slide="prev"></a>
-    <a class="right-control carousel-control" href="#miniCarousel" data-slide="next"></a>
+
+    <div class="span6" id="trading-chocolate">
+      <div class="title">Trending Chocolate</div>
+
+      <% if !(@chocolates.blank?) %>
+          <div class="trading-chocolate" id="trading-chocolate-1">
+            <img class="chocolate" src="<%= Photo.find_by_chocolate_id(@chocolates[0].id).image %>">
+
+            <div class="trading-chocolate-rating">
+              <p><%= @chocolates[0].name %></p>
+              <div class="rating-starts"><%= @chocolates[0].ratings.average(:rate) %></div>
+            </div>
+            <div class="trading-chocolate-overlay"></div>
+          </div>
+
+
+
+          <div class="trading-chocolate" id="trading-chocolate-2">
+            <img class="chocolate" src="<%= Photo.find_by_chocolate_id(@chocolates[1].id).image %>">
+
+            <div class="trading-chocolate-rating">
+              <p><%= @chocolates[1].name %></p>
+              <div class="rating-starts"><%= @chocolates[1].ratings.average(:rate) %></div>
+            </div>
+            <div class="trading-chocolate-overlay"></div>
+          </div>
+      <% end %>
+      </div>
+    </div>
   </div>
-  <!-- /#miniCarousel -->
-
-
 </div>
+ <script>
+     $("#trading-chocolate-1").click(function(){
 
+         document.location = '<%= chocolate_path(@chocolates[0]) %>';
 
-<div id="trading-chocolate">
-  <div class="title">Trending Chocolate</div>
-  <br>
+     });
+     $("#trading-chocolate-2").click(function(){
 
+         document.location = '<%= chocolate_path(@chocolates[1]) %>';
 
-   <% if !(@chocolates.blank?) %>
-  <div class="trading-chocolate" id="trading-chocolate-1">
-    <img class="chocolate" src="<%= Photo.find_by_chocolate_id(@chocolates[0].id).image %>">
+     });
 
-    <div class="trading-chocolate-rating">
-      <p><%= @chocolates[0].name %></p>
-      <div class="rating-starts"><%= @chocolates[0].ratings.average(:rate) %></div>
-    </div>
-    <div class="trading-chocolate-overlay"></div>
-  </div>
-
-
-
-  <div class="trading-chocolate" id="trading-chocolate-2">
-    <img class="chocolate" src="<%= Photo.find_by_chocolate_id(@chocolates[1].id).image %>">
-
-    <div class="trading-chocolate-rating">
-      <p><%= @chocolates[1].name %></p>
-      <div class="rating-starts"><%= @chocolates[1].ratings.average(:rate) %></div>
-    </div>
-    <div class="trading-chocolate-overlay"></div>
-  </div>
-      <% end %>
-</div>
-
-
-
-
-
+ </script>
 
 
 

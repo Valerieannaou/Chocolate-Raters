@@ -1,5 +1,6 @@
 ChocolateRatingSystem::Application.routes.draw do
   get "user/index"
+  get "chocolates/recent_ratings"
   get "ratings/index"
 
   resources :chocolatiers do
