@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Edit Profile</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -9,13 +9,47 @@
   <div><%= f.label :user_name %><br />
   <%= f.text_field :user_name %></div>
 
+    <% pic = current_user.photo %>
+
+   <% if !(pic.blank?) %>
+        <div class ="pic" >
+        <%= image_tag pic ,:size => '200x200' %>
+          </br>
+          <%= f.check_box :remove_photo %>
+          <%= f.label :remove_photo, "remove image" %>
+          <button type="button">Change</button>
+        </div>
+
+    <% else %>
+        <div class ="pic" >
+        <% pic = current_user.fb_photo %>
+        <% if !(pic.blank?) %>
+
+            <% image_tag pic,:size => '200x200' %>
+              </br>
+              <%= f.check_box :remove_photo %>
+              <%= f.label :remove_photo, "remove image" %>
+              <button type="button">Change</button>
+          </div>
+
+            <% else %>
+
   <div><%= f.label :photo %><br />
-  <%= f.file_field :photo ,:class => 'file_field' %></div>
+  <%= f.file_field :photo ,:class => 'file_field' %>
+  </div>
+            <% end %>
+    <% end %>
+
+
+    <div id="up"><%= f.label :photo %><br />
+      <%= f.file_field :photo ,:class => 'file_field' , :id => 'user_photo' %>
+    </div>
+
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
-
+    <% if f.object.provider.blank? %>
   <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
   <%= f.password_field :password, :autocomplete => "off" %></div>
 
@@ -24,6 +58,7 @@
 
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></div>
+   <% end %>
 
 
   <div><%= f.submit "Update" %></div>
@@ -34,3 +69,25 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
 
 <%= link_to "Back", :back %>
+
+<script>
+    $(document).ready(function() {
+        $('#up').hide();
+        $("button").click(function () {
+            //document.getElementById("pic").innerHTML = $("#upload").clone()
+            //$("#pic").replaceWith("")
+            $('.pic').hide();
+            $('#up').show();
+            //$('#user_photo').reset();
+           //document.getElementById('user_photo').value=''
+            $('#user_photo').each(function(){
+                this.reset();
+            });
+
+        });
+
+
+
+
+    });
+</script>
