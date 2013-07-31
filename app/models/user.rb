@@ -8,8 +8,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :uid, :provider ,:admin, :photo , :user_name ,:fb_photo
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :uid, :provider ,:admin, :photo , :user_name ,:fb_photo , :current_password, :remove_photo
   mount_uploader :photo , ImageUploader
+  validate :photo_size_validation
   # attr_accessible :title, :body
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
@@ -33,4 +34,12 @@ class User < ActiveRecord::Base
 
     end
   end
+  def valid_password?(password)
+    !provider.nil? || super(password)
+  end
+  def photo_size_validation
+    errors[:photo] << "should be less than 1MB" if photo.size > 1.megabytes
+  end
+
+
 end
