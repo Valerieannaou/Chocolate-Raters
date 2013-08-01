@@ -1,90 +1,115 @@
-
-
-
-
-<p id="name" style="color: #000000">
-  <b>Name:</b>
-  <%= @chocolate.name %>
-</p>
-<div id="total" style="height: 40;width: 80; border: solid 1px black;text-align:center; padding: 20px; font-size: 25"> <%= number_with_precision @chocolate.ratings.average(:rate), :precision => 2 %></div>
- <h3> Look: <%= number_with_precision @chocolate.ratings.average(:look), :precision => 2 %> /5 </h3>
-<h3>  Smell: <%= number_with_precision @chocolate.ratings.average(:smell), :precision => 2 %> /5 </h3>
-<h3> Snap:<%= number_with_precision @chocolate.ratings.average(:snap), :precision => 2 %> /5  </h3>
-<h3> Mouthfeel: <%= number_with_precision @chocolate.ratings.average(:mouthfeel), :precision => 2 %> /25</h3>
-<h3> Taste: <%= number_with_precision @chocolate.ratings.average(:taste), :precision => 2 %> /50 </h3>
-<h3> Aftertaste: <%= number_with_precision @chocolate.ratings.average(:aftertaste), :precision => 2 %> /10.  </h3>
-<p style="text-align:justify;color: #000000">
-  <b>Description:</b>
-  <%= @chocolate.description %>
-</p>
-<P>
-<b>Type:</b>
-<%= @chocolate.type_of_chocolate %>
-</P>
-
-<div id="pic" style="min-height:250px;height:auto;">
-<% for photo in @chocolate.photos %>
-    <div class="photos" style="float: left;width: 200px;height: 200px; border: solid 1px black; margin: 10px;">
-      <%= link_to image_tag(photo.image.url(:thumb)) ,photo.image.url, :class => "group1" %>
-    </div>
-    <% end %>
-</div>
-<% if current_user %>
- <% if @chocolate.user_id != current_user.id %>
-<p><%= link_to 'Rate Chocolate',  rate_chocolate_chocolates_path(:chocolate_id => @chocolate.id) %></p>
-<% end %>
-
-    <% else %>
-    <p><%= link_to 'Rate Chocolate', rate_chocolate_chocolates_path(:chocolate_id => @chocolate.id) %></p>
-    <% end %>
- <P>
-   <% if can? :edit , @chocolate %>
-   <%= link_to 'Edit', edit_chocolate_path(@chocolate) %> |
-       <% end %>
-   <%= link_to 'Back', chocolates_path %> <% if can? :delete , @chocolate %>|
-       <%= link_to 'Destroy', @chocolate, method: :delete, data: { confirm: 'Are you sure?' } %>
-   <% end %>
-
- </P>
-<div id="reviews" style="height: 400px;width: 600px; background-color: #fffcd0 ; overflow: auto">
-  <% @reviews= Rating.find_all_by_chocolate_id(@chocolate.id) %>
-  <% @reviews.each do |review| %>
-     <% user = User.find(review.user_id) %>
-      <div id= "user_pic" style="float: left">
-
-
-        <% if  !(user.photo.blank?) %>
-            <%  pic = user.photo %>
-
-            <%= image_tag pic ,:size => '80x80'%>
-        <% elsif !(user.fb_photo.blank?) %>
-            <%  pic = (user.fb_photo) %>
-            <%= image_tag pic ,:size => '80x80'%>
-
-        <% else %>
-            <%= image_tag 'default_pro.jpg',:size=> '80x150',:title => 'default image'  %>
-
+<div class="row-fluid">
+  <div class="span5">
+    <%= render partial: 'shared/chocolate_profile', locals: {student: @chocolate} %>
+    <% if current_user %>
+        <% if @chocolate.user_id != current_user.id %>
+            <p><%= link_to 'Rate Chocolate',  rate_chocolate_chocolates_path(:chocolate_id => @chocolate.id) %></p>
         <% end %>
 
+    <% else %>
+        <p><%= link_to 'Rate Chocolate', rate_chocolate_chocolates_path(:chocolate_id => @chocolate.id) %></p>
+    <% end %>
+    <P>
+      <% if can? :edit , @chocolate %>
+          <%= link_to 'Edit', edit_chocolate_path(@chocolate) %> |
+      <% end %>
+      <%= link_to 'Back', chocolates_path %> <% if can? :delete , @chocolate %>|
+          <%= link_to 'Destroy', @chocolate, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+
+    </P>
+  </div>
+
+  <div class="span7" id="rating-chocolate">
+    <div class="row-fluid">
+      <div class="span6" id="rating-chocolate-price">
+        <% total_rate = number_with_precision @chocolate.ratings.average(:rate), :precision => 2 %>
+        <% rate = total_rate.to_s.split(".") %>
+        <div id="rating-chocolate-price-inner">
+          <span class="before-point"><%= rate[0] %></span><span class="after-point">.<%= rate[1] %></span>
+        </div>
+      </div>
+      <div class="span6" id="rating-chocolate-remark">
+        <div class="chocolate-rating">
+
+          <div class="rating-category">Look</div>
+          <%= image_tag 'rating-star.png' %>
+          <div class="avg_rate">
+          <%= number_with_precision @chocolate.ratings.average(:look), :precision => 2 %>
+          </div>
+          <div class="divide-by">/5</div>
+        </div>
+        <div class="chocolate-rating">
+          <div class="rating-category">Smell</div>
+          <%= image_tag 'rating-star.png' %>
+          <div class="avg_rate">
+          <%= number_with_precision @chocolate.ratings.average(:smell), :precision => 2 %>
+            </div>
+          <div class="divide-by">/5</div>
+        </div>
+        <div class="chocolate-rating">
+          <div class="rating-category">Snap</div>
+          <%= image_tag 'rating-star.png' %>
+          <div class="avg_rate">
+            <%= number_with_precision @chocolate.ratings.average(:snap), :precision => 2 %>
+          </div>
+          <div class="divide-by">/5</div>
+        </div>
+        <div class="chocolate-rating">
+          <div class="rating-category">Mouthfeel</div>
+          <%= image_tag 'rating-star.png' %>
+          <div class="avg_rate">
+          <%= number_with_precision @chocolate.ratings.average(:mouthfeel), :precision => 2 %>
+            </div>
+          <div class="divide-by">/5</div>
+        </div>
+        <div class="chocolate-rating">
+          <div class="rating-category">Taste</div>
+          <%= image_tag 'rating-star.png' %>
+          <div class="avg_rate">
+            <%= number_with_precision @chocolate.ratings.average(:taste), :precision => 2 %>
+          </div>
+          <div class="divide-by">/5</div>
+        </div>
+        <div class="chocolate-rating">
+          <div class="rating-category">Aftertaste</div>
+          <%= image_tag 'rating-star.png' %>
+          <div class="avg_rate">
+            <%= number_with_precision @chocolate.ratings.average(:aftertaste), :precision => 2 %>
+          </div>
+          <div class="divide-by">/5</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row-fluid">
+      <div class="span12" id="chocolate-profile-review">
+       <div id="review-header"><h3>Reviews</h3></div>
+        <div class="chocolate-reviews">
+          <% @reviews= Rating.find_all_by_chocolate_id(@chocolate.id) %>
+          <% @reviews.each do |review| %>
+              <% user = User.find(review.user_id) %>
+              <p><%= link_to user.user_name, user_review_chocolates_path(:user_id => user.id, :chocolate_id => @chocolate.id) %></p>
+              </br>
+              <P style="margin-left: 20px"><span style="font-size: 20px"><%= review.rate %> </span> <%= review.comment %></P>
+          <% end %>
+        </div>
 
       </div>
-      <h3><%= link_to user.user_name, user_review_chocolates_path(:user_id => user.id, :chocolate_id => @chocolate.id) %></h3>
-      </br>
-      <P style="margin-left: 20px"><span style="font-size: 20px"><%= review.rate %> </span> <%= review.comment %></P>
-    <% end %>
-
-
-
+    </div>
+  </div>
 </div>
-
-<div style="height: 20px;"></div>
-
-<script>
-    $(document).ready(function(){
-        //Examples of how to assign the Colorbox event to elements
-        $("a.group1").colorbox({rel:'group1'});
-    });
-
-
-
+<script language="javascript">
+    $(document).ready(
+            function (){
+                $("#pikame").PikaChoose({
+                    carousel:true,
+                    showCaption:false,
+//                    text: { previous: "< previous", next: "next >", loading: "Loading..." },
+                    autoPlay: false
+                });
+            });
 </script>
+
+
+
