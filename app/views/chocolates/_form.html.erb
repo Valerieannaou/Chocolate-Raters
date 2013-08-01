@@ -29,7 +29,11 @@
       <%= f.label :description %><br />
       <%= f.text_area :description ,:size => "100x10" %>
     </div>
-    <%#= f.hidden_field :user_id, :value => current_user.id %>
+    <div class="field">
+      <%= f.label :beans %><br />
+      <%= f.text_area :beans ,:size => "100x10" %>
+    </div>
+
     <div class="field">
       <%= f.fields_for :photos do |builder| %>
           <%#= image_tag builder.image if builder.image.present? %>
