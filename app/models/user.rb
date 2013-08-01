@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
     !provider.nil? || super(password)
   end
   def photo_size_validation
-    errors[:photo] << "should be less than 1MB" if photo.size > 1.megabytes
+    errors[:photo] << "should be less than 10MB" if photo.size > 10.megabytes
   end
 
 
