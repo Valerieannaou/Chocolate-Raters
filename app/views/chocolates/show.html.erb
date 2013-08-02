@@ -1,40 +1,61 @@
 <div class="row-fluid">
-  <div class="span5">
+  <div class="span5" id= "chocolate-profile">
     <%= render partial: 'shared/chocolate_profile', locals: {student: @chocolate} %>
+
     <% if current_user %>
         <% if @chocolate.user_id != current_user.id %>
-            <p><%= link_to 'Rate Chocolate',  rate_chocolate_chocolates_path(:chocolate_id => @chocolate.id) %></p>
+            <div class="row-fluid" id=" link-to-rate">
+              <div class="span12" id="link-to-rate-button">
+                <button onclick="window.location.href= '<%= rate_chocolate_chocolates_path(:chocolate_id => @chocolate.id) %>'">Rate this chocolate</button>
+              </div>
+            </div>
         <% end %>
 
     <% else %>
-        <p><%= link_to 'Rate Chocolate', rate_chocolate_chocolates_path(:chocolate_id => @chocolate.id) %></p>
+        <div class="row-fluid" id=" link-to-rate">
+          <div class="span12" id="link-to-rate-button">
+            <button onclick="window.location.href= '<%= rate_chocolate_chocolates_path(:chocolate_id => @chocolate.id) %>'">Rate this chocolate</button>
+          </div>
+        </div>
     <% end %>
     <P>
+      <div id="chocolate-edit-destroy">
       <% if can? :edit , @chocolate %>
           <%= link_to 'Edit', edit_chocolate_path(@chocolate) %> |
       <% end %>
-      <%= link_to 'Back', chocolates_path %> <% if can? :delete , @chocolate %>|
+         <% if can? :delete , @chocolate %>
           <%= link_to 'Destroy', @chocolate, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
-
+      </div>
     </P>
   </div>
 
   <div class="span7" id="rating-chocolate">
     <div class="row-fluid">
-      <div class="span6" id="rating-chocolate-price">
+      <div class="span6">
+      <div  id="rating-chocolate-price">
         <% total_rate = number_with_precision @chocolate.ratings.average(:rate), :precision => 2 %>
         <% rate = total_rate.to_s.split(".") %>
         <div id="rating-chocolate-price-inner">
           <span class="before-point"><%= rate[0] %></span><span class="after-point">.<%= rate[1] %></span>
         </div>
       </div>
+        <div class="row-fluid" id=" buy-link">
+          <div class="span6" id="buy-button">
+            <button>Buy</button>
+          </div>
+        </div>
+      </div>
+
+
+
       <div class="span6" id="rating-chocolate-remark">
         <div class="chocolate-rating">
 
           <div class="rating-category">Look</div>
           <%= image_tag 'rating-star.png' %>
           <div class="avg_rate">
+
           <%= number_with_precision @chocolate.ratings.average(:look), :precision => 2 %>
           </div>
           <div class="divide-by">/5</div>
@@ -82,16 +103,24 @@
       </div>
     </div>
 
-    <div class="row-fluid">
+
+
+
+
+
+    <div class="row-fluid" id="profile-review-container">
       <div class="span12" id="chocolate-profile-review">
-       <div id="review-header"><h3>Reviews</h3></div>
+        <p id="review-header">Reviews</p>
         <div class="chocolate-reviews">
-          <% @reviews= Rating.find_all_by_chocolate_id(@chocolate.id) %>
+          <% @reviews= Rating.find_all_by_chocolate_id(@chocolate.id, :limit => 20) %>
           <% @reviews.each do |review| %>
               <% user = User.find(review.user_id) %>
-              <p><%= link_to user.user_name, user_review_chocolates_path(:user_id => user.id, :chocolate_id => @chocolate.id) %></p>
+              <div id="each-review">
+             <div id="chocolate-review-user-name"><strong><a href="<%= user_review_chocolates_path(:user_id => user.id, :chocolate_id => @chocolate.id) %>"><%= user.user_name  %></a> </strong></div>
               </br>
-              <P style="margin-left: 20px"><span style="font-size: 20px"><%= review.rate %> </span> <%= review.comment %></P>
+              <div id="rate-and-comment"><span id="rate"><%= review.rate %></span> <span id="comment"><%= review.comment %></span></div>
+              <div id="see-more-chocolate-review"><a href="<%= user_review_chocolates_path(:user_id => user.id, :chocolate_id => @chocolate.id) %>">See more...</a> </div>
+              </div>
           <% end %>
         </div>
 
@@ -108,8 +137,11 @@
 //                    text: { previous: "< previous", next: "next >", loading: "Loading..." },
                     autoPlay: false
                 });
+
             });
 </script>
 
+<style>
 
+</style>
 
