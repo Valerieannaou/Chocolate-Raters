@@ -355,6 +355,7 @@ body {
 }
 
 #rating-chocolate-remark {
+    padding-top: 5px;
     width: 265px;
 }
 #rating-chocolate-remark .chocolate-rating {
@@ -404,12 +405,22 @@ body {
 
 }
 #rating-chocolate-remark .chocolate-rating .avg_rate {
+    height: 25px;
+    width: 50px;
+    background: #E9E9E9;
+    border: 2px solid #DBDBDB;
     float: left;
     margin-left: 8px;
     font-family: "Myriad Pro";
     color: #777;
     font-size: 16px;
-    margin-top: 9px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    margin-top: 2px;
+
 
 }
 #rating-chocolate-review textarea {
@@ -443,22 +454,136 @@ body {
     border-radius: 6px;
     margin-top: 25px;
 }
+
+
+#buy-button button {
+    float: left;
+    font-family: "Myriad Pro";
+    margin-left: 33px;
+    font-size: 22px;
+    /*font-weight: bold;*/
+    color: #FFF;
+    text-align: center;
+    height: 33px;
+    width: 200px;
+    background: #EB008A;
+    border: 0;
+    padding: 0 0 0 5px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    border-radius: 6px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+
+}
+#link-to-rate-button {
+    text-align: center;
+}
+#link-to-rate-button button{
+    /*float: left;*/
+    font-family: "Myriad Pro";
+    font-size: 22px;
+    /*font-weight: bold;*/
+    color: #FFF;
+    text-align: center;
+    height: 33px;
+    width: 270px;
+    margin: auto;
+    background: #EB008A;
+    border: 0;
+    padding: 0 10px 0 10px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    border-radius: 6px;
+    margin-top: 25px;
+
+}
 #chocolate-profile-review{
-    margin-top: 50px;
+
     width: 100%;
-    height: 350px;
-    background: #D8C6B8;
-    overflow: auto ;
+
     padding: 10px 10px 10px 10px;
+    position: relative;
+
+
+}
+#chocolate-profile{
+    max-width: 670px;
+}
+
+#review-header{
+   position: absolute;
+    top:0;
+    left:25px;
+    padding:5px 15px 10px 15px;
+    background: #AE7647;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    font-family: "Myriad Pro";
+    font-size: 18px;
+    color: #FFF;
+    font: bold;
+}
+
+#chocolate-profile-review .chocolate-reviews {
+    padding: 30px 10px 10px 10px;
+    background: #D8C6B8;
+    height: 350px;
+    overflow: auto;
+    margin-top: 8px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    font-family: "Myriad Pro";
+
+}
+
+#chocolate-review-user-name a{
+    text-decoration: none;
+    color: #AE7647;
+    font-family: "Myriad Pro";
+    font-size: 14px;
+
+
+}
+
+#rate-and-comment #rate {
+    font-size: 25px;
+    font-family: "Myriad Pro";
+
+}
+#rate-and-comment #comment {
+    font-size: 14px;
+    font-family: "Myriad Pro";
+    margin-left: 5px;
+
+}
+#see-more-chocolate-review a{
+    text-decoration: none;
+    color: #AE7647;
+    font-family: "Myriad Pro";
+    font-size: 14px;
+}
+#each-review{
+    margin-bottom: 10px;
+}
+#chocolate-edit-destroy{
+    margin-left: 140px;
+}
+#chocolate-edit-destroy a{
+    text-decoration: none;
+    color: #AE7647;
+    font-family: "Myriad Pro";
+    font-size: 14px;
+
+
 }
 
 
-
-
-
-
-
-
+/* scroll bar*/
 
 
 
@@ -543,6 +668,7 @@ body {
     #rating-chocolate-review textarea {
         width: 95%;
     }
+
 }
 
 @media (max-width: 767px) {
