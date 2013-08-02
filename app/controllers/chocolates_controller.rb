@@ -31,7 +31,7 @@ class ChocolatesController < ApplicationController
       flash[:notice] = "Login to add new Chocolate"
      else
     @chocolate = Chocolate.new
-    @chocolatiers = Chocolatier.find_all_by_user_id_and_status(current_user.id,1)
+    @chocolatiers = Chocolatier.by_active_status
     if @chocolatiers.blank?
        redirect_to new_chocolatier_path
       flash[:notice] = "Add a chocolatier to add chocolate"
