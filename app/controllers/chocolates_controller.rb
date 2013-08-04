@@ -4,7 +4,7 @@ class ChocolatesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @chocolates = Chocolate.order("id").page(params[:page]).per_page(5)
+    @chocolates = Chocolate.order("id").page(params[:page]).per_page(8)
 
     respond_to do |format|
       format.html # index.html.erb
