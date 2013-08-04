@@ -64,7 +64,7 @@
          <% if @rating != nil %>
              <%= text_area_tag "comment" , @rating.comment %>
          <% else %>
-             <%= text_area_tag "comment" %>
+             <textarea name="comment" placeholder="Reviews...."></textarea>
          <% end %>
            <button type="submit">Submit</button>
 
