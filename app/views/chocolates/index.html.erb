@@ -1,35 +1,36 @@
-<div id="chocolates" >
-<h1>Listing chocolates</h1>
+<div id="chocolates">
 
-<table>
-  <tr>
-    <th>Photo</th>
-    <th>Name</th>
-    <th>Rating</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <ul>
+    <li class="head">
+      <span class="chocolate-image"></span>
+      <span class="chocolate-name">Chocolate</span>
 
-<% @chocolates.each do |chocolate| %>
-  <tr>
-    <% pic = Photo.find_by_chocolate_id(chocolate.id) %>
-    <td>
-      <% if !(pic.blank?)  %>
-           <%= link_to image_tag( pic.image  ,:size => '180x180')%>
-       <% end %>
-    </td>
-    <td><%= link_to chocolate.name, chocolate %></td>
-    <td><%= chocolate.ratings.average(:rate) %></td>
+      <span class="chocolate-rating-in-index">Rating</span>
+      <span class="star-image"></span>
+    </li>
 
+     <% count =1 %>
 
+    <% @chocolates.each do |chocolate| %>
+        <% class_name=" " %>
 
-  </tr>
-<% end %>
-</table>
+        <% if(count%2 == 0)    %>
+             <% class_name = "even-li" %>
+        <% else class_name = "odd-li" %>
+        <% end %>
+    <li class="<%= class_name %>">
+      <% pic = Photo.find_by_chocolate_id(chocolate.id) %>
+      <span class="chocolate-image"><%= link_to image_tag( pic.image), chocolate %></span>
+      <span class="chocolate-name"><%= link_to chocolate.name, chocolate %></span>
 
-<br />
+      <span class="chocolate-rating-in-index"><%= chocolate.ratings.average(:rate) %></span>
+      <span class="star-image"><%= image_tag('chocolate-rating-star.png') %></span>
+    </li>
+        <% count+= 1 %>
+    <% end %>
+  </ul>
 
-<%= link_to 'New Chocolate', new_chocolate_path %>
+ <div id="chocolate-index-page-no">
 <%= will_paginate @chocolates %>
+ </div>
  </div>
