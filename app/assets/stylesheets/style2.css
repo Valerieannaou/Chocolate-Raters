@@ -417,6 +417,7 @@ body {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     -khtml-border-radius: 5px;
+    border-radius: 5px;
     padding-top: 5px;
     padding-left: 5px;
     margin-top: 2px;
@@ -522,6 +523,7 @@ body {
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     -khtml-border-radius: 6px;
+    border-radius: 6px;
     font-family: "Myriad Pro";
     font-size: 18px;
     color: #FFF;
@@ -537,6 +539,7 @@ body {
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     -khtml-border-radius: 6px;
+    border-radius: 6px;
     font-family: "Myriad Pro";
 
 }
@@ -578,12 +581,216 @@ body {
     color: #AE7647;
     font-family: "Myriad Pro";
     font-size: 14px;
-
-
 }
 
 
 /* scroll bar*/
+/* add a choclatier */
+#add-chocolatier #add-chocolatier-title{
+    color: #AE7647;
+    font-family: "Myriad Pro";
+    font-size: 20px;
+
+}
+#add-chocolatier-form{
+    margin-top:15px ;
+    border-top: 3px solid #676865;
+}
+#chocolatier-form {
+    margin-top: 15px;
+}
+#chocolatier-form .field {
+   padding-top: 5px;
+}
+#chocolatier-form .field input {
+
+    background: #f3f3f3;
+    width: 93%;
+    font-size: 12px;
+    color: #676865;
+    font-family: "Myriad Pro";
+    /*margin-top: -15px;*/
+
+}
+#chocolatier-form .required-star {
+    float: right;
+    font-size: 22px;
+    color: #676865;
+}
+#chocolatier-form .field select {
+    position: relative;
+    font-size: 12px;
+    color: #676865;
+    font-family: "Myriad Pro";
+    background: #f3f3f3;
+    width: 96%;
+
+}
+#chocolatier-submit-button button {
+    font-family: "Myriad Pro";
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFF;
+    text-align: center;
+    height: 30px;
+    width: 160px;
+    margin: auto;
+    background: #EB008A;
+    border: 0;
+    padding: 0 3px 0 3px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    border-radius: 6px;
+    margin-top: 25px;
+
+}
+/* chocolate index */
+#chocolates ul {
+    margin-left: 0;
+}
+#chocolates ul li {
+    list-style: none;
+    padding-left: 15px;
+    overflow: hidden;
+    margin-top: 7px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+#chocolates .head{
+    background: url("chocolate-index-head.png") repeat;
+    height: 43px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    border-radius: 6px;
+}
+
+#chocolates .head .chocolate-image{
+    height: 15px;
+    width: 95px;
+    float: left;
+}
+#chocolates .head .chocolate-name{
+    float: left;
+    margin-top: 12px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 17px;
+}
+#chocolates .head .chocolate-rating-in-index {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 12px;
+}
+
+#chocolates .head .star-image{
+    width: 110px;
+    float: right;
+}
+
+#chocolates .odd-li {
+    background: #DED7D1;
+}
+#chocolates .even-li {
+    background: #D4CAC1;
+}
+
+#chocolates .chocolate-image{
+    height: 95px;
+    width: 95px;
+    float: left;
+}
+#chocolates .chocolate-image img{
+    height: 95px;
+    width: 95px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px
+}
+#chocolates .chocolate-name{
+    float: left;
+    word-break: break-all;
+    margin-left: 18px;
+    color: #952D92;
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 37px;
+    font-family: "Myriad Pro";
+}
+#chocolates .chocolate-name a{
+    text-decoration: none;
+    color: #952D92;
+    font-weight: bold;
+    font-size: 17px;
+    font-family: "Myriad Pro";
+}
+
+#chocolates .star-image{
+    max-width: 110px;
+    width: 12%;
+    float: right;
+    margin-top: 30px;
+}
+#chocolates .star-image img{
+    height: 30px;
+    width: 33px;
+
+
+}
+#chocolates .chocolate-rating-in-index{
+    max-width: 80px;
+    width: 8.50%;
+    float: right;
+    font-size: 24px;
+    margin-top: 35px;
+}
+
+.pagination em {
+    background: #5F5F5F;
+    /*height: 20pxn!important;*/
+    /*width: 20px !important;*/
+    padding: 2px 6px 2px 6px;
+    font-style: normal;
+    color: #FFF;
+}
+.pagination a, .pagination span {
+    background: #C3C1C2;
+    /*height: 20pxn!important;*/
+    /*width: 20px !important;*/
+    padding: 2px 6px 2px 6px;
+    font-style: normal;
+    color: #FFF;
+    text-decoration: none;
+}
+#chocolate-index-page-no{
+    float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
