@@ -590,6 +590,7 @@ body {
     color: #AE7647;
     font-family: "Myriad Pro";
     font-size: 20px;
+    font-weight: bold;
 
 }
 #add-chocolatier-form{
@@ -850,7 +851,91 @@ body {
     padding-top: 80px;
 }
 
+/* add chocolate */
+#add-chocolate #add-chocolate-title{
+    color: #AE7647;
+    font-family: "Myriad Pro";
+    font-size: 20px;
+    font-weight: bold;
 
+}
+#add-chocolate-form{
+    margin-top:15px ;
+    border-top: 3px solid #676865;
+}
+#chocolate-form {
+    margin-top: 15px;
+}
+#chocolate-form .field {
+    padding-top: 5px;
+}
+#chocolate-form .field input {
+
+    background: #f3f3f3;
+    width: 93%;
+    font-size: 12px;
+    color: #676865;
+    font-family: "Myriad Pro";
+    /*margin-top: -15px;*/
+
+}
+#chocolate-form .required-star {
+    float: right;
+    font-size: 22px;
+    color: #676865;
+}
+#chocolate-form .field select {
+    position: relative;
+    font-size: 12px;
+    color: #676865;
+    font-family: "Myriad Pro";
+    background: #f3f3f3;
+    width: 96%;
+
+}
+#chocolate-form #cocoa input {
+    background: #f3f3f3;
+    width: 30%;
+    font-size: 12px;
+    color: #676865;
+    font-family: "Myriad Pro";
+
+}
+
+#chocolate-form .field textarea {
+    background: #f3f3f3;
+    width: 93%;
+    height: 160px;
+    font-size: 12px;
+    color: #676865;
+    font-family: "Myriad Pro";
+
+}
+#chocolate-form button {
+    font-family: "Myriad Pro";
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFF;
+    text-align: center;
+    height: 30px;
+    width: 160px;
+    margin: auto;
+    background: #EB008A;
+    border: 0;
+    padding: 0 3px 0 3px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    border-radius: 6px;
+    margin-top: 25px;
+
+}
+#chocolate-form a{
+    text-decoration: none;
+    color: #AE7647;
+    font-family: "Myriad Pro";
+
+}
 
 
 
