@@ -10,35 +10,33 @@
           </ul>
         </div>
     <% end %>
-
+    <div id="chocolate-form">
     <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name %>
+      <div class="required-star">*</div>
+      <%= f.text_field :name , :placeholder => 'Name' %>
     </div>
-    <p>Chocolatier</p>
-    <%=  f.select :chocolatier_id, options_for_select(@chocolatiers.collect{|c| [c.name, c.id]})  %>
+      <div class="field">
+        <div class="required-star">*</div>
+    <%=  f.select :chocolatier_id, options_for_select(@chocolatiers.collect{|c| [c.name, c.id]}) ,:placeholder => 'Select a chocolatier' %>
+        </div>
     <div class="field">
-      <%= f.label :type_of_chocolate %><br />
-      <%= f.text_field :type_of_chocolate %>
+      <%= f.text_field :type_of_chocolate,:placeholder => 'Type of chocolate' %>
     </div>
-    <div class="field">
-      <%= f.label :cocoa %><br />
-      <%= f.text_field :cocoa %>  %
+    <div id="cocoa" >
+      <%= f.text_field :cocoa,:placeholder => 'Cocoa(%)' %>
     </div>
+      <div class="field">
+        <%= f.text_area :beans ,:placeholder => 'Beans'%>
+      </div>
     <div class="field">
-      <%= f.label :description %><br />
-      <%= f.text_area :description ,:size => "100x10" %>
-    </div>
-    <div class="field">
-      <%= f.label :beans %><br />
-      <%= f.text_area :beans ,:size => "100x10" %>
+      <%= f.text_area :description,:placeholder => 'Commercial Description' %>
     </div>
 
     <div class="field">
       <%= f.fields_for :photos do |builder| %>
           <%#= image_tag builder.image if builder.image.present? %>
           <% if builder.object.new_record? %>
-          Photo: <%= builder.file_field :image ,:class => 'file_field' %>
+          <%= builder.file_field :image ,:class => 'file_field' %>
               <%= builder.link_to_remove "Remove"  %>
            <% else %>
               <div id="mphoto">
@@ -52,6 +50,7 @@
     </div>
     <%= f.link_to_add "Add a photo", :photos %>
     <div class="actions">
-      <%= f.submit %>
+      <%= f.button :submit  %>
     </div>
+        </div>
 <% end %>
