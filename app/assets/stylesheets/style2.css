@@ -773,6 +773,82 @@ body {
     float: right;
 }
 
+/*Sign up page*/
+#sign_up #sign-up-form-title {
+    color: #AE7647;
+    font-family: "Myriad Pro";
+    font-size: 20px;
+}
+#sign-up-form #form-body {
+    margin-top:15px ;
+    border-top: 3px solid #676865;
+
+}
+#form-body #form-fields {
+    margin-top: 15px;
+
+}
+#form-body #form-fields .field {
+    padding-top: 15px;
+
+}
+#form-body #form-fields .field input {
+    background: #f3f3f3;
+    width: 93%;
+    font-size: 12px;
+    color: #676865;
+    font-family: "Myriad Pro";
+    /*margin-top: -15px;*/
+
+}
+#form-fields .required-star {
+    float: right;
+    font-size: 22px;
+    color: #676865;
+}
+#form-body button{
+    font-family: "Myriad Pro";
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFF;
+    text-align: center;
+    height: 30px;
+    width: 160px;
+    margin: auto;
+    background: #EB008A;
+    border: 0;
+    padding: 0 3px 0 3px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    border-radius: 6px;
+    margin-top: 25px;
+
+
+}
+#sign-up-link{
+    text-decoration: none;
+    color: #EB008A;
+    font-family: "Myriad Pro";
+    font-size: 12px;
+
+}
+#sign-up-link a{
+    text-decoration: none;
+    color: #AE7647;
+    font-family: "Myriad Pro";
+    font-size: 12px;
+
+}
+#fb-login #inner-fb {
+    margin-top: 60px;
+    height: 250px;
+    border-left: 1px solid #676865;
+}
+#fb-login #inner-fb #fb-pic  {
+    padding-left: 60px;
+    padding-top: 80px;
+}
 
 
 
@@ -832,6 +908,13 @@ body {
     }
     #search-box-in-header input {
         width: 65%;
+    }
+    #fb-login #inner-fb #fb-pic{
+         padding: 0 0 0 0;
+    }
+    #fb-login #inner-fb {
+        margin-top: 60px;
+        height: auto;
     }
 }
 @media (max-width: 320px) {
@@ -898,5 +981,12 @@ body {
     }
     #rating-chocolate-review textarea {
         width: 93%;
+    }
+    #fb-login #inner-fb #fb-pic{
+        padding: 0 0 0 0;
+    }
+    #fb-login #inner-fb {
+        margin-top: 60px;
+        height: auto;
     }
 }
