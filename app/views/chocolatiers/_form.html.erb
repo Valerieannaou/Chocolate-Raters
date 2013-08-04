@@ -13,46 +13,43 @@
     <% end %>
 
 
-    <div class="form-inputs">
+    <div id="chocolatier-form">
       <div class="field">
-        <%= f.label :name %><br />
-        <%= f.text_field :name %>
+        <div class="required-star">*</div>
+        <%= f.text_field :name, :placeholder => 'Name' %>
+
       </div>
       <div class="field">
-        <%= f.label :address %><br />
-        <%= f.text_field :address %>
+        <%= f.text_field :address, :placeholder => 'Address' %>
       </div>
       <div class="field">
-        <%= f.label :city %><br />
-        <%= f.text_field :city %>
+
+        <%= f.text_field :city, :placeholder => 'City' %>
       </div>
       <div class="field">
-        <%= f.label :country %><br />
+         <div class="required-star">*</div>
         <%= f.country_select :country,["United States"] %>
+
       </div>
       <div class="field">
-        <%= f.label :state %><br />
-        <%= f.text_field :state %>
+        <%= f.text_field :state, :placeholder => 'State' %>
       </div>
       <div class="field">
-        <%= f.label :zip_code %><br />
-        <%= f.text_field :zip_code %>
+        <%= f.text_field :zip_code , :placeholder => 'Zip code' %>
       </div>
       <div class="field">
-        <%= f.label :chocolatier_type %><br />
-        <%= f.text_field :chocolatier_type %>
+        <%= f.text_field :chocolatier_type, :placeholder => 'Chocolatier type' %>
       </div>
       <div class="field">
-        <%= f.label :chocolatier_url %><br />
-        <%= f.text_field :chocolatier_url %>
+        <div class="required-star">*</div>
+        <%= f.text_field :chocolatier_url , :placeholder => 'Url'%>
+
       </div>
       <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email %>
+        <%= f.email_field :email , :placeholder => 'Email' %>
       </div>
       <div class="field">
-        <%= f.label :phone %><br />
-        <%= f.phone_field :phone %>
+        <%= f.phone_field :phone , :placeholder => 'phone' %>
       </div>
       <%#= hidden_field_tag "user_id", current_user.id  %>
       <%#= f.hidden_field :user_id, :value => current_user.id %>
@@ -61,7 +58,7 @@
 
   </div>
 
-  <div class="form-actions">
+  <div id="chocolatier-submit-button">
     <%= f.button :submit %>
   </div>
 <% end %>
