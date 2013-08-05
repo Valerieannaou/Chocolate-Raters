@@ -11,6 +11,7 @@ class Ability
         can :manage , :all
     elsif user.email != nil
       can :read , :all
+      can :new, :user
       can :manage , Chocolatier do |chocolatier|
         chocolatier.user_id == user.id
       end
@@ -31,6 +32,7 @@ class Ability
       end
       cannot :index , Rating
       cannot :index , :user
+      can :new, :user
     else
       can :read ,:all
       can :new , Chocolatier
@@ -39,6 +41,7 @@ class Ability
       cannot :index , Rating
       cannot :index , :user
       can :show_search , :all
+      can :new, :user
   end
 
 
