@@ -1,0 +1,130 @@
+ #login-form{
+     width: 400px;
+ }
+
+
+#login{
+    background: #DCDCDC;
+    height: 60px;
+}
+#login p{
+    padding-top: 20px;
+    padding-left: 20px;
+    font-family: verdana;
+    font-size: 20px;
+    color: #555;
+    font-weight: bold;
+}
+#facebox .content {
+    padding: 0;
+}
+#login-form #facebook-login-button {
+    height: 110px;
+}
+#login-form #facebook-login-button img{
+    padding-top: 20px;
+    padding-left: 30px;
+    width: 85%;
+
+}
+#login-form #facebook-login-button p{
+    padding-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    color: #555;
+    font-weight: bold;
+}
+#login-form #form .field{
+    padding-top: 20px;
+    padding-left: 30px;
+
+}
+#login-form #form .field input{
+     width: 85%;
+    height: 30px;
+    font-family: "Myriad Pro";
+    font-size: 14px;
+    color: #555;
+    padding-top: 8px;
+    padding-left: 12px;
+
+}
+#login-form #remember-me{
+    padding-left: 40px;
+}
+#chk-box{
+    float: left;
+    padding-right: 5px;
+    height: 40px;
+
+
+}
+#chk-txt p{
+    font-size: 12px;
+    color: #000000;
+}
+ #chk-txt{
+     float: left;
+
+
+
+ }
+#forgot-password a{
+    text-decoration: none;
+    font-size: 12px;
+    color: #1C9DC7;
+    padding-left: 28%;
+
+ }
+ #forgot-password {
+     padding-left: 28%;
+
+ }
+#submit{
+   margin-top: 20px;
+}
+ #submit button{
+  margin-left:30px ;
+ font-family: "Myriad Pro";
+ font-size: 22px;
+ /*font-weight: bold;*/
+ color: #FFF;
+ text-align: center;
+ height: 33px;
+ width: 200px;
+ background: #EB008A;
+ border: 0;
+  width: 85%;
+  height: 60px;
+ -moz-border-radius: 4px;
+ -webkit-border-radius: 4px;
+ -khtml-border-radius: 4px;
+ border-radius: 4px;
+
+ }
+ #login-form #sign-up #sign-up-que{
+     margin-left: 30px;
+     color: #000000;
+     font-size: 12px;
+ }
+ #login-form #sign-up a{
+     text-decoration: none;
+     color: #1C9DC7;
+     font-size: 12px;
+     font-weight: bold;
+ }
+ #login-form #sign-up{
+     padding-bottom: 20px;
+ }
+ @media (max-width: 360px) {
+     #login-form{
+         width: 280px;
+         margin-left: 20px;
+     }
+
+     #forgot-password {
+
+         padding-left:3px;
+
+     }
+ }
