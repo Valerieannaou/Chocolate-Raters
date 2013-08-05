@@ -5,6 +5,12 @@ class UserController < ApplicationController
     @users= User.all
   end
 
+  def new
+    respond_to do |format|
+      format.js{}
+    end
+  end
+
 
   def destroy
     @user = User.find(params[:id])
