@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <%= stylesheet_link_tag "bootstrap.min","bootstrap-responsive.min","style" %>
+  <%= stylesheet_link_tag  "facebox","bootstrap.min","bootstrap-responsive.min","style" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tag %>
 </head>
@@ -47,7 +47,7 @@
                   <%= link_to "Logout", destroy_user_session_path, method: :delete %>
               <% else %>
                   <%= link_to "Sign up", new_user_registration_path %> |
-                  <%= link_to "Login", new_user_session_path %> |
+                  <%#= link_to "Login", new_user_session_path %> <%= link_to("Login", "javascript:void(0);", :id => 'login') %>|
                   <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), :class => "popup", :"data-width" => 600, :"data-height" => 400 %>
 
               <% end %>
@@ -168,6 +168,17 @@
             $('#miniCarousel').carousel({interval: false});
         })
     }(window.jQuery)
+
+
+    $("#login").click(function()
+    {
+        $.ajax({
+            type: 'get',
+            url: "<%= new_user_path() %>",
+            dataType: 'script'
+        });
+    });
+
 </script>
 </body>
 </html>
