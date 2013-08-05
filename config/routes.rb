@@ -14,6 +14,7 @@ ChocolateRatingSystem::Application.routes.draw do
   resources :user do
     collection do
       get 'destroy'
+      get 'new'
     end
   end
 
