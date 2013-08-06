@@ -51,6 +51,9 @@
       <div class="field">
         <%= f.phone_field :phone , :placeholder => 'phone' %>
       </div>
+      <div class="field">
+        <%= f.file_field :photo ,:class => 'file_field' %></div>
+    </div>
       <%#= hidden_field_tag "user_id", current_user.id  %>
       <%#= f.hidden_field :user_id, :value => current_user.id %>
       <%#= f.hidden_field :stats, :value => 0 %>
