@@ -937,6 +937,123 @@ body {
 
 }
 
+/* chocolatier index */
+#chocolatier ul {
+    margin-left: 0;
+}
+#chocolatier ul li {
+    list-style: none;
+    padding-left: 15px;
+    overflow: hidden;
+    margin-top: 7px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+#chocolatier .head{
+    background: url("chocolate-index-head.png") repeat;
+    height: 43px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    border-radius: 6px;
+}
+
+#chocolatier .head .chocolatier-image{
+    height: 15px;
+    width: 95px;
+    float: left;
+}
+#chocolatier .head .chocolatier-name{
+    float: left;
+    margin-top: 12px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 17px;
+}
+#chocolatier .head .total-chocolates {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 12px;
+    float: right;
+    padding-right: 20px;
+}
+
+
+
+#chocolatier .odd-li {
+    background: #DED7D1;
+}
+#chocolatier .even-li {
+    background: #D4CAC1;
+}
+
+#chocolatier .chocolatier-image{
+    height: 95px;
+    width: 95px;
+    float: left;
+}
+#chocolatier .chocolatier-image img{
+    height: 95px;
+    width: 95px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px
+}
+#chocolatier #image-blank {
+    height: 95px;
+    width: 95px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    background: #BCBCBC;
+
+}
+#chocolatier .chocolatier-name{
+    float: left;
+    word-break: break-all;
+    margin-left: 18px;
+    color: #952D92;
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 30px;
+    font-family: "Myriad Pro";
+}
+#chocolatier .chocolatier-name a{
+    text-decoration: none;
+    color: #952D92;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Myriad Pro";
+}
+#chocolatier .chocolatier-name #address{
+    color: #000000;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#chocolatier .total-chocolate{
+    max-width: 80px;
+    width: 8.5%;
+    float: right;
+    font-size: 30px;
+    margin-top: 35px;
+    float: right;
+    color: #71706E;
+}
+
+
+#chocolatier-index-page-no{
+    float: right;
+}
+
+
 
 
 

@@ -1,39 +1,33 @@
-<h1>Listing chocolatiers</h1>
+<div id="chocolatier">
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Address</th>
-    <th>City</th>
-    <th>Country</th>
-    <th>State</th>
-    <th>Zip code</th>
-    <th>Chocolatier type</th>
-    <th>Chocolatier url</th>
-    <th>Email</th>
-    <th>Phone</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <ul>
+    <li class="head">
+      <span class="chocolatier-image"></span>
+      <span class="chocolatier-name">Chocolatier</span>
 
-<% @chocolatiers.each do |chocolatier| %>
-  <tr>
-    <td><%= link_to chocolatier.name , chocolatier %></td>
-    <td><%= chocolatier.address %></td>
-    <td><%= chocolatier.city %></td>
-    <td><%= chocolatier.country %></td>
-    <td><%= chocolatier.state %></td>
-    <td><%= chocolatier.zip_code %></td>
-    <td><%= chocolatier.chocolatier_type %></td>
-    <td><%= chocolatier.chocolatier_url %></td>
-    <td><%= chocolatier.email %></td>
-    <td><%= chocolatier.phone %></td>
+      <span class="total-chocolates">Total Chocolates</span>
+    </li>
 
-  </tr>
-<% end %>
-</table>
-<%= will_paginate @chocolatiers %>
-<br />
+    <% count =1 %>
 
-<%= link_to 'New Chocolatier', new_chocolatier_path %>
+    <% @chocolatiers.each do |chocolatier| %>
+        <% class_name=" " %>
+
+        <% if(count%2 == 0)    %>
+            <% class_name = "even-li" %>
+        <% else class_name = "odd-li" %>
+        <% end %>
+        <li class="<%= class_name %>">
+          <span class="chocolatier-image"><% if !(chocolatier.photo.blank?) %><%= link_to image_tag( chocolatier.photo), chocolate %><% else %><div id="image-blank"></div><% end %></span>
+          <span class="chocolatier-name"><%= link_to chocolatier.name, chocolatier %><div id="address"><%= chocolatier.state %><% if !(chocolatier.state.blank?) %>,<% end %> <%= chocolatier.country %></div></span>
+
+          <span class="total-chocolate"><%= chocolatier.chocolates.size %></span>
+        </li>
+        <% count+= 1 %>
+    <% end %>
+  </ul>
+
+  <div id="chocolatier-index-page-no">
+    <%= will_paginate @chocolatiers %>
+  </div>
+</div>
