@@ -82,7 +82,7 @@
           <div class="avg_rate">
           <%= number_with_precision @chocolate.ratings.average(:mouthfeel), :precision => 2 %>
             </div>
-          <div class="divide-by">/5</div>
+          <div class="divide-by">/25</div>
         </div>
         <div class="chocolate-rating">
           <div class="rating-category">Taste</div>
@@ -90,7 +90,7 @@
           <div class="avg_rate">
             <%= number_with_precision @chocolate.ratings.average(:taste), :precision => 2 %>
           </div>
-          <div class="divide-by">/5</div>
+          <div class="divide-by">/50</div>
         </div>
         <div class="chocolate-rating">
           <div class="rating-category">Aftertaste</div>
@@ -98,7 +98,7 @@
           <div class="avg_rate">
             <%= number_with_precision @chocolate.ratings.average(:aftertaste), :precision => 2 %>
           </div>
-          <div class="divide-by">/5</div>
+          <div class="divide-by">/10</div>
         </div>
       </div>
     </div>

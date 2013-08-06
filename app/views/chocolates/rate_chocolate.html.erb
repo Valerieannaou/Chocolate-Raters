@@ -40,19 +40,19 @@
            <div class="rating-category">Mouthfeel</div>
            <%= image_tag 'rating-star.png' %>
            <%= select_tag "mouthfeel", options_for_select((1..25).step(1)) ,:prompt => " " %>
-           <div class="divide-by">/5</div>
+           <div class="divide-by">/25</div>
          </div>
          <div class="chocolate-rating">
            <div class="rating-category">Taste</div>
            <%= image_tag 'rating-star.png' %>
            <%= select_tag "taste", options_for_select((2..50).step(2)) ,:prompt => " "  %>
-           <div class="divide-by">/5</div>
+           <div class="divide-by">/50</div>
          </div>
          <div class="chocolate-rating">
            <div class="rating-category">Aftertaste</div>
            <%= image_tag 'rating-star.png' %>
            <%= select_tag "aftertaste", options_for_select((1..10).step(1)) ,:prompt => " "  %>
-           <div class="divide-by">/5</div>
+           <div class="divide-by">/10</div>
          </div>
        </div>
      </div>
