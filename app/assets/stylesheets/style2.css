@@ -626,6 +626,7 @@ body {
     background: #f3f3f3;
     width: 96%;
 
+
 }
 #chocolatier-submit-button button {
     font-family: "Myriad Pro";
@@ -891,6 +892,8 @@ body {
     font-family: "Myriad Pro";
     background: #f3f3f3;
     width: 96%;
+    height: 40px;
+    padding-top: 10px;
 
 }
 #chocolate-form #cocoa input {
@@ -901,6 +904,27 @@ body {
     font-family: "Myriad Pro";
 
 }
+#chocolate-form #cocoa {
+    padding-top: 10px;
+    color: #676865;
+}
+
+#chocolate-form #bar_type{
+    padding-top: 10px;
+    color: #676865;
+}
+.type_option{
+    padding-top: 15px;
+    color: #676865;
+    margin-right: 20px;
+    margin-left: 5px;
+    font-family: "Myriad Pro";
+
+}
+#chocolate-form .type{
+    margin-top: -2px;
+}
+
 
 #chocolate-form .field textarea {
     background: #f3f3f3;
@@ -934,6 +958,22 @@ body {
     text-decoration: none;
     color: #AE7647;
     font-family: "Myriad Pro";
+
+}
+#add-chocolatier-link #question{
+    margin-top: 55px;
+    margin-left: 10px;
+    font-family: "Myriad Pro";
+    color: #000000;
+    font-size: 13px;
+}
+#add-chocolatier-link #link a{
+    text-decoration: none;
+    font-family: "Myriad Pro";
+    margin-left: 13px;
+    color: #EB008A;
+    font-size: 15px;
+    border-bottom: 1px solid #EB008A;
 
 }
 
@@ -1052,8 +1092,6 @@ body {
 #chocolatier-index-page-no{
     float: right;
 }
-
-
 
 
 

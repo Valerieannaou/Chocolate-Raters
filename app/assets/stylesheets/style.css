@@ -143,6 +143,49 @@ body {
     background: url("search-box-bg.png") repeat;
     z-index: 99;
 }
+#sign-in-links{
+    position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
+    width: 500px;
+    height: 70px;
+    margin: auto;
+
+    /*border: 6px solid rgba( 50, 50, 50, .7);*/
+
+
+    /*border-color: #323232;*/
+    border-color: #544540;
+    background: url("menu-bg.png") repeat-y;
+    background-size:500px 70px;
+    background-repeat:no-repeat ;
+    /*border-image: url("images/search-box-border.png") repeat;*/
+
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+    z-index: 99;
+
+
+}
+#email-signup img{
+    padding-top: 8px;
+    padding-left: 8px;
+
+    width: 40%;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+}
+#facebook-signup img{
+    padding-top: 8px;
+    margin-left: 8px;
+    width: 54%;
+
+}
 
 #search-box-on-slider form {
     /*background: rgba(255, 255, 255, .7);*/
@@ -586,6 +629,16 @@ ol.carousel-indicator-button li {
     #trading-chocolate-2 {
         margin-top: 20px;
         margin-left: 0;
+    }
+    #sign-in-links{
+        width: 300px;
+        height: 46px;
+    }
+    #email-signup img{
+        width: 38%;
+    }
+    #facebook-signup img{
+        width: 52%;
     }
 }
 /* ./responsive Trending Chocolate */
