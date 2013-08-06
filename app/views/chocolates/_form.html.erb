@@ -11,20 +11,37 @@
         </div>
     <% end %>
     <div id="chocolate-form">
+      <div class="field">
+        <div class="required-star">*</div>
+        <%=  f.select :chocolatier_id, options_for_select(@chocolatiers.collect{|c| [c.name, c.id]}) ,:placeholder => 'Select a chocolatier' %>
+      </div>
     <div class="field">
       <div class="required-star">*</div>
       <%= f.text_field :name , :placeholder => 'Name' %>
     </div>
-      <div class="field">
-        <div class="required-star">*</div>
-    <%=  f.select :chocolatier_id, options_for_select(@chocolatiers.collect{|c| [c.name, c.id]}) ,:placeholder => 'Select a chocolatier' %>
-        </div>
-    <div class="field">
-      <%= f.text_field :type_of_chocolate,:placeholder => 'Type of chocolate' %>
+
+
+    <div id="type">
+      <%= f.radio_button :type_of_chocolate, 'bar' ,:id =>'type_bar',:class =>'type' %><span class="type_option">Bar </span>
+      <%= f.radio_button :type_of_chocolate, 'Truffle/bonbon' ,:id => 'type_truffle',:class =>'type' %> <span class="type_option">Truffle/bonbon </span>
     </div>
+
+
+      <div id="bar_type">
+        <%= f.radio_button :bar_type, 'dark' ,:class =>'type' %><span class="type_option">Dark </span>
+        <%= f.radio_button :bar_type, 'milk',:class =>'type' %> <span class="type_option">Milk</span>
+        <%= f.radio_button :bar_type, 'white',:class =>'type' %> <span class="type_option">White</span>
+      </div>
+
     <div id="cocoa" >
       <%= f.text_field :cocoa,:placeholder => 'Cocoa(%)' %>
     </div>
+
+      <div id="bar_state">
+        <%= f.radio_button :bar_state, 'solid' ,:class =>'type' %><span class="type_option">Solid </span>
+        <%= f.radio_button :bar_state, 'filled/flavored',:class =>'type' %> <span class="type_option">Filled/Flavored</span>
+      </div>
+
       <div class="field">
         <%= f.text_area :beans ,:placeholder => 'Beans'%>
       </div>
@@ -34,7 +51,6 @@
 
     <div class="field">
       <%= f.fields_for :photos do |builder| %>
-          <%#= image_tag builder.image if builder.image.present? %>
           <% if builder.object.new_record? %>
           <%= builder.file_field :image ,:class => 'file_field' %>
               <%= builder.link_to_remove "Remove"  %>
@@ -54,3 +70,28 @@
     </div>
         </div>
 <% end %>
+<script>
+  $(document).ready(
+          function(){
+              $('#cocoa').hide();
+              $('#bar_type').hide();
+              $('#bar_state').hide();
+              $('#type_bar').click(
+                      function(){
+                          $('#cocoa').show();
+                          $('#bar_type').show();
+                          $('#bar_state').show();
+                      }
+              )
+              $('#type_truffle').click(
+                      function(){
+                          $('#cocoa').hide();
+                          $('#bar_type').hide();
+                          $('#bar_state').hide();
+                      }
+              )
+
+
+          }
+  )
+</script>
