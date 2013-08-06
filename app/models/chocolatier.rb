@@ -1,5 +1,5 @@
 class Chocolatier < ActiveRecord::Base
-  attr_accessible :address, :chocolatier_type, :chocolatier_url, :city, :country, :email, :name, :phone, :state, :zip_code ,:photo
+  attr_accessible :address, :chocolatier_type, :chocolatier_url, :city, :country, :email, :name, :phone, :state, :zip_code ,:photo ,:business_hour
   belongs_to :user
   has_many :chocolates , :dependent => :destroy
   scope :by_active_status ,where(status: 1)
