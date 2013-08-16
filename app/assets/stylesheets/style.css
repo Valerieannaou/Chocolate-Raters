@@ -54,9 +54,9 @@ body {
     -khtml-border-radius: 2px;
     border-radius: 2px;
     float: right; /* TODO: @media #tablet:[margin-top: -x;] #mobile: [float: left;] */
-    margin-top: 4px;
+
 }
-#login-signup a {
+a#login-signup{
     color: #FFF;
     text-decoration: none;
 }
@@ -93,8 +93,14 @@ body {
     color: #D4DF21;
     border-left: 2px solid #AE7645;
     text-shadow: none;
-    padding: 0 31px;
-    font-size: 17px;
+    padding: 0 25px;
+    font-size: 15px;
+    /*margin-left: 11px;*/
+    /*margin-right: 11px;*/
+    width: 120px;
+}
+#main-menu .dropdown-toggle {
+    width: 110px;
 }
 .navbar .nav > li > a:hover {
     color: #DDD;
@@ -102,6 +108,112 @@ body {
 }
 .navbar .nav > li:first-child > a {
     border-left: none;
+}
+
+#menu-and-login {
+    margin-top: 44px;
+}
+#menu-and-login .span1 {
+    /*margin-top: 20px;        */
+
+}
+.navbar .content-wrapper {
+    overflow: visible;
+}
+.navbar .nav li.dropdown.open > .dropdown-toggle {
+    background: url("menu-bg.png");
+    color: #ffffff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: -5px;
+}
+#main-menu .dropdown-menu {
+    background: none;
+    top: 30px;
+    border: none;
+    box-shadow: none;
+}
+ ul.nav li.dropdown :hover {
+    background: url("menu-bg.png");
+    color: #ffffff;
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+}
+#main-menu .dropdown-menu li {
+    background: url("menu-bg.png");
+    margin-bottom: 2px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+}
+#main-menu .dropdown-menu li a:hover {
+    background: none;
+    color: #fff9ff;
+}
+#main-menu .dropdown-menu li a {
+    color: #D4DF21;
+    font-weight: bold;
+}
+
+#user-menu .dropdown-menu li {
+    background: url("menu-bg.png");
+    margin-bottom: 2px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    width: 120px;
+    text-align: center;
+}
+
+#user-menu .dropdown-menu li a:hover {
+    background: none;
+    color: #fff9ff;
+}
+#user-menu .dropdown-menu li a {
+    color: #D4DF21;
+}
+.navbar .nav > li > .dropdown-menu:after {
+    display: none;
+}
+.navbar .nav > li > .dropdown-menu:before {
+    display: none;
+}
+
+#main-menu .dropdown:hover .dropdown-toggle {
+    background: url("menu-bg.png");
+}
+#user-menu .dropdown:hover .dropdown-toggle {
+    background: url("menu-bg.png");
+}
+
+#user-menu{
+    margin-top: -28px;
+}
+#user-options .nav {
+    margin-left: -50px;
+}
+
+#user-options .nav > li > a {
+    padding: 0 0 0 0;
+    text-align: center;
+    color: #D4DF21;
+    font-size: 15px;
+    font-weight: normal;
+}
+#user-options .dropdown-menu {
+    background: none;
+    border: none;
+    box-shadow: none;
+    top: 32px;
+}
+#user-options .dropdown-menu li :hover{
+    background: none;
+    color: #D4DF21;
 }
 
 #over-slideshow {
@@ -118,6 +230,7 @@ body {
     z-index: 9;
     margin-bottom: 80px;
 }
+
 
 #search-box-on-slider {
     position: absolute;
@@ -640,23 +753,67 @@ ol.carousel-indicator-button li {
     #facebook-signup img{
         width: 52%;
     }
+    #user-menu .span1{
+        position: fixed;
+    }
 }
 /* ./responsive Trending Chocolate */
 
+/* responsive sign in links */
+@media (max-width: 695px) {
+    #sign-in-links {
+        top: 70%;
+    }
+}
+@media (max-width: 550px) {
+    #sign-in-links {
+        top: 85%;
+    }
+
+}
+@media (max-width: 440px) {
+    #sign-in-links {
+        top: 88%;
+    }
+
+}
+@media (max-width: 410px) {
+    #sign-in-links {
+        top: 114%;
+    }
+}
+/* ./responsive sign in links */
 
 
 
 @media (max-width: 979px) {
     #main-menu-container {
         padding-bottom: 5px;
+
     }
 
     .navbar .nav > li {
         background: url("menu-bg.png");
     }
+    #main-menu > .container > button.btn {
+        margin-right: 40px;
+
+    }
+    #user-menu .dropdown{
+        padding: 0;
+    }
+    .navbar .nav > li > a {
+        border-left: none;
+    }
+    #user-menu .dropdown-menu {
+        margin-top: -16px;
+    }
 }
 
 @media (max-width: 767px) {
+    body {
+        padding: 0;
+    }
     .navbar-wrapper .content-wrapper {
         width: 90%;
     }
@@ -672,12 +829,33 @@ ol.carousel-indicator-button li {
         padding-top: 30px;
         border-bottom: 1px solid #555;
     }
+    #menu-and-login {
+        margin-top: 0;
+    }
+    #main-menu > .container > button.btn {
+        float: left;
+        margin-left: 0;
+    }
+    #login-signup {
+        float: left;
+    }
+    #menu-and-login .span1 {
+        /*margin-top: -56px;  */
+        float: right;
+    }
+    #logged-in-user-pic, #login-signup {
+        float: right;
+    }
+    #user-options .nav{
+        float: right;
+    }
+    #logged-in-user-pic img{
+        margin-top: -15px;
+    }
 }
 
 @media (max-width: 480px) {
-    #logged-in-user-pic, #login-signup {
-        float: left;
-    }
+
 
     #login-signup-span {
         margin-top: 0px;
