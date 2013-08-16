@@ -2,22 +2,7 @@
   <div class="span5" id= "chocolate-profile">
     <%= render partial: 'shared/chocolate_profile', locals: {student: @chocolate} %>
 
-    <% if current_user %>
-        <% if @chocolate.user_id != current_user.id %>
-            <div class="row-fluid" id=" link-to-rate">
-              <div class="span12" id="link-to-rate-button">
-                <button onclick="window.location.href= '<%= rate_chocolate_chocolates_path(:chocolate_id => @chocolate.id) %>'">Rate this chocolate</button>
-              </div>
-            </div>
-        <% end %>
 
-    <% else %>
-        <div class="row-fluid" id=" link-to-rate">
-          <div class="span12" id="link-to-rate-button">
-            <button onclick="window.location.href= '<%= rate_chocolate_chocolates_path(:chocolate_id => @chocolate.id) %>'">Rate this chocolate</button>
-          </div>
-        </div>
-    <% end %>
     <P>
       <div id="chocolate-edit-destroy">
       <% if can? :edit , @chocolate %>
@@ -40,65 +25,21 @@
           <span class="before-point"><%= rate[0] %></span><span class="after-point">.<%= rate[1] %></span>
         </div>
       </div>
-        <div class="row-fluid" id=" buy-link">
-          <div class="span6" id="buy-button">
-            <button>Buy</button>
-          </div>
-        </div>
+
       </div>
 
 
 
       <div class="span6" id="rating-chocolate-remark">
-        <div class="chocolate-rating">
-
-          <div class="rating-category">Look</div>
-          <%= image_tag 'rating-star.png' %>
-          <div class="avg_rate">
-
-          <%= number_with_precision @chocolate.ratings.average(:look), :precision => 2 %>
+        <div class="row-fluid" id=" buy-link">
+          <div class="span6" id="buy-button">
+            <button>Buy</button>
           </div>
-          <div class="divide-by">/5</div>
         </div>
-        <div class="chocolate-rating">
-          <div class="rating-category">Smell</div>
-          <%= image_tag 'rating-star.png' %>
-          <div class="avg_rate">
-          <%= number_with_precision @chocolate.ratings.average(:smell), :precision => 2 %>
-            </div>
-          <div class="divide-by">/5</div>
-        </div>
-        <div class="chocolate-rating">
-          <div class="rating-category">Snap</div>
-          <%= image_tag 'rating-star.png' %>
-          <div class="avg_rate">
-            <%= number_with_precision @chocolate.ratings.average(:snap), :precision => 2 %>
+        <div class="row-fluid" id=" buy-link">
+          <div class="span6" id="rate-button">
+            <button onclick="window.location.href= '<%= rate_chocolate_chocolates_path(:chocolate_id => @chocolate.id) %>'">Rate this chocolate</button>
           </div>
-          <div class="divide-by">/5</div>
-        </div>
-        <div class="chocolate-rating">
-          <div class="rating-category">Mouthfeel</div>
-          <%= image_tag 'rating-star.png' %>
-          <div class="avg_rate">
-          <%= number_with_precision @chocolate.ratings.average(:mouthfeel), :precision => 2 %>
-            </div>
-          <div class="divide-by">/25</div>
-        </div>
-        <div class="chocolate-rating">
-          <div class="rating-category">Taste</div>
-          <%= image_tag 'rating-star.png' %>
-          <div class="avg_rate">
-            <%= number_with_precision @chocolate.ratings.average(:taste), :precision => 2 %>
-          </div>
-          <div class="divide-by">/50</div>
-        </div>
-        <div class="chocolate-rating">
-          <div class="rating-category">Aftertaste</div>
-          <%= image_tag 'rating-star.png' %>
-          <div class="avg_rate">
-            <%= number_with_precision @chocolate.ratings.average(:aftertaste), :precision => 2 %>
-          </div>
-          <div class="divide-by">/10</div>
         </div>
       </div>
     </div>
@@ -119,7 +60,7 @@
              <div id="chocolate-review-user-name"><strong><a href="<%= user_review_chocolates_path(:user_id => user.id, :chocolate_id => @chocolate.id) %>"><%= user.user_name  %></a> </strong></div>
               </br>
               <div id="rate-and-comment"><span id="rate"><%= review.rate %></span> <span id="comment"><%= review.comment %></span></div>
-              <div id="see-more-chocolate-review"><a href="<%= user_review_chocolates_path(:user_id => user.id, :chocolate_id => @chocolate.id) %>">See more...</a> </div>
+
               </div>
           <% end %>
         </div>

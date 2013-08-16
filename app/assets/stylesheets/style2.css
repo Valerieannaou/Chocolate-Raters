@@ -473,6 +473,7 @@ ul.nav li.dropdown :hover {
     border-radius: 3px;
     margin-bottom: 10px;
 }
+
 #rating-chocolate-remark .chocolate-rating .rating-category {
     width: 120px;
     float: left;
@@ -560,11 +561,34 @@ ul.nav li.dropdown :hover {
 }
 
 
+
+
 #buy-button button {
     float: left;
     font-family: "Myriad Pro";
     margin-left: 33px;
     font-size: 22px;
+    /*font-weight: bold;*/
+    color: #FFF;
+    text-align: center;
+    height: 33px;
+    width: 200px;
+    background: #D5DE23;
+    border: 0;
+    padding: 0 0 0 5px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    border-radius: 6px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+
+}
+#rate-button button {
+    float: left;
+    font-family: "Myriad Pro";
+    margin-left: 33px;
+    font-size: 16px;
     /*font-weight: bold;*/
     color: #FFF;
     text-align: center;
@@ -1339,6 +1363,15 @@ ul.nav li.dropdown :hover {
     #fb-login #inner-fb {
         margin-top: 60px;
         height: auto;
+    }
+    #chocolates .star-image{
+        display: none;
+    }
+    #chocolates .chocolate-rating-in-index{
+        width:auto;
+        padding-right: 10px;
+
+
     }
 
 
