@@ -1122,7 +1122,7 @@ ul.nav li.dropdown :hover {
     border-radius: 5px;
 }
 #chocolatier .head{
-
+    background: url("chocolate-index-head.png") repeat;
     height: 43px;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
