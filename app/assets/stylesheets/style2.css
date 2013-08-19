@@ -102,7 +102,7 @@ body {
     float: right;
     height: 45px;
     width: 45px;
-    margin-top: 14px;
+    margin-top: 4px;
 }
 #logged-in-user-pic img {
     height: 45px;
@@ -198,6 +198,7 @@ ul.nav li.dropdown :hover {
 
 
 .navbar .nav > li {
+
     font-weight: bold;
     line-height: 12px;
     padding: 10px 0;
@@ -1121,7 +1122,7 @@ ul.nav li.dropdown :hover {
     border-radius: 5px;
 }
 #chocolatier .head{
-    background: url("chocolate-index-head.png") repeat;
+
     height: 43px;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
@@ -1221,7 +1222,140 @@ ul.nav li.dropdown :hover {
 }
 
 
+/* chocolatier profile */
+#chocolatier-profile #photo-or-logo{
 
+    height: 200px;
+    background: #555555;
+}
+#chocolatier-profile #photo-or-logo img{
+    height: 200px;
+}
+
+#chocolatier-profile #chocolatier-info {
+    padding-left: 30px;
+    padding-top: 50px;
+
+}
+#chocolatier-profile #chocolatier-info #name{
+    font-size: 26px;
+    color: #A34F9E;
+    font-family: "Myriad Pro";
+
+}
+#chocolatier-profile #chocolatier-info #state-country {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #555555;
+    font-family: "Myriad Pro";
+
+}
+#chocolatier-profile #chocolatier-info #joined-on{
+    margin-top: 20px;
+    font-size: 12px;
+    color: #555555;
+    font-family: "Myriad Pro";
+}
+#chocolatier-profile #chocolates-header {
+
+    background: #BFBDBE;
+    height: 50px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+#chocolatier-profile #chocolatier-chocolate{
+    margin-top: 30px;
+    color: #AF7547;
+    font-family: "Myriad Pro";
+    font-size: 16px;
+    font-weight: bold;
+}
+#chocolates-header #name{
+
+
+}
+#chocolates-header #action{
+   margin-left: 41%;
+
+}
+#chocolates-header #rating{
+    margin-left: 30%;
+
+}
+#chocolates-header #headers {
+   padding: 15px 10px 10px 15px;
+    color: #000000;
+
+}
+#chocolatier-profile #chocolate-list{
+    height: 400px;
+    overflow: auto;
+
+
+}
+#chocolatier-profile #chocolate-list .chocolate{
+    width: 98%;
+
+    border-bottom: 1px solid #000000;
+    margin-left: 10px;
+
+
+
+}
+#chocolatier-profile #chocolate-list .chocolate #image{
+
+}
+#chocolate-list .chocolate #image img{
+    height:60px ;
+    width: 70px;
+    margin-bottom:10px ;
+
+}
+#chocolate-list .chocolate .name a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #A34F9E;
+    font-family: "Myriad Pro";
+}
+#chocolate-list .chocolate .name{
+    margin-top: 15px;
+}
+
+#chocolate-list .chocolate .star {
+    background: url("star-disabled.png") no-repeat;
+    margin-top: 6px;
+
+
+}
+#chocolate-list .chocolate :hover  .star{
+    background: url("chocolate-rating-star.png") no-repeat;
+    margin-top: 0px;
+    height: 46px;
+}
+#chocolate-list .chocolate :hover  .cart{
+    background: url("cart.png") no-repeat;
+    margin-top: 0px;
+    height: 46px;
+}
+
+
+#chocolate-list .chocolate .cart{
+    background: url("cart-disabled.png") no-repeat;
+    height: 46px;
+    width: 53px;
+  
+
+}
+#chocolate-list .chocolate .rating {
+    margin-top: 15px;
+   text-align: center;
+    margin-left: 20%;
+}
+ .chocolate .row-fluid{
+     padding-top: 20px;
+ }
 
 
 
@@ -1333,6 +1467,10 @@ ul.nav li.dropdown :hover {
         padding-left: 0;
 
     }
+    #chocolate-list .chocolate :hover  .star{
+
+        width: 50px;
+    }
 
 }
 
@@ -1371,8 +1509,20 @@ ul.nav li.dropdown :hover {
         width:auto;
         padding-right: 10px;
 
+    }
+    #chocolatier-profile #chocolates-header{
+        display:none;
 
     }
+    #chocolate-list .chocolate .rating {
+        margin-left: 0;
+        text-align: left;
+
+    }
+
+
+
+
 
 
 }

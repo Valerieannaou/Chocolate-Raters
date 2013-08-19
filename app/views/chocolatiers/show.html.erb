@@ -1,73 +1,62 @@
-<p>
-  <b>Name:</b>
-  <%= @chocolatier.name %>
-</p>
+<div id="chocolatier-profile">
+  <div class="span2"></div>
+  <div id="detail" class="span7">
+    <div class="row-fluid">
+    <div  class="span4" id="photo-or-logo">
+      <div > <% if !(@chocolatier.photo.blank?) %><%= image_tag(@chocolatier.photo) %><% end %></div>
 
-<p>
-  <b>Address:</b>
-  <%= @chocolatier.address %>
-</p>
+      </div>
+      <div id="chocolatier-info" class="span8">
+        <div id="name"><%= @chocolatier.name %></div>
+        <div id="state-country"><%= @chocolatier.city %><% if !(@chocolatier.city.blank?) %>,<% end %> <%= @chocolatier.country %> </div>
+        <div id="joined-on">Joined: <%= @chocolatier.created_at.strftime(" %B  %d, %Y") %></div>
+        <div id="links">
+          <% if can? :edit , @chocolatier %>
+              <%= link_to 'Edit', edit_chocolatier_path(@chocolatier) %> |
+          <% end %>
+          <% if can? :delete , @chocolatier %>|
+              <%= link_to 'Destroy', @chocolatier, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+          <% if admin? %>
+              <% if @chocolatier.status != 1 %>
+                  |<%= link_to 'Approve', approve_chocolatier_path(@chocolatier.id) %>
+              <% end %>
+          <% end %>
+        </div>
+      </div>
 
-<p>
-  <b>City:</b>
-  <%= @chocolatier.city %>
-</p>
+    </div>
+  </div>
+  <div id="chocolatier-chocolate" class="span9" >Chocolate</div>
+  <div class="span9" id="chocolates-header">
+    <div id="headers">
+    <span id="name">Name</span><span id="action">Actions</span><span id="rating">Rating</span>
+    </div>
+  </div>
+  <div id="chocolate-list" class="span9">
+    <% @chocolates.each do |chocolate| %>
+        <% pic = Photo.find_by_chocolate_id(chocolate.id).image %>
 
-<p>
-  <b>Country:</b>
-  <%= @chocolatier.country %>
-</p>
+    <div class="chocolate">
+      <div class="row-fluid">
+      <div id="image" class="span2">
+        <%= link_to image_tag(pic), chocolate %>
+      </div>
+      <div  class="span3 name">
+        <%= link_to chocolate.name , chocolate %>
+      </div>
+      <div class="span1 star">
+        <%#= image_tag('star-disabled.png') %>
+      </div>
+        <div class="span1 cart">
+         <%#= image_tag('cart-disabled.png') %>
+        </div>
+        <div class="span2 rating">
+          <%= number_with_precision chocolate.ratings.average(:rate), :precision => 2 %>
+        </div>
+      </div>
 
-<p>
-  <b>State:</b>
-  <%= @chocolatier.state %>
-</p>
-
-<p>
-  <b>Zip code:</b>
-  <%= @chocolatier.zip_code %>
-</p>
-
-<p>
-  <b>Chocolatier type:</b>
-  <%= @chocolatier.chocolatier_type %>
-</p>
-
-<p>
-  <b>Chocolatier url:</b>
-  <%= @chocolatier.chocolatier_url %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @chocolatier.email %>
-</p>
-
-<p>
-  <b>Phone:</b>
-  <%= @chocolatier.phone %>
-</p>
-
-<% if can? :edit , @chocolatier %>
-<%= link_to 'Edit', edit_chocolatier_path(@chocolatier) %> |
+    </div>
     <% end %>
-<%= link_to 'Back', chocolatiers_path %><% if can? :delete , @chocolatier %>|
-<%= link_to 'Destroy', @chocolatier, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
-<% if admin? %>
-    <% if @chocolatier.status != 1 %>
-    |<%= link_to 'Approve', approve_chocolatier_path(@chocolatier.id) %>
-        <% end %>
-<% end %>
-
-<h3>chocolates</h3>
-<% @chocolates.each do |chocolate| %>
-    <% pic = Photo.find_by_chocolate_id(chocolate.id).image %>
-    <%= link_to image_tag(pic  ,:size => '80x80'), chocolate %>
-    </br>
-    <%= link_to chocolate.name , chocolate %>
-    <%= chocolate.ratings.average(:rate)  %>
-    </br>
-
-
-<% end %>
+  </div>
+</div>

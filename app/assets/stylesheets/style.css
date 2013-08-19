@@ -39,7 +39,7 @@ body {
     float: right; /* TODO: @media #tablet:[margin-top: -x;] #mobile: [float: left;] */
     height: 45px;
     width: 45px;
-    margin-top: 14px;
+
 }
 #logged-in-user-pic img {
     height: 45px;

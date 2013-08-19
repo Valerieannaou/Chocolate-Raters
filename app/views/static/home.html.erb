@@ -13,7 +13,7 @@
 
   <div class="row-fluid">
     <div class="span6" id="recent-rating">
-      <div class="title"><%= link_to "Recent Ratings", chocolates_recent_ratings_path%></div>
+      <div class="title"><%= link_to "Recent Ratings"%></div>
       <!--<br>-->
       <!--<img src="images/female-face.jpg" style="width: 200px">-->
 
@@ -41,7 +41,7 @@
 
                     <% end %>
 
-                    <p class="name"><%= user.user_name %></p>
+                    <p class="name"><%= (user.user_name).split(" ").first %></p>
                     <% chocolate = Chocolate.find(review.chocolate_id) %>
                     <div class="container">
                       <div class="carousel-caption">

@@ -19,10 +19,12 @@
     <div class="row-fluid">
       <div class="span6">
       <div  id="rating-chocolate-price">
+
         <% total_rate = number_with_precision @chocolate.ratings.average(:rate), :precision => 2 %>
         <% rate = total_rate.to_s.split(".") %>
+
         <div id="rating-chocolate-price-inner">
-          <span class="before-point"><%= rate[0] %></span><span class="after-point">.<%= rate[1] %></span>
+          <span class="before-point"><%= rate[0] %></span><span class="after-point"><% if !(total_rate.blank?) %>.<% end %><%= rate[1] %></span>
         </div>
       </div>
 
@@ -54,6 +56,9 @@
         <p id="review-header">Reviews</p>
         <div class="chocolate-reviews">
           <% @reviews= Rating.find_all_by_chocolate_id(@chocolate.id, :limit => 20) %>
+          <% if @reviews.blank? %>
+                  <div>No reviews yet...</div>
+              <% else %>
           <% @reviews.each do |review| %>
               <% user = User.find(review.user_id) %>
               <div id="each-review">
@@ -63,6 +68,7 @@
 
               </div>
           <% end %>
+              <% end %>
         </div>
 
       </div>
