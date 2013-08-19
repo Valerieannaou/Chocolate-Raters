@@ -18,7 +18,7 @@
         <% else class_name = "odd-li" %>
         <% end %>
         <li class="<%= class_name %>">
-          <span class="chocolatier-image"><% if !(chocolatier.photo.blank?) %><%= link_to image_tag( chocolatier.photo), chocolate %><% else %><div id="image-blank"></div><% end %></span>
+          <span class="chocolatier-image"><% if !(chocolatier.photo.blank?) %><%= link_to image_tag( chocolatier.photo), chocolatier %><% else %><div id="image-blank"></div><% end %></span>
           <span class="chocolatier-name"><%= link_to chocolatier.name, chocolatier %><div id="address"><%= chocolatier.state %><% if !(chocolatier.state.blank?) %>,<% end %> <%= chocolatier.country %></div></span>
 
           <span class="total-chocolate"><%= chocolatier.chocolates.size %></span>

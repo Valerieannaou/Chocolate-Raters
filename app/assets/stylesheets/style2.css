@@ -311,7 +311,9 @@ ul.nav li.dropdown :hover {
     height: 250px !important;
 }
 
+
 #chocolate-slider .pika-stage img {
+    background: white;
     width: 100%;
     height: 208px;
     border: 2px solid #BEA998;
@@ -837,6 +839,7 @@ ul.nav li.dropdown :hover {
     float: left;
 }
 #chocolates .chocolate-image img{
+    background: white;
     height: 95px;
     width: 95px;
     -moz-border-radius: 5px;
@@ -1161,6 +1164,7 @@ ul.nav li.dropdown :hover {
 }
 
 #chocolatier .chocolatier-image{
+
     height: 95px;
     width: 95px;
     float: left;
@@ -1308,6 +1312,7 @@ ul.nav li.dropdown :hover {
 
 }
 #chocolate-list .chocolate #image img{
+    background: white;
     height:60px ;
     width: 70px;
     margin-bottom:10px ;
