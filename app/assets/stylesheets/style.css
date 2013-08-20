@@ -614,15 +614,21 @@ ol.carousel-indicator-button li {
     text-align: center;
     padding-top: 20px;
 }
+.trading-chocolate-rating .rate{
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: bold;
+}
+.trading-chocolate-rating .rate .outof{
+   font-size: 12px;
+}
 
 .trading-chocolate-rating p {
     font-family: verdana;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;
     color: #FFF;
 }
-
-
 
 .rating-stars {
     margin-top: -5px;
