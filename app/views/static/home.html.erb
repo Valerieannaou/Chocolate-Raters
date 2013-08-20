@@ -82,7 +82,7 @@
               <div class="rating-starts"><%= image_tag('yellow-star.png') %>
                 <span class="rate">
                   <% if !(@chocolates[0].ratings.blank?) %>
-                <%= number_with_precision @chocolates[0].ratings.average(:rate), :precision => 2  %>
+                <%= number_with_precision @chocolates[0].ratings.average(:rate), :precision => 1  %>
                       <span class="outof">/100</span>
                       <% end %>
                     </span>
@@ -101,7 +101,7 @@
               <div class="rating-starts"><%= image_tag('yellow-star.png') %>
                <span class="rate">
                  <% if !(@chocolates[1].ratings.blank?) %>
-                <%= number_with_precision @chocolates[1].ratings.average(:rate), :precision => 2  %>
+                <%= number_with_precision @chocolates[1].ratings.average(:rate), :precision => 1  %>
                      <span class="outof">/100</span>
                      <% end %>
                 </span>

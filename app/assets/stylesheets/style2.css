@@ -1139,6 +1139,7 @@ ul.nav li.dropdown :hover {
     float: left;
 }
 #chocolatier .head .chocolatier-name{
+
     float: left;
     margin-top: 12px;
     color: #FFF;
@@ -1188,6 +1189,7 @@ ul.nav li.dropdown :hover {
 
 }
 #chocolatier .chocolatier-name{
+
     float: left;
     word-break: break-all;
     margin-left: 18px;
@@ -1226,7 +1228,7 @@ ul.nav li.dropdown :hover {
 }
 
 
-/* chocolatier profile */
+/*********************@@@@************************ chocolatier profile **********************@@@@*********************/
 #chocolatier-profile #photo-or-logo{
 
     height: 200px;
@@ -1711,6 +1713,17 @@ ul.nav li.dropdown :hover {
 
 
 
+}
+
+
+
+@media (max-width: 480px){
+    #chocolatier .chocolatier-name{
+        clear: left;
+    }
+    #chocolatier .total-chocolate{
+        padding-bottom: 2px;
+    }
 }
 @media (max-width: 760px) {
     #search-result-area .title-head .actions, #search-result-area .title-head .score, #search-result-area .title-head .ratings {

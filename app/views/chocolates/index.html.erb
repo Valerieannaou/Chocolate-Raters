@@ -23,7 +23,7 @@
       <span class="chocolate-image"><%= link_to image_tag( pic.image), chocolate %></span>
       <span class="chocolate-name"><%= link_to chocolate.name, chocolate %></span>
 
-      <span class="chocolate-rating-in-index"><%= chocolate.ratings.average(:rate) %></span>
+      <span class="chocolate-rating-in-index"><%= number_with_precision chocolate.ratings.average(:rate),:precision => 1 %></span>
       <span class="star-image"><%= image_tag('chocolate-rating-star.png') %></span>
     </li>
         <% count+= 1 %>
