@@ -31,13 +31,13 @@
                     <% if  !(user.photo.blank?) %>
                         <%  pic = user.photo %>
 
-                        <%= link_to (image_tag pic), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id) %>
+                        <%= link_to (image_tag pic) %>
                     <% elsif !(user.fb_photo.blank?) %>
                         <%  pic = (user.fb_photo) %>
-                        <%= link_to (image_tag pic), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id) %>
+                        <%= link_to (image_tag pic)%>
 
                     <% else %>
-                        <%= link_to (image_tag 'default_pro.jpg',:title => 'default image'), user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id)  %>
+                        <%= link_to (image_tag 'default_pro.jpg',:title => 'default image')  %>
 
                     <% end %>
 
@@ -52,7 +52,7 @@
                         <p class="description"><span style="font-size: 20px"><%= review.rate %> </span> <%= truncate review.comment, length: 110 %></p>
 
 
-                        <div class="read-more"><a href="<%= user_review_chocolates_path(:user_id => user.id, :chocolate_id => review.chocolate_id) %>">Read more...</a></div>
+                        <div class="read-more"><a href="<%= chocolate_path(chocolate.id) %>">Read more...</a></div>
 
                       </div>
                     </div>

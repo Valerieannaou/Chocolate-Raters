@@ -62,7 +62,7 @@
           <% @reviews.each do |review| %>
               <% user = User.find(review.user_id) %>
               <div id="each-review">
-             <div id="chocolate-review-user-name"><strong><a href="<%= user_review_chocolates_path(:user_id => user.id, :chocolate_id => @chocolate.id) %>"><%= user.user_name  %></a> </strong></div>
+             <div id="chocolate-review-user-name"><strong><a href="<%=  %>"><%= user.user_name  %></a> </strong></div>
               </br>
               <div id="rate-and-comment"><span id="rate"><%= review.rate %></span> <span id="comment"><%= review.comment %></span></div>
 

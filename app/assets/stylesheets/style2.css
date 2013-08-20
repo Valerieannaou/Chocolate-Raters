@@ -1319,10 +1319,10 @@ ul.nav li.dropdown :hover {
 
 }
 #chocolate-list .chocolate .name a{
+    font-weight: bold;
     text-decoration: none;
-    font-size: 14px;
-    color: #A34F9E;
-    font-family: "Myriad Pro";
+    color: #92278F;
+    font-size: 13px;
 }
 #chocolate-list .chocolate .name{
     margin-top: 15px;
