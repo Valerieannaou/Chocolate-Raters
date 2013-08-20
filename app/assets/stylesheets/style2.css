@@ -715,7 +715,7 @@ ul.nav li.dropdown :hover {
 
 
 /* scroll bar*/
-/* add a choclatier */
+/*******************@@@@********************* add a choclatier *********************@@@@********************/
 #add-chocolatier #add-chocolatier-title{
     color: #AE7647;
     font-family: "Myriad Pro";
@@ -777,7 +777,7 @@ ul.nav li.dropdown :hover {
     margin-top: 25px;
 
 }
-/* chocolate index */
+/********************@@@@@******************** chocolate index *******************@@@@********************/
 #chocolates ul {
     margin-left: 0;
 }
@@ -1108,7 +1108,7 @@ ul.nav li.dropdown :hover {
 
 }
 
-/* chocolatier index */
+/*******************@@@@******************** chocolatier index ******************@@@@*********************/
 #chocolatier ul {
     margin-left: 0;
 }
@@ -1363,7 +1363,7 @@ ul.nav li.dropdown :hover {
  }
 
 
-/***************************************************************************/
+/******************@@@@****************search-page*********************@@@@********************/
 #search-result-page-title {
     color: #A46F42;
     background: url("search-page-title-bg.png");
