@@ -1363,6 +1363,187 @@ ul.nav li.dropdown :hover {
  }
 
 
+/***************************************************************************/
+#search-result-page-title {
+    color: #A46F42;
+    background: url("search-page-title-bg.png");
+    font-family: "Myriad Pro";
+    font-size: 18px;
+    margin-top: -10px;
+}
+#search-result-page-title p {
+    padding: 15px 2.8%;
+    margin: 0;
+}
+#search-result-area ul {
+    margin: auto;
+    max-width: 720px;
+    overflow: hidden;
+    width: 95%;
+    background: #EDEDED;
+}
+#search-result-area ul li {
+    border-bottom: 2px solid #AAA;
+    overflow: hidden;
+    list-style-type: none;
+}
+#search-result-area ul li:last-child {
+    border-bottom: none;
+}
+#search-result-area .title-text {
+    padding-top: 10px;
+    font-family: "Myriad Pro";
+    font-size: 17px;
+    font-weight: bold;
+    color: #A46F42;
+    border-bottom: none;
+    background: #E9E9E9;
+    padding-bottom: 6px;
+}
+#search-result-area .title-head {
+    background: url("search-page-title-head-bg.png");
+    /*margin-top: 6px;*/
+    /*height: 45px;*/
+    padding: 12px 0 12px 2.9%;
+    /*margin-left: ;*/
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    border-bottom: none;
+}
+#search-result-area .title-head div {
+    color: #222;
+    font-weight: bold;
+    font-size: 13px;
+}
+#search-result-area div {
+    /*display: inline-block;*/
+    float: left;
+}
+#search-result-area .title-head .name {
+    max-width: 300px; /*42.85%*/
+    width: 95%;
+}
+#search-result-area .actions {
+    max-width: 185px;
+    width: 95%;
+    text-align: center;
+}
+#search-result-area .score {
+    margin-left: 40px;
+    width: 98px;
+}
+#search-result-area img.chocolate-image{
+    background: white;
+    width: 67px;
+    height: 52px;
+    margin: 10px 12px 5px 0;
+    display: inline-block;
+}
+#search-result-area .chocolate {
+    font-weight: bold;
+    margin-left: 9px;
+    margin-right: 5px;
+}
+#search-result-area .chocolate .name {
+    width: 320px;
+}
+#search-result-area .chocolate .name p{
+    display: inline-block;
+    color: #92278F;
+    font-size: 13px;
+}
+#search-result-area .chocolate .name a{
+    text-decoration: none;
+    display: inline-block;
+    color: #92278F;
+    font-size: 13px;
+}
+#search-result-area .chocolate .actions {
+    overflow: hidden;
+}
+#search-result-area .star {
+    height: 22px;
+    width: 25px;
+    background: url("search-star-disabled.png");
+    margin-top: 23px;
+    margin-right: 29px;
+}
+#search-result-area .cart {
+    height: 32px;
+    width: 38px;
+    background: url("cart-disabled.png");
+    margin-top: 18px;
+    margin-right: 22px;
+}
+#search-result-area .statistic {
+    height: 28px;
+    width: 36px;
+    background: url("statistic-disabled.png");
+    margin-top: 20px;
+}
+#search-result-area ul li.chocolate:hover .star {
+    background: url("search-star-enabled.png");
+}
+#search-result-area ul li.chocolate:hover .cart {
+    background: url("cart-enabled.png");
+}
+#search-result-area ul li.chocolate:hover .statistic {
+    background: url("statistic-enabled.png");
+}
+#search-result-area .chocolate .score {
+    margin-top: 25px;
+    margin-left: 50px;
+}
+#search-result-area .chocolate .ratings {
+    margin-top: 25px;
+}
+
+#search-result-area .chocolatiers {
+    /*margin-left: 0.6%;*/
+}
+#search-result-area .chocolatiers li.title-text {
+    margin-left: 0;
+    margin-right: 0;
+}
+#search-result-area .chocolatiers li.title-head {
+    margin-left: 0;
+    margin-right: 0;
+    /*padding: 0;*/
+    /*padding-left: 2.9%;*/
+}
+#search-result-area .chocolatiers li.title-head .name {
+    margin: 0;
+}
+#search-result-area .chocolatiers li {
+    margin-left: 0.6%;
+    margin-right: 0.6%;
+    border-bottom-width: 1px;
+}
+#search-result-area .chocolatiers .name {
+
+    /*margin-left: 0.6%;*/
+    width: 49.7%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+#search-result-area .chocolatiers .name a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    color: #92278F;
+
+}
+#search-result-area .chocolatiers .details {
+    width: 49.7%;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+
 
 
 
@@ -1530,4 +1711,40 @@ ul.nav li.dropdown :hover {
 
 
 
+}
+@media (max-width: 760px) {
+    #search-result-area .title-head .actions, #search-result-area .title-head .score, #search-result-area .title-head .ratings {
+        display: none;
+    }
+    #search-result-area .chocolate .ratings {
+        margin-bottom: 11px;
+    }
+    #search-result-area .chocolate .name {
+        float: none;
+        width: 100%;
+        margin-top: 12px;
+    }
+    #search-result-area .actions {
+        float: none;
+        margin-left: 9px;
+    }
+    #search-result-area .chocolate .score {
+        margin-left: 9px;
+    }
+    #search-result-area .chocolate .score:before {
+        content: 'Score: ';
+    }
+    #search-result-area .chocolate .ratings:before {
+        content: 'Ratings: ';
+    }
+
+    #search-result-area .chocolatiers .name {
+        float: none;
+        margin-left: .6%;
+        width: 99.4%;
+    }
+    #search-result-area .chocolatiers .details {
+        margin-left: .6%;
+        width: 99.4%;
+    }
 }

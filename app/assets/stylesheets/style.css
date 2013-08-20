@@ -589,6 +589,7 @@ ol.carousel-indicator-button li {
     border: 3px solid #C6A487;
     border-radius: 10px;
     z-index: 12;
+    background: white;
 }
 
 .trading-chocolate:hover img.chocolate {

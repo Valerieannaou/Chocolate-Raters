@@ -88,6 +88,7 @@ class ChocolatesController < ApplicationController
   end
   def show_search
     #@chocolates = Chocolate.search(params[:search])
+    @search = params[:search]
     @chocolates = Chocolate.search "*#{params[:search].downcase}*"
     @chocolates_by_unique_chocolatier = @chocolates.uniq{|x| x.chocolatier_id}
 

@@ -1,38 +1,54 @@
-<h1>Chocolates</h1>
+<div class="content-wrapper" id="search-result-page-title">
+  <p>Search results for <b>"<%= @search %>"</b></p>
+</div>
+<div id="search-result-area">
+  <ul>
+    <li class="title-text">Chocolate</li>
+    <li class="title-head">
+      <div class="name">Name</div>
+      <div class="actions">Actions</div>
+      <div class="score">Score</div>
+      <div class="ratings">Ratings</div>
+    </li>
+    <% @chocolates.each do |chocolate| %>
+        <li class="chocolate">
+          <div class="name">
+            <img class="chocolate-image" src="<%= Photo.find_by_chocolate_id(chocolate.id).image %>">
+            <p><%= link_to chocolate.name, chocolate %></p>
+          </div>
+          <div class="actions">
+            <div class="star"></div>
+            <div class="cart"></div>
+            <div class="statistic"></div>
+          </div>
+          <div class="score"></div>
+          <div class="ratings"><%= number_with_precision chocolate.ratings.average(:rate), :precision => 2 %></div>
+        </li>
+     <% end %>
+  </ul>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Rating</th>
-    <th></th>
-    <th></th>
-  </tr>
-
-  <% @chocolates.each do |chocolate| %>
-      <tr>
-        <td><%= link_to chocolate.name, chocolate %></td>
-        <td><%= number_with_precision chocolate.ratings.average(:rate), :precision => 2 %></td>
-      </tr>
-  <% end %>
-</table>
-
-<br />
-<h1>Chocolatiers</h1>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Country</th>
-    <th></th>
-    <th></th>
-  </tr>
-
-  <% @chocolates_by_unique_chocolatier.each do |chocolate| %>
-      <tr>
+  <ul class="chocolatiers">
+    <li class="title-text">Chocolatiers</li>
+    <li class="title-head">
+      <div class="name">Name</div>
+    </li>
+    <% @chocolates_by_unique_chocolatier.each do |chocolate| %>
         <% chocolatier = Chocolatier.find(chocolate.chocolatier_id) %>
-        <td><%= link_to chocolatier.name, chocolatier %></td>
-        <td ><%= chocolatier.email %></td>
-        <td ><%= chocolatier.country %></td>
-      </tr>
-  <% end %>
-</table>
+    <li>
+      <div class="name"><%= link_to chocolatier.name, chocolatier %></div>
+      <div class="details"><%= chocolatier.country %></div>
+    </li>
+   <% end %>
+  </ul>
+
+  <ul class="chocolatiers">
+    <li class="title-text">Place</li>
+    <li class="title-head">
+      <div class="name">Name</div>
+    </li>
+    <li>
+      <div class="name"></div>
+      <div class="details"></div>
+    </li>
+  </ul>
+</div>

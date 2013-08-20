@@ -79,7 +79,7 @@
 
             <div class="trading-chocolate-rating">
               <p><%= @chocolates[0].name %></p>
-              <div class="rating-starts"><%= @chocolates[0].ratings.average(:rate) %></div>
+              <div class="rating-starts"><%= number_with_precision @chocolates[0].ratings.average(:rate), :precision => 2  %></div>
             </div>
             <div class="trading-chocolate-overlay"></div>
           </div>
@@ -91,7 +91,7 @@
 
             <div class="trading-chocolate-rating">
               <p><%= @chocolates[1].name %></p>
-              <div class="rating-starts"><%= @chocolates[1].ratings.average(:rate) %></div>
+              <div class="rating-starts"><%= number_with_precision @chocolates[1].ratings.average(:rate), :precision => 2  %></div>
             </div>
             <div class="trading-chocolate-overlay"></div>
           </div>
