@@ -64,14 +64,14 @@ ChocolateRatingSystem::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
-  config.action_mailer.default_url_options = { :host => 'http://chocolate-raters.com' }
+  config.action_mailer.default_url_options = { :host => 'http://www.chocolateraters.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       :address              => "smtp.gmail.com",
       :port                 => 587,
-      :domain               => 'localhost:3000',
-      :user_name            => 'sifat.nascenia@gmail.com',
-      :password             => 'test165389',
+      :domain               => 'chocolateraters.com',
+      :user_name            => 'chocolateraters@gmail.com',
+      :password             => 'ChocolateRaters1',
       :authentication       => 'plain',
       :enable_starttls_auto => true
   }
