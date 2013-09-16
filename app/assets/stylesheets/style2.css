@@ -670,14 +670,14 @@ ul.nav li.dropdown :hover {
     -webkit-border-radius: 6px;
     -khtml-border-radius: 6px;
     border-radius: 6px;
-    font-family: "Myriad Pro";
+    font-family: sans-serif;
 
 }
 
 #chocolate-review-user-name a{
     text-decoration: none;
     color: #AE7647;
-    font-family: "Myriad Pro";
+    font-family: sans-serif;
     font-size: 14px;
 
 
@@ -685,19 +685,19 @@ ul.nav li.dropdown :hover {
 
 #chocolate-review-user-name #rate {
     font-size: 20px;
-    font-family: "Myriad Pro";
+    font-family: sans-serif;
 
 }
 #chocolate-review-user-name #comment {
     font-size: 14px;
-    font-family: "Myriad Pro";
+    font-family: sans-serif;
     margin-left: 5px;
 
 }
 #see-more-chocolate-review a{
     text-decoration: none;
     color: #AE7647;
-    font-family: "Myriad Pro";
+    font-family: sans-serif;
     font-size: 14px;
 }
 #each-review{
@@ -813,14 +813,14 @@ ul.nav li.dropdown :hover {
     color: #FFF;
     font-weight: bold;
     font-size: 17px;
-    font-family: "Myriad Pro";
+    font-family: sans-serif;
 }
 #chocolates .head .chocolate-rating-in-index {
     color: #FFF;
     font-weight: bold;
     font-size: 17px;
     margin-top: 12px;
-    font-family: "Myriad Pro";
+    font-family: sans-serif;
 }
 
 #chocolates .head .star-image{
@@ -857,14 +857,14 @@ ul.nav li.dropdown :hover {
     font-weight: bold;
     font-size: 17px;
     margin-top: 37px;
-    font-family: "Myriad Pro";
+    font-family: sans-serif;
 }
 #chocolates .chocolate-name a{
     text-decoration: none;
     color: #952D92;
     font-weight: bold;
     font-size: 17px;
-    font-family: "Myriad Pro";
+    font-family: sans-serif;
 }
 
 #chocolates .star-image{
@@ -1159,7 +1159,7 @@ ul.nav li.dropdown :hover {
     color: #FFF;
     font-weight: bold;
     font-size: 17px;
-    font-family: "Myriad Pro";
+    font-family: sans-serif;
 }
 #chocolatier .head .total-chocolates {
     color: #FFF;
@@ -1168,7 +1168,7 @@ ul.nav li.dropdown :hover {
     margin-top: 12px;
     float: right;
     padding-right: 20px;
-    font-family: "Myriad Pro";
+    font-family: sans-serif;
 }
 
 
@@ -1213,14 +1213,14 @@ ul.nav li.dropdown :hover {
     font-weight: bold;
     font-size: 17px;
     margin-top: 30px;
-    font-family: "Myriad Pro";
+    font-family: sans-serif;
 }
 #chocolatier .chocolatier-name a{
     text-decoration: none;
     color: #952D92;
     font-weight: bold;
     font-size: 20px;
-    font-family: "Myriad Pro";
+    font-family:sans-serif;
 }
 #chocolatier .chocolatier-name #address{
     color: #000000;
