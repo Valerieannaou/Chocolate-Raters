@@ -157,6 +157,7 @@ a#login-signup{
 #main-menu .dropdown-menu li a {
     color: #D4DF21;
     font-weight: bold;
+    margin-left: 6px;
 }
 
 #user-menu .dropdown-menu li {
@@ -228,7 +229,7 @@ a#login-signup{
 
 #myCarousel {
     z-index: 9;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 
 
@@ -390,6 +391,15 @@ a#login-signup{
     float: left;
 }
 /* ./mini search box */
+.carousel-control {
+    height: 80px;
+    margin-top: 0;
+    font-size: 120px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    background-color: transparent;
+    border: 0;
+    z-index: 10;
+}
 
 .carousel-caption {
     background: none;
@@ -452,12 +462,9 @@ ol.carousel-indicator-button li {
     font-weight: bold;
     color: #FFF;
     font-size: 22px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    border-radius: 10px;
+
     font-family: verdana;
-    padding-top: 5px;
+    padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;

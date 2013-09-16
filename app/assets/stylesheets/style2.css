@@ -683,12 +683,12 @@ ul.nav li.dropdown :hover {
 
 }
 
-#rate-and-comment #rate {
-    font-size: 25px;
+#chocolate-review-user-name #rate {
+    font-size: 20px;
     font-family: "Myriad Pro";
 
 }
-#rate-and-comment #comment {
+#chocolate-review-user-name #comment {
     font-size: 14px;
     font-family: "Myriad Pro";
     margin-left: 5px;
@@ -813,12 +813,14 @@ ul.nav li.dropdown :hover {
     color: #FFF;
     font-weight: bold;
     font-size: 17px;
+    font-family: "Myriad Pro";
 }
 #chocolates .head .chocolate-rating-in-index {
     color: #FFF;
     font-weight: bold;
     font-size: 17px;
     margin-top: 12px;
+    font-family: "Myriad Pro";
 }
 
 #chocolates .head .star-image{
@@ -881,7 +883,7 @@ ul.nav li.dropdown :hover {
     max-width: 80px;
     width: 8.50%;
     float: right;
-    font-size: 24px;
+    font-size: 40px;
     margin-top: 35px;
 }
 
@@ -1035,7 +1037,19 @@ ul.nav li.dropdown :hover {
     font-family: "Myriad Pro";
 
 }
+#chocolate-form #flavour input {
+    background: #f3f3f3;
+    width: 30%;
+    font-size: 12px;
+    color: #676865;
+    font-family: "Myriad Pro";
+
+}
 #chocolate-form #cocoa {
+    padding-top: 10px;
+    color: #676865;
+}
+#chocolate-form #flavour {
     padding-top: 10px;
     color: #676865;
 }
@@ -1145,6 +1159,7 @@ ul.nav li.dropdown :hover {
     color: #FFF;
     font-weight: bold;
     font-size: 17px;
+    font-family: "Myriad Pro";
 }
 #chocolatier .head .total-chocolates {
     color: #FFF;
@@ -1153,6 +1168,7 @@ ul.nav li.dropdown :hover {
     margin-top: 12px;
     float: right;
     padding-right: 20px;
+    font-family: "Myriad Pro";
 }
 
 
@@ -1694,6 +1710,7 @@ ul.nav li.dropdown :hover {
         display: none;
     }
     #chocolates .chocolate-rating-in-index{
+
         width:auto;
         padding-right: 10px;
 
@@ -1707,12 +1724,6 @@ ul.nav li.dropdown :hover {
         text-align: left;
 
     }
-
-
-
-
-
-
 }
 
 
