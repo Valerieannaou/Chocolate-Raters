@@ -11,16 +11,15 @@
         <div id="joined-on">Joined: <%= @chocolatier.created_at.strftime(" %B  %d, %Y") %></div>
         <div id="links">
           <% if can? :edit , @chocolatier %>
-              <%= link_to 'Edit', edit_chocolatier_path(@chocolatier) %> |
+              <%= link_to 'Edit', edit_chocolatier_path(@chocolatier) %>
           <% end %>
-          <% if can? :delete , @chocolatier %>|
-              <%= link_to 'Destroy', @chocolatier, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% if current_user %>
+          <% if current_user.admin? %>
+             |<%= link_to 'Remove', @chocolatier, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
-          <% if admin? %>
-              <% if @chocolatier.status != 1 %>
-                  |<%= link_to 'Approve', approve_chocolatier_path(@chocolatier.id) %>
-              <% end %>
           <% end %>
+
+
         </div>
       </div>
     </div>
@@ -50,7 +49,7 @@
          <%#= image_tag('cart-disabled.png') %>
         </div>
         <div class="span2 rating">
-          <%= number_with_precision chocolate.ratings.average(:rate), :precision => 2 %>
+          <%= number_with_precision chocolate.ratings.average(:rate), :precision => 0 %>
         </div>
       </div>
 

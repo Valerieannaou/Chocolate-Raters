@@ -7,7 +7,7 @@ class Ability
         #else
     user ||= User.new # guest user
 
-    if user.email == "j-moore@ou.edu" || user.email == "chocolateraters@gmail.com" || user.email == "jmoore2002@gmail.com"  || user.email == "fuad@nascenia.com"  || user.email == "sifat@nascenia.com"
+    if user.email == "j-moore@ou.edu" || user.email == "chocolateraters@gmail.com" || user.email == "jmoore2002@gmail.com"  || user.email == "fuad@nascenia.com"  || user.email == "sifat@nascenia.com" || user.email == "valerieamyers@gmail.com"
         can :manage , :all
     elsif user.email != nil
       can :read , :all

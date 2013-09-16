@@ -19,8 +19,9 @@
         <div class ="pic" >
         <%= image_tag pic ,:size => '200x200' %>
           </br>
-          <%= f.check_box :remove_photo %>
+          <%= f.check_box :remove_photo ,:style =>'float:left'%>
           <%= f.label :remove_photo, "remove image" %>
+          <P>or</P>
           <button type="button">Change</button>
         </div>
 

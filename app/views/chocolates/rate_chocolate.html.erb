@@ -20,39 +20,39 @@
          <div class="chocolate-rating">
 
            <div class="rating-category">Look</div>
-           <%= image_tag 'rating-star.png' %>
-           <%= select_tag "look", options_for_select((1..5).step(1)) ,:prompt => " " %>
-           <div class="divide-by">/5</div>
+           <%= image_tag 'rating-star.png', :id => 'look' %>
+           <%= select_tag "look", options_for_select((1..10).step(1)) ,:prompt => " " %>
+           <div class="divide-by">/10</div>
          </div>
          <div class="chocolate-rating">
            <div class="rating-category">Smell</div>
-           <%= image_tag 'rating-star.png' %>
-           <%= select_tag "smell", options_for_select((1..5).step(1)) ,:prompt => " "  %>
-           <div class="divide-by">/5</div>
+           <%= image_tag 'rating-star.png', :id => 'smell' %>
+           <%= select_tag "smell", options_for_select((1..10).step(1)) ,:prompt => " "  %>
+           <div class="divide-by">/10</div>
          </div>
          <div class="chocolate-rating">
            <div class="rating-category">Snap</div>
-           <%= image_tag 'rating-star.png' %>
-           <%= select_tag "snap", options_for_select((1..5).step(1)) ,:prompt => " " %>
-           <div class="divide-by">/5</div>
+           <%= image_tag 'rating-star.png', :id => 'snap' %>
+           <%= select_tag "snap", options_for_select((1..10).step(1)) ,:prompt => " " %>
+           <div class="divide-by">/10</div>
          </div>
          <div class="chocolate-rating">
            <div class="rating-category">Mouthfeel</div>
-           <%= image_tag 'rating-star.png' %>
-           <%= select_tag "mouthfeel", options_for_select((1..25).step(1)) ,:prompt => " " %>
-           <div class="divide-by">/25</div>
+           <%= image_tag 'rating-star.png',:id => 'mouthfeel' %>
+           <%= select_tag "mouthfeel", options_for_select((1..10).step(1)) ,:prompt => " " %>
+           <div class="divide-by">/10</div>
          </div>
          <div class="chocolate-rating">
            <div class="rating-category">Taste</div>
-           <%= image_tag 'rating-star.png' %>
-           <%= select_tag "taste", options_for_select((2..50).step(2)) ,:prompt => " "  %>
-           <div class="divide-by">/50</div>
+           <%= image_tag 'rating-star.png',:id => 'taste' %>
+           <%= select_tag "taste", options_for_select((1..20).step(1)) ,:prompt => " "  %>
+           <div class="divide-by">/20</div>
          </div>
          <div class="chocolate-rating">
-           <div class="rating-category">Aftertaste</div>
-           <%= image_tag 'rating-star.png' %>
-           <%= select_tag "aftertaste", options_for_select((1..10).step(1)) ,:prompt => " "  %>
-           <div class="divide-by">/10</div>
+           <div class="rating-category">Overall</div>
+           <%= image_tag 'rating-star.png', :id => 'overall' %>
+           <%= select_tag "aftertaste", options_for_select((1..40).step(1)) ,:prompt => " "  %>
+           <div class="divide-by">/40</div>
          </div>
        </div>
      </div>
@@ -82,6 +82,148 @@
                      showCaption:false,
 //                    text: { previous: "< previous", next: "next >", loading: "Loading..." },
                      autoPlay: false
+                 });
+
+                 $('#look').qtip({
+                     position :{
+                        corner:{
+                            tooltip:'topLeft',
+                            target: 'bottomMiddle'
+                        }
+                     },
+                     content: 'Chocolate should be smooth and a consistent color, be free of blooming (the gray-ish chalky spots that get on chocolate when it has not been stored properly), and there should be no visible streaks of cocoa butter.',
+                     show: 'mouseover',
+                     hide: 'mouseout' ,
+                     style: {
+                         border: {
+                             width: 1,
+                             color: '#AE7647',
+                             radius: 2
+                         },
+                         background: 'white',
+                         padding: 10,
+                         textAlign: 'left',
+                         tip: true, // Give it a speech bubble tip with automatic corner detection
+                         name: 'cream' // Style it according to the preset 'cream' style
+                     }
+                 });
+                 $('#smell').qtip({
+                     position :{
+                         corner:{
+                             tooltip:'topLeft',
+                             target: 'bottomMiddle'
+                         }
+                     },
+                     content: 'Chocolate should be smooth and a consistent color, be free of blooming (the gray-ish chalky spots that get on chocolate when it has not been stored properly), and there should be no visible streaks of cocoa butter.',
+                     show: 'mouseover',
+                     hide: 'mouseout' ,
+                     style: {
+                         border: {
+                             width: 1,
+                             color: '#AE7647' ,
+                             radius: 2
+
+                         },
+                         background: 'white',
+                         padding: 10,
+                         textAlign: 'left',
+                         tip: true, // Give it a speech bubble tip with automatic corner detection
+                         name: 'cream' // Style it according to the preset 'cream' style
+                     }
+                 });
+                 $('#snap').qtip({
+                     position :{
+                         corner:{
+                             tooltip:'topLeft',
+                             target: 'bottomMiddle'
+                         }
+                     },
+                     content: 'Chocolate should be smooth and a consistent color, be free of blooming (the gray-ish chalky spots that get on chocolate when it has not been stored properly), and there should be no visible streaks of cocoa butter.',
+                     show: 'mouseover',
+                     hide: 'mouseout' ,
+                     style: {
+                         border: {
+                             width: 1,
+                             color: '#AE7647',
+                             radius: 2
+                         },
+                         background: 'white',
+                         padding: 10,
+                         textAlign: 'left',
+                         tip: true, // Give it a speech bubble tip with automatic corner detection
+                         name: 'cream' // Style it according to the preset 'cream' style
+                     }
+                 });
+                 $('#mouthfeel').qtip({
+                     position :{
+                         corner:{
+                             tooltip:'topLeft',
+                             target: 'bottomMiddle'
+                         }
+                     },
+                     content: 'Chocolate should be smooth and a consistent color, be free of blooming (the gray-ish chalky spots that get on chocolate when it has not been stored properly), and there should be no visible streaks of cocoa butter.',
+                     show: 'mouseover',
+                     hide: 'mouseout' ,
+                     style: {
+                         border: {
+                             width: 1,
+                             color: '#AE7647',
+                             radius: 2
+
+                         },
+
+                         background: 'white',
+                         padding: 10,
+                         textAlign: 'left',
+                         tip: true, // Give it a speech bubble tip with automatic corner detection
+                         name: 'cream' // Style it according to the preset 'cream' style
+                     }
+                 });
+                 $('#taste').qtip({
+                     position :{
+                         corner:{
+                             tooltip:'topLeft',
+                             target: 'bottomMiddle'
+                         }
+                     },
+                     content: 'Chocolate should be smooth and a consistent color, be free of blooming (the gray-ish chalky spots that get on chocolate when it has not been stored properly), and there should be no visible streaks of cocoa butter.',
+                     show: 'mouseover',
+                     hide: 'mouseout' ,
+                     style: {
+                         border: {
+                             width: 1,
+                             color: '#AE7647',
+                             radius: 2
+                         },
+                         background: 'white',
+                         padding: 10,
+                         textAlign: 'left',
+                         tip: true, // Give it a speech bubble tip with automatic corner detection
+                         name: 'cream' // Style it according to the preset 'cream' style
+                     }
+                 });
+                 $('#overall').qtip({
+                     position :{
+                         corner:{
+                             tooltip:'topLeft',
+                             target: 'bottomMiddle'
+                         }
+                     },
+                     content: 'Chocolate should be smooth and a consistent color, be free of blooming (the gray-ish chalky spots that get on chocolate when it has not been stored properly), and there should be no visible streaks of cocoa butter.',
+                     show: 'mouseover',
+                     hide: 'mouseout' ,
+                     style: {
+                         border: {
+                             width: 1,
+                             color: '#AE7647',
+                             radius: 2
+                         },
+                         background: 'white',
+                         padding: 10,
+                         textAlign: 'left',
+                         tip: true, // Give it a speech bubble tip with automatic corner detection
+                         name: 'cream' // Style it according to the preset 'cream' style
+                     }
                  });
              });
      $(document).ready(function(){

@@ -36,6 +36,9 @@
     <div id="cocoa" >
       <%= f.text_field :cocoa,:placeholder => 'Cocoa(%)' %>
     </div>
+      <div id="flavour" >
+        <%= f.text_field :flavour,:placeholder => 'Flavour' %>
+      </div>
 
       <div id="bar_state">
         <%= f.radio_button :bar_state, 'solid' ,:class =>'type' %><span class="type_option">Solid </span>
@@ -76,11 +79,13 @@
               $('#cocoa').hide();
               $('#bar_type').hide();
               $('#bar_state').hide();
+              $('#flavour').hide();
               $('#type_bar').click(
                       function(){
                           $('#cocoa').show();
                           $('#bar_type').show();
                           $('#bar_state').show();
+                          $('#flavour').hide();
                       }
               )
               $('#type_truffle').click(
@@ -88,6 +93,7 @@
                           $('#cocoa').hide();
                           $('#bar_type').hide();
                           $('#bar_state').hide();
+                          $('#flavour').show();
                       }
               )
 

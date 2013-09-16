@@ -93,7 +93,7 @@ class ChocolatesController < ApplicationController
     @chocolates_by_unique_chocolatier = @chocolates.uniq{|x| x.chocolatier_id}
 
     if @chocolates.blank?
-      flash[:notice]="Search do not match"
+      flash[:notice]="No one has rated that chocolate yet!  Check the chocolate list or be the first to rate that chocolate!"
       redirect_to root_path
     else
     respond_to do |format|

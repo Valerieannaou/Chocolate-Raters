@@ -13,7 +13,6 @@
 </head>
 
 <body>
-
 <div class="navbar-wrapper">
   <div class="navbar">
     <div class="content-wrapper">
@@ -31,12 +30,8 @@
 
           <div class="span9"  id="menu-and-login">
             <div class="row-fluid">
-
-
                   <div class="span9 offset2">
-
-
-                    <div class="navbar">
+                     <div class="navbar">
                         <div class="navbar-inner" id="main-menu">
                           <div class="container">
                             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -68,7 +63,17 @@
                                     <!---<li><a href="#">Top Chocolatiers</a></li>---->
                                   </ul>
                                 </li>
-                                <li><a href="#">Shop</a></li>
+                                <li class="dropdown">
+                                  <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+                                    Shop
+                                    <b class="caret"></b>
+                                  </a>
+                                  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                    <li><a href="<%= chocolates_path %>">Comming soon</a></li>
+
+                                    <!---<li><a href="#">Top Chocolatiers</a></li>---->
+                                  </ul>
+                                </li>
                               </ul>
                             </div>
                             <!--/.nav-collapse -->
@@ -117,6 +122,12 @@
           </div>
 
         </div>
+        <% if notice.present? %>
+            <div class="alert">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong><%= notice %></strong>
+            </div>
+        <% end %>
       </div>
     </div>
 
@@ -141,10 +152,10 @@
                 <!--<li><a href="#">One more separated link</a></li>-->
               <!--</ul>-->
             <!--</li>-->
-            <!--<li><%= link_to 'Chocolates', chocolates_path %></li>-->
-            <!--<li><%= link_to 'Add chocolate', new_chocolate_path %></li>-->
-            <!--<li><%= link_to 'Chocolatiers', chocolatiers_path %> </li>-->
-            <!--<li><%= link_to 'Add chocolatier', new_chocolatier_path %></li>-->
+            <!--<li><%#= link_to 'Chocolates', chocolates_path %></li>-->
+            <!--<li><%#= link_to 'Add chocolate', new_chocolate_path %></li>-->
+            <!--<li><%#= link_to 'Chocolatiers', chocolatiers_path %> </li>-->
+            <!--<li><%#= link_to 'Add chocolatier', new_chocolatier_path %></li>-->
           <!--</ul>-->
         <!--</div>-->
         <!--&lt;!&ndash;/.nav-collapse &ndash;&gt;-->
@@ -153,6 +164,8 @@
   </div>
 </div>
 
+
+
 <!-- Carousel
     ================================================== -->
 <div id="myCarousel" class="carousel slide">
@@ -160,45 +173,42 @@
 
   <div class="carousel-inner">
     <div class="item active">
-      <%= image_tag 'slide-01.png'%>
+      <%= image_tag 'Slider_1.jpg'%>
 
       <div class="container">
         <div class="carousel-caption hidden-phone">
-          <h1>Top Rated Dark Chocolate</h1>
+
         </div>
       </div>
     </div>
     <div class="item">
-      <%= image_tag 'slide-02.png'%>
+      <%= image_tag 'Slider_2.jpg'%>
 
       <div class="container">
         <div class="carousel-caption hidden-phone">
-          <h1>Another example headline.</h1>
+
         </div>
       </div>
     </div>
     <div class="item">
-      <%= image_tag 'slide-03.png'%>
+      <%= image_tag 'Slider_3.jpg'%>
 
       <div class="container">
         <div class="carousel-caption hidden-phone">
-          <h1>One more for good measure.</h1>
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <%= image_tag 'slide-04.png'%>
 
-      <div class="container">
-        <div class="carousel-caption hidden-phone">
-          <h1>One more for good measure.</h1>
         </div>
       </div>
     </div>
+
+
+  </div>
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
   </div>
 
   <div class="content-wrapper">
     <div class="container">
+
       <div class="row-fluid">
         <% if current_user %>
         <div class="span12" id="search-box-on-slider">
@@ -212,7 +222,7 @@
          <% else %>
         <div class="span8" id="sign-in-links">
           <span id="email-signup"> <%= link_to(image_tag('sign-up-with-email.png'), "javascript:void(0);", :class => 'login') %></span>
-          <span id="facebook-signup"><%= link_to (image_tag('sign-up-with-facebook_transparent.png')), user_omniauth_authorize_path(:facebook), :class => "popup", :"data-width" => 600, :"data-height" => 400 %></span>
+          <span id="facebook-signup"><%= link_to (image_tag('Sign_in_final-16_09.png')), user_omniauth_authorize_path(:facebook), :class => "popup", :"data-width" => 600, :"data-height" => 400 %></span>
 
         </div>
         <% end %>
@@ -221,7 +231,7 @@
   </div>
 
 
-  <div class="content-wrapper">
+  <!-------<div class="content-wrapper">
     <ol class="carousel-indicators carousel-indicator-button hidden-phone">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -229,7 +239,7 @@
       <li data-target="#myCarousel" data-slide-to="3"></li>
       <div style="width: 108px; height: 17px; position: absolute;left: 0; top: 0;"></div>
     </ol>
-  </div>
+  </div>---->
 </div>
 
 <%= yield %>
@@ -250,6 +260,7 @@
             // carousel demo
             $('#myCarousel').carousel();
             $('#miniCarousel').carousel({interval: false});
+
         })
     }(window.jQuery)
 

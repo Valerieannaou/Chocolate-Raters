@@ -2,7 +2,6 @@
 
   <ul>
     <li class="head">
-      <span class="chocolate-image"></span>
       <span class="chocolate-name">Chocolate</span>
 
       <span class="chocolate-rating-in-index">Rating</span>
@@ -23,8 +22,8 @@
       <span class="chocolate-image"><%= link_to image_tag( pic.image), chocolate %></span>
       <span class="chocolate-name"><%= link_to chocolate.name, chocolate %></span>
 
-      <span class="chocolate-rating-in-index"><%= number_with_precision chocolate.ratings.average(:rate),:precision => 1 %></span>
-      <span class="star-image"><%= image_tag('chocolate-rating-star.png') %></span>
+      <span class="chocolate-rating-in-index"><%= number_with_precision chocolate.ratings.average(:rate),:precision => 0 %></span>
+      <span class="star-image"><%= link_to image_tag('chocolate-rating-star.png'), rate_chocolate_chocolates_path(:chocolate_id => chocolate.id) %></span>
     </li>
         <% count+= 1 %>
     <% end %>

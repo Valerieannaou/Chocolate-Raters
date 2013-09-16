@@ -18,6 +18,7 @@
 //= require_tree .
 //require 'carrierwave/processing/rmagick'
 // require cocoon
+// require bootstrap-alert.js
 
 function popupCenter(url, width, height, name) {
     var left = (screen.width/2)-(width/2);

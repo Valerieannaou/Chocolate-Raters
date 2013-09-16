@@ -62,7 +62,7 @@ class ChocolatiersController < ApplicationController
   # POST /chocolatiers.json
   def create
     @chocolatier = Chocolatier.new(params[:chocolatier])
-    @chocolatier.status = 0
+    @chocolatier.status = 1
     @chocolatier.user_id= current_user.id
 
     respond_to do |format|

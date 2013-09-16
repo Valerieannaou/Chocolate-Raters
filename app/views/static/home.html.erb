@@ -49,7 +49,7 @@
                           <a href="<%= chocolate_path(chocolate.id) %>"><%= chocolate.name %></a>
                         </div>
 
-                        <p class="description"><span style="font-size: 20px"><%= review.rate %> </span> <%= truncate review.comment, length: 110 %></p>
+                        <p class="description"><span style="font-size: 20px"><%= (review.rate).to_i %> </span> <%= truncate review.comment, length: 110 %></p>
 
 
                         <div class="read-more"><a href="<%= chocolate_path(chocolate.id) %>">Read more...</a></div>
@@ -75,14 +75,15 @@
 
       <% if !(@chocolates.blank?) %>
           <div class="trading-chocolate" id="trading-chocolate-1">
-            <img class="chocolate" src="<%= Photo.find_by_chocolate_id(@chocolates[0].id).image %>">
+            <% photo_1 = Photo.find_by_chocolate_id(@chocolates[0].id) %>
+            <img class="chocolate" src="<%= photo_1.image if photo_1.present? %>">
 
             <div class="trading-chocolate-rating">
               <p><%= @chocolates[0].name %></p>
               <div class="rating-starts"><%= image_tag('yellow-star.png') %>
                 <span class="rate">
                   <% if !(@chocolates[0].ratings.blank?) %>
-                <%= number_with_precision @chocolates[0].ratings.average(:rate), :precision => 1  %>
+                <%= number_with_precision @chocolates[0].ratings.average(:rate), :precision => 0  %>
                       <span class="outof">/100</span>
                       <% end %>
                     </span>
@@ -94,14 +95,15 @@
 
 
           <div class="trading-chocolate" id="trading-chocolate-2">
-            <img class="chocolate" src="<%= Photo.find_by_chocolate_id(@chocolates[1].id).image %>">
+            <% photo = Photo.find_by_chocolate_id(@chocolates[1].id) %>
+            <img class="chocolate" src="<%= photo.image if photo.present? %>">
 
             <div class="trading-chocolate-rating">
               <p><%= @chocolates[1].name %></p>
               <div class="rating-starts"><%= image_tag('yellow-star.png') %>
                <span class="rate">
                  <% if !(@chocolates[1].ratings.blank?) %>
-                <%= number_with_precision @chocolates[1].ratings.average(:rate), :precision => 1  %>
+                <%= number_with_precision @chocolates[1].ratings.average(:rate), :precision => 0  %>
                      <span class="outof">/100</span>
                      <% end %>
                 </span>

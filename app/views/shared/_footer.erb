@@ -1,15 +1,12 @@
 <div id="footer-area-full-width">
   <div class="content-wrapper" id="footer-area">
     <div class="row-fluid">
-      <div class="span3" id="footer-area-1">
-        <b>about us</b><br>
-        About RateChocolate<br>
-        FAQ<br>
-        Contact<br>
-        New Chocolate<br>
+      <div class="span3" id="footer-area-1" style="font-size: 12px; margin-top: 60px">
+
+             Copyright &copy; 2013, Chocolate Raters All rights reserved.
       </div>
       <div class="span3" id="footer-area-2">
-        <b>add</b><br>
+        <b>about us</b><br>
         About RateChocolate<br>
         FAQ<br>
         Contact<br>
@@ -32,7 +29,6 @@
         <% end %>
         <% if admin? %>
             <b>Link for admin access</b><br>
-            <%= link_to 'Requests', requests_chocolatiers_path %></br>
             <%= link_to 'Users', user_index_path %></br>
             <%= link_to 'Reviews', ratings_index_path %></br>
 
@@ -43,7 +39,7 @@
     <!--<div style="clear: both"></div>-->
 
     <div id="copy-right">
-      Copyright &copy; 2013, Chocolate Raters All rights reserved.
+
     </div>
   </div>
 </div>
