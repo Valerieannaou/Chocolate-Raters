@@ -13,7 +13,7 @@
           <% if can? :edit , @chocolatier %>
               <%= link_to 'Edit', edit_chocolatier_path(@chocolatier) %>
           <% end %>
-          <% if current_user %>
+          <% if current_user.present? %>
           <% if current_user.admin? %>
              |<%= link_to 'Remove', @chocolatier, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
@@ -32,12 +32,14 @@
   </div>
   <div id="chocolate-list" class="span9">
     <% @chocolates.each do |chocolate| %>
-        <% pic = Photo.find_by_chocolate_id(chocolate.id).image %>
+        <% pic = Photo.find_by_chocolate_id(chocolate.id) %>
 
     <div class="chocolate">
       <div class="row-fluid">
       <div id="image" class="span2">
-        <%= link_to image_tag(pic), chocolate %>
+         <% if pic.present? %>
+        <%= link_to image_tag(pic.image), chocolate %>
+        <% end %>
       </div>
       <div  class="span3 name">
         <%= link_to chocolate.name , chocolate %>

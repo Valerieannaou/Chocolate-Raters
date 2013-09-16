@@ -19,7 +19,7 @@
         <% end %>
     <li class="<%= class_name %>">
       <% pic = Photo.find_by_chocolate_id(chocolate.id) %>
-      <span class="chocolate-image"><%= link_to image_tag( pic.image), chocolate %></span>
+      <span class="chocolate-image"><% if pic.present? %><%= link_to image_tag( pic.image), chocolate %><% end %></span>
       <span class="chocolate-name"><%= link_to chocolate.name, chocolate %></span>
 
       <span class="chocolate-rating-in-index"><%= number_with_precision chocolate.ratings.average(:rate),:precision => 0 %></span>

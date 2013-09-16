@@ -9,7 +9,7 @@
           <%= link_to 'Edit', edit_chocolate_path(@chocolate) %>
       <% end %>
          <%# if can? :delete , @chocolate %>
-        <% if current_user %>
+        <% if current_user.present? %>
         <% if current_user.admin? %>
             | <%= link_to 'Remove', @chocolate, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
