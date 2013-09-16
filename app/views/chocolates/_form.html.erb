@@ -59,8 +59,8 @@
               <%= builder.link_to_remove "Remove"  %>
            <% else %>
               <div id="mphoto">
-              <div id="photo" style="width: 200px; height: 200px; border: solid 1px black; margin: 10px;">
-            <%=  image_tag builder.object.image.url, :size =>'200x200' %>
+              <div id="photo" style=" margin: 10px;">
+            <%=  image_tag (builder.object.image.url), :style => "width: 200px; height: 200px; border: solid 1px black;" %>
               </div>
           <%= builder.link_to_remove "Remove"  %>
               </div>

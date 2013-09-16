@@ -13,11 +13,9 @@
           <% if can? :edit , @chocolatier %>
               <%= link_to 'Edit', edit_chocolatier_path(@chocolatier) %>
           <% end %>
-          <% if current_user.present? %>
-          <% if current_user.admin? %>
+          <% if can? :destroy, @chocolatier %>
              |<%= link_to 'Remove', @chocolatier, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-          <% end %>
+           <% end %>
 
 
         </div>

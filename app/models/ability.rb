@@ -12,7 +12,7 @@ class Ability
     elsif user.email != nil
       can :read , :all
       can :new, :user
-      can :manage , Chocolatier do |chocolatier|
+      can :edit , Chocolatier do |chocolatier|
         chocolatier.user_id == user.id
       end
      cannot :requests, Chocolatier
@@ -20,7 +20,7 @@ class Ability
       can :new , Chocolate
       can :create ,Chocolatier
       can :create , Chocolate
-      can :manage , Chocolate do |chocolate|
+      can :edit , Chocolate do |chocolate|
         chocolate.user_id == user.id
       end
       can :rate_chocolate , Chocolate
