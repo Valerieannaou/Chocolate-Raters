@@ -9,7 +9,7 @@
           <%= link_to 'Edit', edit_chocolate_path(@chocolate) %>
       <% end %>
          <%# if can? :delete , @chocolate %>
-          <% if can? :destroy, @chocolate %>
+          <% if admin? %>
             | <%= link_to 'Remove', @chocolate, method: :delete, data: { confirm: 'Are you sure?' } %>
            <% end %>
       </div>

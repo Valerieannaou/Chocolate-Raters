@@ -13,7 +13,7 @@
           <% if can? :edit , @chocolatier %>
               <%= link_to 'Edit', edit_chocolatier_path(@chocolatier) %>
           <% end %>
-          <% if can? :destroy, @chocolatier %>
+          <% if admin? %>
              |<%= link_to 'Remove', @chocolatier, method: :delete, data: { confirm: 'Are you sure?' } %>
            <% end %>
 
