@@ -72,7 +72,7 @@
 
     <div class="span6" id="trading-chocolate">
       <div class="title">Trending Chocolate</div>
-
+      <div class="clear:both"></div>
       <% if !(@chocolates.blank?) %>
           <div class="trading-chocolate" id="trading-chocolate-1">
             <% photo_1 = Photo.find_by_chocolate_id(@chocolates[0].id) %>
