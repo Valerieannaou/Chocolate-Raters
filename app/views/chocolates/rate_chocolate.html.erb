@@ -20,37 +20,37 @@
          <div class="chocolate-rating">
 
            <div class="rating-category">Look</div>
-           <%= image_tag 'rating-star.png', :id => 'look' %>
+           <%= image_tag 'rating-star.png', :id => 'qlook' %>
            <%= select_tag "look", options_for_select((1..10).step(1)) ,:prompt => " " %>
            <div class="divide-by">/10</div>
          </div>
          <div class="chocolate-rating">
            <div class="rating-category">Smell</div>
-           <%= image_tag 'rating-star.png', :id => 'smell' %>
+           <%= image_tag 'rating-star.png', :id => 'qsmell' %>
            <%= select_tag "smell", options_for_select((1..10).step(1)) ,:prompt => " "  %>
            <div class="divide-by">/10</div>
          </div>
          <div class="chocolate-rating">
            <div class="rating-category">Snap</div>
-           <%= image_tag 'rating-star.png', :id => 'snap' %>
+           <%= image_tag 'rating-star.png', :id => 'qsnap' %>
            <%= select_tag "snap", options_for_select((1..10).step(1)) ,:prompt => " " %>
            <div class="divide-by">/10</div>
          </div>
          <div class="chocolate-rating">
            <div class="rating-category">Mouthfeel</div>
-           <%= image_tag 'rating-star.png',:id => 'mouthfeel' %>
+           <%= image_tag 'rating-star.png',:id => 'qmouthfeel' %>
            <%= select_tag "mouthfeel", options_for_select((1..10).step(1)) ,:prompt => " " %>
            <div class="divide-by">/10</div>
          </div>
          <div class="chocolate-rating">
            <div class="rating-category">Taste</div>
-           <%= image_tag 'rating-star.png',:id => 'taste' %>
+           <%= image_tag 'rating-star.png',:id => 'qtaste' %>
            <%= select_tag "taste", options_for_select((1..20).step(1)) ,:prompt => " "  %>
            <div class="divide-by">/20</div>
          </div>
          <div class="chocolate-rating">
            <div class="rating-category">Overall</div>
-           <%= image_tag 'rating-star.png', :id => 'overall' %>
+           <%= image_tag 'rating-star.png', :id => 'qoverall' %>
            <%= select_tag "aftertaste", options_for_select((1..40).step(1)) ,:prompt => " "  %>
            <div class="divide-by">/40</div>
          </div>
@@ -84,7 +84,7 @@
                      autoPlay: false
                  });
 
-                 $('#look').qtip({
+                 $('#qlook').qtip({
                      position :{
                         corner:{
                             tooltip:'topLeft',
@@ -107,7 +107,7 @@
                          name: 'cream' // Style it according to the preset 'cream' style
                      }
                  });
-                 $('#smell').qtip({
+                 $('#qsmell').qtip({
                      position :{
                          corner:{
                              tooltip:'topLeft',
@@ -131,7 +131,7 @@
                          name: 'cream' // Style it according to the preset 'cream' style
                      }
                  });
-                 $('#snap').qtip({
+                 $('#qsnap').qtip({
                      position :{
                          corner:{
                              tooltip:'topLeft',
@@ -154,7 +154,7 @@
                          name: 'cream' // Style it according to the preset 'cream' style
                      }
                  });
-                 $('#mouthfeel').qtip({
+                 $('#qmouthfeel').qtip({
                      position :{
                          corner:{
                              tooltip:'topLeft',
@@ -179,7 +179,7 @@
                          name: 'cream' // Style it according to the preset 'cream' style
                      }
                  });
-                 $('#taste').qtip({
+                 $('#qtaste').qtip({
                      position :{
                          corner:{
                              tooltip:'topLeft',
@@ -202,7 +202,7 @@
                          name: 'cream' // Style it according to the preset 'cream' style
                      }
                  });
-                 $('#overall').qtip({
+                 $('#qoverall').qtip({
                      position :{
                          corner:{
                              tooltip:'topLeft',
@@ -225,8 +225,7 @@
                          name: 'cream' // Style it according to the preset 'cream' style
                      }
                  });
-             });
-     $(document).ready(function(){
+
          var total_rate= 0;
          var look_rate=0;
          var smell_rate=0;
