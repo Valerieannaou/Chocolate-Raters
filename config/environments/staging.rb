@@ -70,9 +70,9 @@ ChocolateRatingSystem::Application.configure do
   config.action_mailer.smtp_settings = {
       :address              => "smtp.gmail.com",
       :port                 => 587,
-      :domain               => 'chocolateraters.com',
-      :user_name            => 'chocolateraters@gmail.com',
-      :password             => 'ChocolateRaters1',
+      :domain               => '74.207.241.126',
+      :user_name            => 'chocolate.raters.staging@gmail.com',
+      :password             => 'nascenia123',
       :authentication       => 'plain',
       :enable_starttls_auto => true
   }
