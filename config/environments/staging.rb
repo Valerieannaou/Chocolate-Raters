@@ -72,7 +72,7 @@ ChocolateRatingSystem::Application.configure do
       :port                 => 587,
       :domain               => '74.207.241.126',
       :user_name            => 'chocolate.raters.staging@gmail.com',
-      :password             => 'nascenia123',
+      :password             => 'nascenia',
       :authentication       => 'plain',
       :enable_starttls_auto => true
   }
