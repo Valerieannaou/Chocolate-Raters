@@ -86,7 +86,7 @@ end
 
 before 'deploy:assets:precompile', 'deploy:copy_in_database_yml'
 after 'deploy:update_code', 'deploy:migrate'
-#git after 'deploy:migrate', 'deploy:rebuild_sphinx'
+#after 'deploy:migrate', 'deploy:rebuild_sphinx'
 after 'deploy:setup', 'deploy:create_shared_files_and_directories'
 after 'deploy:create_symlink', :link_shared_files
-after "deploy:restart", "deploy:cleanup"
+#after "deploy:restart", "deploy:cleanup"
