@@ -12,7 +12,7 @@
   <div id="chocolate-slider">
     <ul id="pikame" class="jcarousel-skin-pika">
       <% for photo in @chocolate.photos %>
-          <li><%= image_tag photo.image %></li>
+          <li><%= image_tag photo.image_url(:thumb) %></li>
       <% end %>
     </ul>
   </div>

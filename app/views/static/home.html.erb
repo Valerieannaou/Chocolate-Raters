@@ -76,7 +76,7 @@
       <% if !(@chocolates.blank?) %>
           <div class="trading-chocolate" id="trading-chocolate-1">
             <% photo_1 = Photo.find_by_chocolate_id(@chocolates[0].id) %>
-            <img class="chocolate" src="<%= photo_1.image if photo_1.present? %>">
+            <img class="chocolate" src="<%= photo_1.image_url(:thumb) if photo_1.present? %>">
 
             <div class="trading-chocolate-rating">
               <p><%= @chocolates[0].name %></p>
@@ -96,7 +96,7 @@
 
           <div class="trading-chocolate" id="trading-chocolate-2">
             <% photo = Photo.find_by_chocolate_id(@chocolates[1].id) %>
-            <img class="chocolate" src="<%= photo.image if photo.present? %>">
+            <img class="chocolate" src="<%= photo.image_url(:thumb) if photo.present? %>">
 
             <div class="trading-chocolate-rating">
               <p><%= @chocolates[1].name %></p>
