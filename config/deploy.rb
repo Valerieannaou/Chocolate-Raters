@@ -60,7 +60,7 @@ namespace :deploy do
 
   desc 'rebuild sphinx'
   task :rebuild_sphinx, :role => :app do
-    run "cd #{current_path}; rake ts:rebuild RAILS_ENV=staging"
+    run "cd #{current_path}; rake ts:regenerate RAILS_ENV=staging"
   end
 
 
@@ -89,3 +89,4 @@ after 'deploy:update_code', 'deploy:migrate'
 after 'deploy:migrate', 'deploy:rebuild_sphinx'
 after 'deploy:setup', 'deploy:create_shared_files_and_directories'
 after 'deploy:create_symlink', :link_shared_files
+after "deploy:restart", "deploy:cleanup"

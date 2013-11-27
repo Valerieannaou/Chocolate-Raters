@@ -6,7 +6,7 @@ class Ability
         #can :manage , :all
         #else
     user ||= User.new # guest user
-
+    can :show_search , :all
     if user.email == "j-moore@ou.edu" || user.email == "chocolateraters@gmail.com" || user.email == "jmoore2002@gmail.com"  || user.email == "fuad@nascenia.com"  || user.email == "sifat@nascenia.com" || user.email == "valerieamyers@gmail.com"
         can :manage , :all
     elsif user.email != nil
@@ -40,7 +40,7 @@ class Ability
       can :user_review , Chocolate
       cannot :index , Rating
       cannot :index , :user
-      can :show_search , :all
+
       can :new, :user
   end
 

@@ -13,7 +13,9 @@
     <% @chocolates.each do |chocolate| %>
         <li class="chocolate">
           <div class="name">
+            <% if  Photo.find_by_chocolate_id(chocolate.id).present? %>
             <img class="chocolate-image" src="<%= Photo.find_by_chocolate_id(chocolate.id).image %>">
+                <% end %>
             <p><%= link_to chocolate.name, chocolate %></p>
           </div>
           <div class="actions">
