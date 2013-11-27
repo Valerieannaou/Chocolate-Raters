@@ -261,7 +261,7 @@
 
 
          document.getElementById('total').innerHTML=total_rate;
-         $("#look").click(function(){
+         $("#look").change(function(){
              if (document.getElementById('look').value ){
                  total_rate= total_rate-look_rate
                  look_rate =parseFloat( document.getElementById('look').value)
@@ -271,7 +271,7 @@
              }
 
          });
-         $("#smell").click(function(){
+         $("#smell").change(function(){
              if (document.getElementById('smell').value ){
                  total_rate= total_rate-smell_rate
                  smell_rate = parseFloat( document.getElementById('smell').value)
@@ -280,7 +280,7 @@
                  $("#rate").val(total_rate);
              }
          });
-         $("#snap").click(function(){
+         $("#snap").change(function(){
              if (document.getElementById('snap').value ){
                  total_rate= total_rate-snap_rate
                  snap_rate = parseFloat( document.getElementById('snap').value)
@@ -290,7 +290,7 @@
              }
 
          });
-         $("#mouthfeel").click(function(){
+         $("#mouthfeel").change(function(){
              if (document.getElementById('mouthfeel').value ){
                  total_rate= total_rate-mouthfeel_rate
                  mouthfeel_rate = parseFloat( document.getElementById('mouthfeel').value)
@@ -300,7 +300,7 @@
              }
 
          });
-         $("#taste").click(function(){
+         $("#taste").change(function(){
              if (document.getElementById('taste').value ){
                  total_rate= total_rate-taste_rate
                  taste_rate = parseFloat( document.getElementById('taste').value)
@@ -310,7 +310,7 @@
              }
 
          });
-         $("#aftertaste").click(function(){
+         $("#aftertaste").change(function(){
              if (document.getElementById('aftertaste').value ){
                  total_rate= total_rate-aftertaste_rate
                  aftertaste_rate = parseFloat( document.getElementById('aftertaste').value)
