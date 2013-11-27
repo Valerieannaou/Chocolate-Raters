@@ -1,0 +1,8 @@
+development:
+  dict: keywords
+
+production:
+  dict: keywords
+
+staging:
+  dict: keywords
