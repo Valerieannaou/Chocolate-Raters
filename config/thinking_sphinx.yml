@@ -3,6 +3,8 @@ development:
 
 production:
   dict: keywords
+  adapter: mysql2
 
 staging:
   dict: keywords
+  adapter: mysql2
