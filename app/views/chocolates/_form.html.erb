@@ -13,7 +13,7 @@
     <div id="chocolate-form">
       <div class="field">
         <div class="required-star">*</div>
-        <%=  f.select :chocolatier_id, options_for_select(@chocolatiers.collect{|c| [c.name, c.id]}) ,:placeholder => 'Select a chocolatier' %>
+        <%=  f.select :chocolatier_id, options_for_select(@chocolatiers.collect{|c| [c.name, c.id]}.compact.unshift(["Select chocolatier"]))  %>
       </div>
     <div class="field">
       <div class="required-star">*</div>
